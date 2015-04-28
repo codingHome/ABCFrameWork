@@ -28,6 +28,7 @@ PODS:
   - JSONModel (1.0.2)
   - Masonry (0.6.1)
   - Reachability (3.2)
+  - RJImageLoader (0.3.0)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - JSONModel
   - Masonry
   - Reachability
+  - RJImageLoader
   - SDWebImage
   - SVProgressHUD
   - YTKKeyValueStore
@@ -50,6 +52,7 @@ SPEC CHECKSUMS:
   JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  RJImageLoader: f0d9edebeb7837feb0ce51759826900645770db7
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
   YTKKeyValueStore: 4d002941540dd5108fa23009b71e0f2f937f7a0f

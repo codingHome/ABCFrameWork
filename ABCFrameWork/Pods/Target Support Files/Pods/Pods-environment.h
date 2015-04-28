@@ -78,6 +78,12 @@
 #define COCOAPODS_VERSION_MINOR_Masonry 6
 #define COCOAPODS_VERSION_PATCH_Masonry 1
 
+// RJImageLoader
+#define COCOAPODS_POD_AVAILABLE_RJImageLoader
+#define COCOAPODS_VERSION_MAJOR_RJImageLoader 0
+#define COCOAPODS_VERSION_MINOR_RJImageLoader 3
+#define COCOAPODS_VERSION_PATCH_RJImageLoader 0
+
 // Reachability
 #define COCOAPODS_POD_AVAILABLE_Reachability
 #define COCOAPODS_VERSION_MAJOR_Reachability 3

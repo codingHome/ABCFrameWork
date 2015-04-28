@@ -37,6 +37,7 @@
 }
 
 - (void)startOperation {
+    [self.delegate netOperationStarted:self];
     switch (_method) {
         case ABCNetOperationGetMethod:
             [self getRequest];

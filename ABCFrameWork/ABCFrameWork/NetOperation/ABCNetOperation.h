@@ -15,10 +15,13 @@ typedef NS_ENUM(NSUInteger, OperationMethod){
     ABCNetOperationPostDataMethod
 };
 
+@class ABCNetOperation;
+
 @protocol  ABCNetOperationProtocol <NSObject>
 
 @required
 
+- (void)netOperationStarted:(ABCNetOperation*)operation;
 - (void)netOperationSuccess:(id)result;
 - (void)netOperationFail:(NSError*)error;
 
