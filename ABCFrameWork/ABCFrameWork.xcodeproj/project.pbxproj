@@ -11,6 +11,11 @@
 		574E7BB91AEF29B30042E538 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E7BB81AEF29B30042E538 /* AppDelegate.m */; };
 		574E7BC11AEF29B30042E538 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 574E7BC01AEF29B30042E538 /* Images.xcassets */; };
 		574E7BD01AEF29B30042E538 /* ABCFrameWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E7BCF1AEF29B30042E538 /* ABCFrameWorkTests.m */; };
+		574E7BDE1AEF2E1E0042E538 /* ABCNetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E7BDD1AEF2E1E0042E538 /* ABCNetRequest.m */; };
+		574E7BE41AEF336E0042E538 /* ABCRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E7BE31AEF336E0042E538 /* ABCRequestModel.m */; };
+		574E7BE71AEF39090042E538 /* ABCNetOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E7BE61AEF39090042E538 /* ABCNetOperation.m */; };
+		574E7BEA1AEF3AF90042E538 /* ABCCallBackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E7BE91AEF3AF90042E538 /* ABCCallBackModel.m */; };
+		574E7BEE1AEF40760042E538 /* ABCCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E7BED1AEF40760042E538 /* ABCCache.m */; };
 		FF195FEB335411A481CD41F1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 985F236AC74D8B3B3182C61E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +41,17 @@
 		574E7BCE1AEF29B30042E538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		574E7BCF1AEF29B30042E538 /* ABCFrameWorkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCFrameWorkTests.m; sourceTree = "<group>"; };
 		574E7BD91AEF29F50042E538 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		574E7BDB1AEF2DB20042E538 /* ABCFrameWork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCFrameWork.h; sourceTree = "<group>"; };
+		574E7BDC1AEF2E1E0042E538 /* ABCNetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCNetRequest.h; sourceTree = "<group>"; };
+		574E7BDD1AEF2E1E0042E538 /* ABCNetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCNetRequest.m; sourceTree = "<group>"; };
+		574E7BE21AEF336E0042E538 /* ABCRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCRequestModel.h; sourceTree = "<group>"; };
+		574E7BE31AEF336E0042E538 /* ABCRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCRequestModel.m; sourceTree = "<group>"; };
+		574E7BE51AEF39090042E538 /* ABCNetOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCNetOperation.h; sourceTree = "<group>"; };
+		574E7BE61AEF39090042E538 /* ABCNetOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCNetOperation.m; sourceTree = "<group>"; };
+		574E7BE81AEF3AF90042E538 /* ABCCallBackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCCallBackModel.h; sourceTree = "<group>"; };
+		574E7BE91AEF3AF90042E538 /* ABCCallBackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCCallBackModel.m; sourceTree = "<group>"; };
+		574E7BEC1AEF40760042E538 /* ABCCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCCache.h; sourceTree = "<group>"; };
+		574E7BED1AEF40760042E538 /* ABCCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCCache.m; sourceTree = "<group>"; };
 		985F236AC74D8B3B3182C61E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C15D63DE3998204D8FA22996 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +98,10 @@
 		574E7BB21AEF29B30042E538 /* ABCFrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				574E7BDB1AEF2DB20042E538 /* ABCFrameWork.h */,
+				574E7BDF1AEF32F70042E538 /* Model */,
+				574E7BDA1AEF2D870042E538 /* NetOperation */,
+				574E7BEB1AEF40410042E538 /* Cache */,
 				574E7BB31AEF29B30042E538 /* Supporting Files */,
 			);
 			path = ABCFrameWork;
@@ -115,6 +135,53 @@
 				574E7BCE1AEF29B30042E538 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		574E7BDA1AEF2D870042E538 /* NetOperation */ = {
+			isa = PBXGroup;
+			children = (
+				574E7BDC1AEF2E1E0042E538 /* ABCNetRequest.h */,
+				574E7BDD1AEF2E1E0042E538 /* ABCNetRequest.m */,
+				574E7BE51AEF39090042E538 /* ABCNetOperation.h */,
+				574E7BE61AEF39090042E538 /* ABCNetOperation.m */,
+			);
+			name = NetOperation;
+			sourceTree = "<group>";
+		};
+		574E7BDF1AEF32F70042E538 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				574E7BE01AEF33040042E538 /* RequestModel */,
+				574E7BE11AEF33150042E538 /* CallBackModel */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		574E7BE01AEF33040042E538 /* RequestModel */ = {
+			isa = PBXGroup;
+			children = (
+				574E7BE21AEF336E0042E538 /* ABCRequestModel.h */,
+				574E7BE31AEF336E0042E538 /* ABCRequestModel.m */,
+			);
+			name = RequestModel;
+			sourceTree = "<group>";
+		};
+		574E7BE11AEF33150042E538 /* CallBackModel */ = {
+			isa = PBXGroup;
+			children = (
+				574E7BE81AEF3AF90042E538 /* ABCCallBackModel.h */,
+				574E7BE91AEF3AF90042E538 /* ABCCallBackModel.m */,
+			);
+			name = CallBackModel;
+			sourceTree = "<group>";
+		};
+		574E7BEB1AEF40410042E538 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				574E7BEC1AEF40760042E538 /* ABCCache.h */,
+				574E7BED1AEF40760042E538 /* ABCCache.m */,
+			);
+			name = Cache;
 			sourceTree = "<group>";
 		};
 		868EEE91219003C97E9EA33E /* Pods */ = {
@@ -267,8 +334,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				574E7BE41AEF336E0042E538 /* ABCRequestModel.m in Sources */,
 				574E7BB91AEF29B30042E538 /* AppDelegate.m in Sources */,
 				574E7BB61AEF29B30042E538 /* main.m in Sources */,
+				574E7BE71AEF39090042E538 /* ABCNetOperation.m in Sources */,
+				574E7BDE1AEF2E1E0042E538 /* ABCNetRequest.m in Sources */,
+				574E7BEE1AEF40760042E538 /* ABCCache.m in Sources */,
+				574E7BEA1AEF3AF90042E538 /* ABCCallBackModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
