@@ -9,4 +9,5 @@ pod 'Masonry'
 pod 'Reachability'
 pod 'YTKKeyValueStore'
 pod 'SVProgressHUD'
-pod "RJImageLoader"
+pod 'RJImageLoader'
+pod 'Aspects'
