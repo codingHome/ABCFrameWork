@@ -1,5 +1,7 @@
 platform:ios,'7.0'
 
+link_with 'ABCFrameWork', 'ABCFrameWorkTests'
+
 pod 'AFNetworking'
 pod 'SDWebImage'
 pod 'JSONModel'

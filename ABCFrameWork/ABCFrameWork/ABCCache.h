@@ -6,10 +6,16 @@
 //  Copyright (c) 2015年 NationSky. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "YTKKeyValueStore.h"
 
 @interface ABCCache : YTKKeyValueStore
+
+/**
+ *  单例方法
+ *
+ *  @return 单例实例
+ */
++ (instancetype)sharedCache;
 
 /**
  *  将缓存对象存入数据库
@@ -21,8 +27,9 @@
 /**
  *  将缓存对象从数据库取出
  *
- *  @param object 缓存对象
+ *  @param name 表名
+ *  @return 检索结果
  */
-- (void)getFormTableWithObject:(id)object;
+- (id)getFormTableWithTableName:(NSString *)name;
 
 @end

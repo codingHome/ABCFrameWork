@@ -12,6 +12,15 @@ static NSString *DBName = @"Cache.db";
 
 @implementation ABCCache
 
++ (instancetype)sharedCache {
+    static dispatch_once_t onceToken;
+    static ABCCache *sharedCache;
+    dispatch_once(&onceToken, ^{
+        sharedCache = [[ABCCache alloc] init];
+    });
+    return sharedCache;
+}
+
 -(instancetype)init{
     self = [super initDBWithName:DBName];
     if (self) {
@@ -26,9 +35,8 @@ static NSString *DBName = @"Cache.db";
     [self putObject:object withId:ClassName intoTable:ClassName];
 }
 
-- (void)getFormTableWithObject:(id)object {
-    NSString *ClassName = [NSString stringWithCString:object_getClassName(object) encoding:NSUTF8StringEncoding];
-    [self getObjectById:ClassName fromTable:ClassName];
+- (id)getFormTableWithTableName:(NSString *)name {
+    return [self getObjectById:name fromTable:name];
 }
 
 @end
