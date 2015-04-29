@@ -108,12 +108,6 @@
 #define COCOAPODS_VERSION_MINOR_FMDB_standard 5
 #define COCOAPODS_VERSION_PATCH_FMDB_standard 0
 
-// FrameAccessor
-#define COCOAPODS_POD_AVAILABLE_FrameAccessor
-#define COCOAPODS_VERSION_MAJOR_FrameAccessor 2
-#define COCOAPODS_VERSION_MINOR_FrameAccessor 0
-#define COCOAPODS_VERSION_PATCH_FrameAccessor 0
-
 // IBActionSheet
 #define COCOAPODS_POD_AVAILABLE_IBActionSheet
 #define COCOAPODS_VERSION_MAJOR_IBActionSheet 0
@@ -168,15 +162,15 @@
 #define COCOAPODS_VERSION_MINOR_SVProgressHUD 1
 #define COCOAPODS_VERSION_PATCH_SVProgressHUD 3
 
-// UIImage-Helpers
-#define COCOAPODS_POD_AVAILABLE_UIImage_Helpers
-#define COCOAPODS_VERSION_MAJOR_UIImage_Helpers 0
-#define COCOAPODS_VERSION_MINOR_UIImage_Helpers 0
-#define COCOAPODS_VERSION_PATCH_UIImage_Helpers 3
-
 // YTKKeyValueStore
 #define COCOAPODS_POD_AVAILABLE_YTKKeyValueStore
 #define COCOAPODS_VERSION_MAJOR_YTKKeyValueStore 0
 #define COCOAPODS_VERSION_MINOR_YTKKeyValueStore 1
 #define COCOAPODS_VERSION_PATCH_YTKKeyValueStore 2
+
+// pop
+#define COCOAPODS_POD_AVAILABLE_pop
+#define COCOAPODS_VERSION_MAJOR_pop 1
+#define COCOAPODS_VERSION_MINOR_pop 0
+#define COCOAPODS_VERSION_PATCH_pop 7
 

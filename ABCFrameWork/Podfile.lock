@@ -41,18 +41,17 @@ PODS:
   - FMDB/common (2.5)
   - FMDB/standard (2.5):
     - FMDB/common
-  - FrameAccessor (2.0)
   - IBActionSheet (0.0.2)
   - Masonry (0.6.1)
   - MJExtension (2.0.1)
   - MJRefresh (1.4.5)
+  - pop (1.0.7)
   - Reachability (3.2)
   - RJImageLoader (0.3.0)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
   - SVProgressHUD (1.1.3)
-  - UIImage-Helpers (0.0.3)
   - YTKKeyValueStore (0.1.2):
     - FMDB (~> 2.0)
 
@@ -60,16 +59,15 @@ DEPENDENCIES:
   - AFNetworking
   - Aspects
   - BlocksKit
-  - FrameAccessor
   - IBActionSheet
   - Masonry
   - MJExtension
   - MJRefresh
+  - pop
   - Reachability
   - RJImageLoader
   - SDWebImage
   - SVProgressHUD
-  - UIImage-Helpers
   - YTKKeyValueStore
 
 SPEC CHECKSUMS:
@@ -77,16 +75,15 @@ SPEC CHECKSUMS:
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
-  FrameAccessor: 443a13e58e23a10ff22180da0897b28c3f6abf66
   IBActionSheet: 4028206b0561772c3674a339fb4a7265d55a6f8b
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
   MJExtension: 524b4b939199ea34dc9e822babb915238c3c9167
   MJRefresh: 4b24394e577ea399fbc926e5b6072317aae2c152
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   RJImageLoader: f0d9edebeb7837feb0ce51759826900645770db7
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
-  UIImage-Helpers: 06b04a42bdd222844035602e87e936765c80f620
   YTKKeyValueStore: 4d002941540dd5108fa23009b71e0f2f937f7a0f
 
 COCOAPODS: 0.36.4
