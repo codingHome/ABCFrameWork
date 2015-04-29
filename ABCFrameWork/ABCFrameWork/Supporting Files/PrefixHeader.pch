@@ -18,6 +18,8 @@
 
 #define KSCREENWIDTH [UIScreen mainScreen].bounds.size.width
 #define KSCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+//主代理
+#define ABCAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
 #endif
 

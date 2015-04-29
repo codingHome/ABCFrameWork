@@ -168,6 +168,12 @@
 #define COCOAPODS_VERSION_MINOR_SVProgressHUD 1
 #define COCOAPODS_VERSION_PATCH_SVProgressHUD 3
 
+// UIImage-Helpers
+#define COCOAPODS_POD_AVAILABLE_UIImage_Helpers
+#define COCOAPODS_VERSION_MAJOR_UIImage_Helpers 0
+#define COCOAPODS_VERSION_MINOR_UIImage_Helpers 0
+#define COCOAPODS_VERSION_PATCH_UIImage_Helpers 3
+
 // YTKKeyValueStore
 #define COCOAPODS_POD_AVAILABLE_YTKKeyValueStore
 #define COCOAPODS_VERSION_MAJOR_YTKKeyValueStore 0
