@@ -13,11 +13,11 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "AppDelegate.h"
+#import "FrameAccessor.h"
 
 #define KSCREENWIDTH [UIScreen mainScreen].bounds.size.width
 #define KSCREENHEIGHT [UIScreen mainScreen].bounds.size.height
-//主代理
-#define RYAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
 #endif
 
