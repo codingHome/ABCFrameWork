@@ -23,40 +23,45 @@ return;                                                                 \
 
 @property (nonatomic, strong) UIViewController *vc;
 
+@property (nonatomic, strong) UIColor *backGroundColor;
+
+@property (nonatomic, strong) UIColor *textColor;
+
+@property (nonatomic, assign) BOOL isBlur;
+
 @end
 
 @implementation ABCPhotoAlbum
 
-/**
- *  单例方法
- *
- *  @return 实例变量
- */
-+ (ABCPhotoAlbum *)sharedPhotoAlbum {
-    static dispatch_once_t onceToken;
-    static ABCPhotoAlbum *sharedPhotoAlbum;
-    dispatch_once(&onceToken, ^{
-        sharedPhotoAlbum = [[self alloc] init];
-    });
-    return sharedPhotoAlbum;
+- (instancetype)initWithActionSheetBackgroundColor:(UIColor *)backColor textColor:(UIColor *)textColor{
+    self = [super init];
+    if (self) {
+        _backGroundColor = backColor;
+        _textColor = textColor;
+    }
+    return self;
 }
 
 - (void)getPhotoAlbumInSuperViewController:(UIViewController*)viewController {
     self.delegate = (id)viewController;
-    
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
-                                                             delegate:self
-                                                    cancelButtonTitle:@"取消"
-                                               destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"相机",@"相册", nil];
-    [actionSheet showInView:viewController.view];
-    
     _vc = viewController;
+    
+    IBActionSheet *customIBAS = [[IBActionSheet alloc] initWithTitle:nil
+                                                            delegate:self
+                                                   cancelButtonTitle:@"取消"
+                                              destructiveButtonTitle:nil
+                                                   otherButtonTitles:@"相机",@"相册", nil];
+    
+    [customIBAS setButtonBackgroundColor:_backGroundColor];
+    [customIBAS setButtonTextColor:_textColor];
+    customIBAS.buttonResponse = IBActionSheetButtonResponseReversesColorsOnPress;
+    
+    [customIBAS showInView:viewController.view];
 }
 
 #pragma mark -
-#pragma mark UIActionSheetDelegate
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+#pragma mark IBActionSheet/UIActionSheet Delegate Method
+- (void)actionSheet:(IBActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.delegate = self;
     imagePicker.allowsEditing = YES;

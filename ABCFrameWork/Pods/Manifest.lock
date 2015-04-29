@@ -21,13 +21,31 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Aspects (1.4.1)
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
   - FMDB (2.5):
     - FMDB/standard (= 2.5)
   - FMDB/common (2.5)
   - FMDB/standard (2.5):
     - FMDB/common
-  - JSONModel (1.0.2)
+  - FrameAccessor (2.0)
+  - IBActionSheet (0.0.2)
   - Masonry (0.6.1)
+  - MJExtension (2.0.1)
+  - MJRefresh (1.4.5)
   - Reachability (3.2)
   - RJImageLoader (0.3.0)
   - SDWebImage (3.7.2):
@@ -40,8 +58,12 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - Aspects
-  - JSONModel
+  - BlocksKit
+  - FrameAccessor
+  - IBActionSheet
   - Masonry
+  - MJExtension
+  - MJRefresh
   - Reachability
   - RJImageLoader
   - SDWebImage
@@ -51,9 +73,13 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
-  JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
+  FrameAccessor: 443a13e58e23a10ff22180da0897b28c3f6abf66
+  IBActionSheet: 4028206b0561772c3674a339fb4a7265d55a6f8b
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
+  MJExtension: 524b4b939199ea34dc9e822babb915238c3c9167
+  MJRefresh: 4b24394e577ea399fbc926e5b6072317aae2c152
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   RJImageLoader: f0d9edebeb7837feb0ce51759826900645770db7
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29

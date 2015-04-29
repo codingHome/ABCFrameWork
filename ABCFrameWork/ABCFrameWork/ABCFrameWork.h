@@ -9,10 +9,6 @@
 #ifndef ABCFrameWork_ABCFrameWork_h
 #define ABCFrameWork_ABCFrameWork_h
 
-#import "ABCRequestModel.h"
-#import "ABCCallBackModel.h"
-#import "ABCNetOperation.h"
-#import "ABCImageView.h"
-#import "ABCImageLoader.h"
+
 
 #endif

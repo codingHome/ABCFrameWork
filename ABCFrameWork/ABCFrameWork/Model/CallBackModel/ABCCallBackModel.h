@@ -6,8 +6,6 @@
 //  Copyright (c) 2015年 NationSky. All rights reserved.
 //
 
-#import "JSONModel.h"
-
-@interface ABCCallBackModel : JSONModel
+@interface ABCCallBackModel : NSObject
 
 @end

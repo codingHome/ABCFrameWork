@@ -54,6 +54,42 @@
 #define COCOAPODS_VERSION_MINOR_Aspects 4
 #define COCOAPODS_VERSION_PATCH_Aspects 1
 
+// BlocksKit
+#define COCOAPODS_POD_AVAILABLE_BlocksKit
+#define COCOAPODS_VERSION_MAJOR_BlocksKit 2
+#define COCOAPODS_VERSION_MINOR_BlocksKit 2
+#define COCOAPODS_VERSION_PATCH_BlocksKit 5
+
+// BlocksKit/All
+#define COCOAPODS_POD_AVAILABLE_BlocksKit_All
+#define COCOAPODS_VERSION_MAJOR_BlocksKit_All 2
+#define COCOAPODS_VERSION_MINOR_BlocksKit_All 2
+#define COCOAPODS_VERSION_PATCH_BlocksKit_All 5
+
+// BlocksKit/Core
+#define COCOAPODS_POD_AVAILABLE_BlocksKit_Core
+#define COCOAPODS_VERSION_MAJOR_BlocksKit_Core 2
+#define COCOAPODS_VERSION_MINOR_BlocksKit_Core 2
+#define COCOAPODS_VERSION_PATCH_BlocksKit_Core 5
+
+// BlocksKit/DynamicDelegate
+#define COCOAPODS_POD_AVAILABLE_BlocksKit_DynamicDelegate
+#define COCOAPODS_VERSION_MAJOR_BlocksKit_DynamicDelegate 2
+#define COCOAPODS_VERSION_MINOR_BlocksKit_DynamicDelegate 2
+#define COCOAPODS_VERSION_PATCH_BlocksKit_DynamicDelegate 5
+
+// BlocksKit/MessageUI
+#define COCOAPODS_POD_AVAILABLE_BlocksKit_MessageUI
+#define COCOAPODS_VERSION_MAJOR_BlocksKit_MessageUI 2
+#define COCOAPODS_VERSION_MINOR_BlocksKit_MessageUI 2
+#define COCOAPODS_VERSION_PATCH_BlocksKit_MessageUI 5
+
+// BlocksKit/UIKit
+#define COCOAPODS_POD_AVAILABLE_BlocksKit_UIKit
+#define COCOAPODS_VERSION_MAJOR_BlocksKit_UIKit 2
+#define COCOAPODS_VERSION_MINOR_BlocksKit_UIKit 2
+#define COCOAPODS_VERSION_PATCH_BlocksKit_UIKit 5
+
 // FMDB
 #define COCOAPODS_POD_AVAILABLE_FMDB
 #define COCOAPODS_VERSION_MAJOR_FMDB 2
@@ -72,11 +108,29 @@
 #define COCOAPODS_VERSION_MINOR_FMDB_standard 5
 #define COCOAPODS_VERSION_PATCH_FMDB_standard 0
 
-// JSONModel
-#define COCOAPODS_POD_AVAILABLE_JSONModel
-#define COCOAPODS_VERSION_MAJOR_JSONModel 1
-#define COCOAPODS_VERSION_MINOR_JSONModel 0
-#define COCOAPODS_VERSION_PATCH_JSONModel 2
+// FrameAccessor
+#define COCOAPODS_POD_AVAILABLE_FrameAccessor
+#define COCOAPODS_VERSION_MAJOR_FrameAccessor 2
+#define COCOAPODS_VERSION_MINOR_FrameAccessor 0
+#define COCOAPODS_VERSION_PATCH_FrameAccessor 0
+
+// IBActionSheet
+#define COCOAPODS_POD_AVAILABLE_IBActionSheet
+#define COCOAPODS_VERSION_MAJOR_IBActionSheet 0
+#define COCOAPODS_VERSION_MINOR_IBActionSheet 0
+#define COCOAPODS_VERSION_PATCH_IBActionSheet 2
+
+// MJExtension
+#define COCOAPODS_POD_AVAILABLE_MJExtension
+#define COCOAPODS_VERSION_MAJOR_MJExtension 2
+#define COCOAPODS_VERSION_MINOR_MJExtension 0
+#define COCOAPODS_VERSION_PATCH_MJExtension 1
+
+// MJRefresh
+#define COCOAPODS_POD_AVAILABLE_MJRefresh
+#define COCOAPODS_VERSION_MAJOR_MJRefresh 1
+#define COCOAPODS_VERSION_MINOR_MJRefresh 4
+#define COCOAPODS_VERSION_PATCH_MJRefresh 5
 
 // Masonry
 #define COCOAPODS_POD_AVAILABLE_Masonry

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IBActionSheet.h"
 
 @protocol ABCPhotoAlbumDelegate <NSObject>
 
@@ -27,16 +28,19 @@
 
 @end
 
-@interface ABCPhotoAlbum : NSObject<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
+@interface ABCPhotoAlbum : NSObject<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate,IBActionSheetDelegate>
 
 @property (nonatomic, weak) id<ABCPhotoAlbumDelegate>delegate;
 
 /**
- *  单例方法
+ *  初始化方法
+ *
+ *  @param backColor 背景颜色
+ *  @param textColor 文字颜色
  *
  *  @return 实例变量
  */
-+ (ABCPhotoAlbum *)sharedPhotoAlbum;
+- (instancetype)initWithActionSheetBackgroundColor:(UIColor *)backColor textColor:(UIColor *)textColor;
 
 /**
  *  获取图片库
