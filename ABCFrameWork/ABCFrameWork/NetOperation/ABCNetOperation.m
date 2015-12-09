@@ -7,53 +7,69 @@
 //
 
 #import "ABCNetOperation.h"
-#import "ABCCache.h"
 #import "SVProgressHUD.h"
+#import "ABCCallBackModel.h"
+#import "ABCNetObserver.h"
 
 @interface ABCNetOperation ()
 
-@property (nonatomic, strong)ABCRequestModel *model;
+@property (nonatomic, strong)ABCRequestModel *requestModel;
 @property (nonatomic, strong)NSString *url;
 
 @end
 
 @implementation ABCNetOperation
 
+-(void)dealloc {
+    [[ABCNetObserver sharedNetObserver] removeNotification:self];
+}
+
 - (instancetype)initWithUrl:(NSString *)url Model:(ABCRequestModel *)model OperationMethod:(OperationMethod)method {
     self = [super init];
     if (self) {
         _url = url;
-        _model = model;
+        _requestModel = model;
         _method = method;
+        _progressHUB = YES;
+        _cache = YES;
     }
     return self;
 }
 
-- (void)setProgressHUB:(BOOL)progressHUB {
-    _progressHUB = progressHUB;
-    if (_progressHUB) {
-        [SVProgressHUD show];
+- (void)startOperation {
+    //获取网络状态
+    [[ABCNetObserver sharedNetObserver] registNotification:self selector:@selector(getNetWorkStatus:)];
+    [[ABCNetObserver sharedNetObserver] startNotifier];
+}
+
+- (void)getNetWorkStatus:(NSNotification *)notification {
+    ABCNetObserver *observer = notification.object;
+    if (observer.status == ABCNetStatusWifi || observer.status == ABCNetStatusWWAN) {
+        [self startRequest];
+    }else {
+        [SVProgressHUD showWithStatus:@"网络异常"];
     }
 }
 
-- (void)startOperation {
-    [self.delegate netOperationStarted:self];
-    switch (_method) {
-        case ABCNetOperationGetMethod:
-            [self getRequest];
-            break;
-        case ABCNetOperationPostMethod:
-            [self postRequest];
-            break;
-        case ABCNetOperationPostDataMethod:
-            [self postDataRequest];
-            break;
+- (void)startRequest {
+    if (_progressHUB) {
+        switch (_method) {
+            case ABCNetOperationGetMethod:
+                [self getRequest];
+                break;
+            case ABCNetOperationPostMethod:
+                [self postRequest];
+                break;
+            case ABCNetOperationPostDataMethod:
+                [self postDataRequest];
+                break;
+        }
     }
 }
 
 - (void)getRequest {
     [[ABCNetRequest sharedNetRequest]GetUrl:_url
-                               RequestModel:_model
+                               RequestModel:_requestModel
                              RequestSuccess:^(id result, NSError *error) {
                                  [self callBackResult:result Error:error];
                              }
@@ -64,7 +80,7 @@
 
 - (void)postRequest {
     [[ABCNetRequest sharedNetRequest]PostUrl:_url
-                                RequestModel:_model
+                                RequestModel:_requestModel
                               RequestSuccess:^(id result, NSError *error) {
                                   [self callBackResult:result Error:error];
                               }
@@ -74,7 +90,7 @@
 }
 
 - (void)postDataRequest {
-    [[ABCNetRequest sharedNetRequest]PostUrl:_url RequestModel:_model
+    [[ABCNetRequest sharedNetRequest]PostUrl:_url RequestModel:_requestModel
                                         Body:^(id<AFMultipartFormData> formData) {
                                             if (_bodyBlock) {
                                                 _bodyBlock(formData);
@@ -89,17 +105,29 @@
 }
 
 - (void)callBackResult:(id)result Error:(NSError *)error {
-    //缓存
-    if (_cache) {
-        [[ABCCache sharedCache]putIntoTableWithObject:result];
-    }
+    
+    ABCCallBackModel *callBackModel = [self transformCallBackResult:result];
+    
     [SVProgressHUD dismiss];
     //delegate回调
     if (result&&!error) {
-        [_delegate netOperationSuccess:result];
+        [_delegate netOperationSuccess:callBackModel];
     }else if (error){
         [_delegate netOperationFail:error];
     }
+}
+
+- (ABCCallBackModel *)transformCallBackResult:(NSDictionary *)result {
+    NSString *modelClassStr = [NSStringFromClass(self.requestModel.class) stringByReplacingOccurrencesOfString:@"RequestModel" withString:@"CallBackModel"];
+    
+    Class ModelClass = NSClassFromString(modelClassStr);
+    
+    ABCCallBackModel *callBackModel = [[ModelClass alloc] initWithDictionary:result error:nil];
+    
+    if (self.cache) {
+        [callBackModel insertTable];
+    }
+    return callBackModel;
 }
 
 @end

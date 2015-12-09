@@ -29,23 +29,23 @@
 -(instancetype)init {
     self = [super init];
     if (self) {
-        [UIViewController aspect_hookSelector:@selector(viewDidLoad) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo>aspectInfo){
-            [self viewDidLoad:[aspectInfo instance]];
-        } error:NULL];
-        
-        [UIViewController aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo, BOOL animated){
-            [self viewWillAppear:animated viewController:[aspectInfo instance]];
-        } error:NULL];
+//        [UIViewController aspect_hookSelector:@selector(viewDidLoad) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo>aspectInfo){
+//            [self viewDidLoad:[aspectInfo instance]];
+//        } error:NULL];
+//        
+//        [UIViewController aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo, BOOL animated){
+//            [self viewWillAppear:animated viewController:[aspectInfo instance]];
+//        } error:NULL];
     }
     return self;
 }
 
-- (void)viewDidLoad:(UIViewController *)viewController {
-    NSLog(@"[%@ loadView]", [viewController class]);
-}
-
-- (void)viewWillAppear:(BOOL)animated viewController:(UIViewController *)viewController {
-    NSLog(@"[%@ viewWillAppear:%@]", [viewController class], animated ? @"YES" : @"NO");
-}
+//- (void)viewDidLoad:(UIViewController *)viewController {
+//    NSLog(@"[%@ loadView]", [viewController class]);
+//}
+//
+//- (void)viewWillAppear:(BOOL)animated viewController:(UIViewController *)viewController {
+//    NSLog(@"[%@ viewWillAppear:%@]", [viewController class], animated ? @"YES" : @"NO");
+//}
 
 @end

@@ -133,7 +133,7 @@
 
 static NSString *identifier = @"cellIdentifier";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ABCSearchTableCell *cell = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
+    ABCSearchTableCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [ABCSearchTableCell initViewFromXIB];
     }
@@ -142,7 +142,8 @@ static NSString *identifier = @"cellIdentifier";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
-#pragma mark - RYSearchTagViewDelegate
+
+#pragma mark - ABCSearchTagViewDelegate
 - (void)theTagsContent:(NSString *)tagsContent {
     
 }

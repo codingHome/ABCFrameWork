@@ -9,6 +9,6 @@
 #ifndef ABCFrameWork_ABCFrameWork_h
 #define ABCFrameWork_ABCFrameWork_h
 
-
+#import "ABCPrecompile.h"
 
 #endif

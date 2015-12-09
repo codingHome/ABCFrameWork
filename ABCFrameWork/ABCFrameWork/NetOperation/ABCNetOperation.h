@@ -30,12 +30,12 @@ typedef NS_ENUM(NSUInteger, OperationMethod){
 @interface ABCNetOperation : NSObject
 
 /**
- *  是否需要缓存
+ *  是否需要缓存 默认缓存
  */
 @property (nonatomic, assign)BOOL cache;
 
 /**
- *  是否显示菊花界面
+ *  是否显示菊花界面 默认显示
  */
 @property (nonatomic, assign)BOOL progressHUB;
 
