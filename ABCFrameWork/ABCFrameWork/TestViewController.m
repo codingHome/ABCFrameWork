@@ -7,6 +7,7 @@
 //
 
 #import "TestViewController.h"
+#import "TestRequestModel.h"
 
 @implementation TestViewController
 
@@ -16,13 +17,17 @@
 
 
 - (void)test {
-    ABCRequestModel *testModel = [[ABCRequestModel alloc] init];
+    TestRequestModel *testModel = [[TestRequestModel alloc] init];
     testModel.city = @"beijing";
     testModel.key = @"ec1c681fdacfcc3d4dfc530981b86a82";
     
-    ABCNetOperation *testOperation = [[ABCNetOperation alloc] initWithUrl:@"http://web.juhe.cn:8080/environment/air/cityair?" Model:testModel OperationMethod:ABCNetOperationGetMethod];
-    testOperation.delegate = self;
-    [testOperation startOperation];
+//    ABCNetOperation *testOperation = [[ABCNetOperation alloc] initWithUrl:@"http://web.juhe.cn:8080/environment/air/cityair?" Model:testModel OperationMethod:ABCNetOperationGetMethod];
+//    testOperation.delegate = self;
+//    [testOperation startOperation];
+    ABCNetOperation *testOperation = [[ABCNetOperation alloc] init];
+    [testOperation operationWithUrl:@"http://web.juhe.cn:8080/environment/air/cityair?" Model:testModel OperationMethod:ABCNetOperationGetMethod CallBack:^(id result, NSError *error) {
+        
+    }];
 }
 
 - (void)netOperationStarted:(ABCNetOperation*)operation {

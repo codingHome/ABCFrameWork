@@ -12,8 +12,9 @@
 
 @interface ABCNetOperation ()
 
-@property (nonatomic, strong)ABCRequestModel *requestModel;
-@property (nonatomic, strong)NSString *url;
+@property (nonatomic, strong) ABCRequestModel *requestModel;
+@property (nonatomic, strong) NSString *url;
+@property (nonatomic, copy) CallBack callBack;
 
 @end
 
@@ -29,6 +30,16 @@
         _cache = YES;
     }
     return self;
+}
+
+- (void)operationWithUrl:(NSString *)url Model:(ABCRequestModel *)model OperationMethod:(OperationMethod)method CallBack:(void(^)(id result, NSError *error))callBack {
+    _url = url;
+    _requestModel = model;
+    _method = method;
+    _progressHUB = YES;
+    _cache = YES;
+    _callBack = callBack;
+    [self startOperation];
 }
 
 - (void)startOperation {
@@ -88,26 +99,34 @@
 
 - (void)callBackResult:(id)result Error:(NSError *)error {
     
-//    ABCCallBackModel *callBackModel = [self transformCallBackResult:result];
+    ABCCallBackModel *callBackModel = [self transformCallBackResult:result];
     
     [ABCHub dismiss];
     //delegate回调
     if (_delegate) {
         if (result&&!error) {
-            [_delegate netOperationSuccess:self result:result];
+            [_delegate netOperationSuccess:self result:callBackModel];
         }else if (error){
             [_delegate netOperationFail:self error:error];
         }
+    }else if (_callBack) {
+        _callBack(result, error);
     }
 }
 
-- (ABCCallBackModel *)transformCallBackResult:(NSDictionary *)result {
+- (ABCCallBackModel *)transformCallBackResult:(id)result {
     
     NSString *modelClassStr = [NSStringFromClass(self.requestModel.class) stringByReplacingOccurrencesOfString:@"RequestModel" withString:@"CallBackModel"];
     
     Class ModelClass = NSClassFromString(modelClassStr);
     
-    ABCCallBackModel *callBackModel = [[ModelClass alloc] initWithDictionary:result error:nil];
+    ABCCallBackModel *callBackModel = nil;
+    
+    if ([result isKindOfClass:[NSDictionary class]]) {
+        callBackModel = [[ModelClass alloc] initWithDictionary:result error:nil];
+    }else if ([result isKindOfClass:[NSString class]]) {
+        callBackModel = [[ModelClass alloc] initWithString:result error:nil];
+    }
     
     if (self.cache) {
         [callBackModel insertTable];

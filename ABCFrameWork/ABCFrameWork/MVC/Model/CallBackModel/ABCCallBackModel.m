@@ -45,7 +45,7 @@
 }
 
 #pragma mark -
-#pragma mark - SQL Public Methods
+#pragma mark SQL Public Methods
 
 /**
  *  创建表
@@ -104,10 +104,6 @@
  */
 - (BOOL)insertTable
 {
-    if (![self checkTableIsExist]) {
-        [self createTable];
-        [self createUniqueIndex:[self uniqueIndex]];
-    }
     NSMutableDictionary *_dictionary = [NSMutableDictionary dictionaryWithDictionary:[ABCSqlHandler objectToDictionary:self]];
     NSString *sql = [ABCSqlHandler insertSql:[self class] dictionary:_dictionary];
     
@@ -119,10 +115,6 @@
  */
 - (BOOL)updateTable
 {
-    if (![self checkTableIsExist]) {
-        [self createTable];
-        [self createUniqueIndex:[self uniqueIndex]];
-    }
     NSMutableDictionary *_dictionary = [NSMutableDictionary dictionaryWithDictionary:[ABCSqlHandler objectToDictionary:self]];
     NSString *sql = [ABCSqlHandler updateSql:[self class] dictionary:_dictionary];
     
@@ -134,10 +126,6 @@
  */
 - (BOOL)deleteFromTable
 {
-    if (![self checkTableIsExist]) {
-        [self createTable];
-        [self createUniqueIndex:[self uniqueIndex]];
-    }
     [self inDatabase:^(FMDatabase *db) {
         NSString *sql = [ABCSqlHandler deleteSql:[self class]
                                          conditions:[NSString stringWithFormat:@"abc_id=%ld",self.abc_id]];
@@ -151,10 +139,6 @@
  */
 - (NSArray *)selectFromTable
 {
-    if (![self checkTableIsExist]) {
-        [self createTable];
-        [self createUniqueIndex:[self uniqueIndex]];
-    }
     return [self transformResult:[self executeQuery:[ABCSqlHandler queryAllSql:[self class] conditions:nil order:nil]]];
 }
 
@@ -163,10 +147,6 @@
  */
 - (NSArray *)selectByConditions:(NSString*)conditions args:(NSArray*)args pageNumber:(NSInteger)pageNumber pageSize:(NSInteger)pageSize order:(NSString*)order
 {
-    if (![self checkTableIsExist]) {
-        [self createTable];
-        [self createUniqueIndex:[self uniqueIndex]];
-    }
     return [self transformResult:[self executeQuery:[ABCSqlHandler queryWithPageSql:[self class] conditions:conditions pageNumber:pageNumber pageSize:pageSize order:order]]];
 }
 

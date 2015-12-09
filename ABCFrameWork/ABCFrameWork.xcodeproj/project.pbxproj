@@ -28,6 +28,10 @@
 		574E7C2D1AF0C28F0042E538 /* UIButton+ArrayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E7C2C1AF0C28F0042E538 /* UIButton+ArrayButton.m */; };
 		574E7C341AF0C6E80042E538 /* ABCSearchTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E7C321AF0C6E80042E538 /* ABCSearchTableCell.m */; };
 		574E7C351AF0C6E80042E538 /* ABCSearchTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 574E7C331AF0C6E80042E538 /* ABCSearchTableCell.xib */; };
+		57F664541C1816A7003F4899 /* TestRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F664531C1816A7003F4899 /* TestRequestModel.m */; };
+		57F664571C1816BD003F4899 /* TestCallBackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F664561C1816BD003F4899 /* TestCallBackModel.m */; };
+		57F6645B1C18202C003F4899 /* ABCCallBackModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F6645A1C18202C003F4899 /* ABCCallBackModelTest.m */; };
+		57F664611C18209C003F4899 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F664601C18209C003F4899 /* TestModel.m */; };
 		57F72CD71C17D08600C0F36E /* ABCCallBackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CD61C17D08600C0F36E /* ABCCallBackModel.m */; };
 		57F72CDD1C17DB2400C0F36E /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CDC1C17DB2400C0F36E /* NSString+Additions.m */; };
 		57F72CE01C17DB2D00C0F36E /* UIView+DDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CDF1C17DB2D00C0F36E /* UIView+DDAddition.m */; };
@@ -94,6 +98,13 @@
 		574E7C311AF0C6E80042E538 /* ABCSearchTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCSearchTableCell.h; sourceTree = "<group>"; };
 		574E7C321AF0C6E80042E538 /* ABCSearchTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCSearchTableCell.m; sourceTree = "<group>"; };
 		574E7C331AF0C6E80042E538 /* ABCSearchTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABCSearchTableCell.xib; sourceTree = "<group>"; };
+		57F664521C1816A7003F4899 /* TestRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRequestModel.h; sourceTree = "<group>"; };
+		57F664531C1816A7003F4899 /* TestRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRequestModel.m; sourceTree = "<group>"; };
+		57F664551C1816BD003F4899 /* TestCallBackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCallBackModel.h; sourceTree = "<group>"; };
+		57F664561C1816BD003F4899 /* TestCallBackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCallBackModel.m; sourceTree = "<group>"; };
+		57F6645A1C18202C003F4899 /* ABCCallBackModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCCallBackModelTest.m; path = ABCCallBackModelTest/ABCCallBackModelTest.m; sourceTree = "<group>"; };
+		57F6645F1C18209C003F4899 /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestModel.h; path = ABCCallBackModelTest/TestModel.h; sourceTree = "<group>"; };
+		57F664601C18209C003F4899 /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestModel.m; path = ABCCallBackModelTest/TestModel.m; sourceTree = "<group>"; };
 		57F72CD51C17D08600C0F36E /* ABCCallBackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCCallBackModel.h; sourceTree = "<group>"; };
 		57F72CD61C17D08600C0F36E /* ABCCallBackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCCallBackModel.m; sourceTree = "<group>"; };
 		57F72CDB1C17DB2400C0F36E /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
@@ -163,6 +174,10 @@
 				574E7BB81AEF29B30042E538 /* AppDelegate.m */,
 				57F72CE71C17FF9700C0F36E /* TestViewController.h */,
 				57F72CE81C17FF9700C0F36E /* TestViewController.m */,
+				57F664521C1816A7003F4899 /* TestRequestModel.h */,
+				57F664531C1816A7003F4899 /* TestRequestModel.m */,
+				57F664551C1816BD003F4899 /* TestCallBackModel.h */,
+				57F664561C1816BD003F4899 /* TestCallBackModel.m */,
 			);
 			path = ABCFrameWork;
 			sourceTree = "<group>";
@@ -181,6 +196,7 @@
 		574E7BCC1AEF29B30042E538 /* ABCFrameWorkTests */ = {
 			isa = PBXGroup;
 			children = (
+				57F664591C181FFE003F4899 /* ABCCallBackModelTest */,
 				57F72CE11C17F89200C0F36E /* ABCRequestModelTest */,
 				574E7BCD1AEF29B30042E538 /* Supporting Files */,
 			);
@@ -326,6 +342,16 @@
 				57F72CD91C17DAAE00C0F36E /* UIView */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		57F664591C181FFE003F4899 /* ABCCallBackModelTest */ = {
+			isa = PBXGroup;
+			children = (
+				57F6645A1C18202C003F4899 /* ABCCallBackModelTest.m */,
+				57F6645F1C18209C003F4899 /* TestModel.h */,
+				57F664601C18209C003F4899 /* TestModel.m */,
+			);
+			name = ABCCallBackModelTest;
 			sourceTree = "<group>";
 		};
 		57F72CD41C17D05F00C0F36E /* CallBackModel */ = {
@@ -600,6 +626,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				574E7BE41AEF336E0042E538 /* ABCRequestModel.m in Sources */,
+				57F664541C1816A7003F4899 /* TestRequestModel.m in Sources */,
 				574E7C0A1AEF7F690042E538 /* ABCNetObserver.m in Sources */,
 				57F72CE01C17DB2D00C0F36E /* UIView+DDAddition.m in Sources */,
 				574E7C201AF0C1EC0042E538 /* ABCSearchDelegate.m in Sources */,
@@ -618,6 +645,7 @@
 				574E7C341AF0C6E80042E538 /* ABCSearchTableCell.m in Sources */,
 				574E7BFE1AEF74450042E538 /* ViewControllerIntercept.m in Sources */,
 				574E7C261AF0C22F0042E538 /* ABCSearchTagView.m in Sources */,
+				57F664571C1816BD003F4899 /* TestCallBackModel.m in Sources */,
 				574E7C1C1AF0AC9E0042E538 /* ABCUserInfo.m in Sources */,
 				574E7C011AEF74C40042E538 /* ABCImageView.m in Sources */,
 				57F72CDD1C17DB2400C0F36E /* NSString+Additions.m in Sources */,
@@ -629,7 +657,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				574E7C071AEF7D0E0042E538 /* ABCRequestTestModel.m in Sources */,
+				57F6645B1C18202C003F4899 /* ABCCallBackModelTest.m in Sources */,
 				574E7C031AEF77F00042E538 /* ABCRequestModelTest.m in Sources */,
+				57F664611C18209C003F4899 /* TestModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

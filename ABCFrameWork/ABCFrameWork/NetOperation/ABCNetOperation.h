@@ -15,6 +15,8 @@ typedef NS_ENUM(NSUInteger, OperationMethod){
     ABCNetOperationPostDataMethod
 };
 
+typedef void(^CallBack)(id result, NSError *error);
+
 @class ABCNetOperation;
 
 @protocol  ABCNetOperationProtocol <NSObject>
@@ -69,5 +71,15 @@ typedef NS_ENUM(NSUInteger, OperationMethod){
  *  开始请求
  */
 - (void)startOperation;
+
+/**
+ *  block回调方法
+ *
+ *  @param url      请求地址
+ *  @param model    请求对象
+ *  @param method   请求方式
+ *  @param callBack 请求回调
+ */
+- (void)operationWithUrl:(NSString *)url Model:(ABCRequestModel *)model OperationMethod:(OperationMethod)method CallBack:(CallBack)callBack;
 
 @end
