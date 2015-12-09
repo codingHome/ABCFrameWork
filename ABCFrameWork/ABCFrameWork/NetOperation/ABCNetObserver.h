@@ -14,7 +14,7 @@ typedef NS_ENUM(NSUInteger, ABCNetStatus) {
     ABCNetStatusNone
 };
 
-static NSString *kABCNetStatusChangeNotification = @"kABCNetStatusChangeNotification";
+extern NSString *const kABCNetStatusChangeNotification;
 
 @interface ABCNetObserver : NSObject
 

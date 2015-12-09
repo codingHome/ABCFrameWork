@@ -10,7 +10,7 @@
 
 @interface ABCRequestTestModel : ABCRequestModel
 
-@property (nonatomic, copy)NSString *name;
-@property (nonatomic, copy)NSString *school;
+@property (nonatomic, copy)NSString *city;
+@property (nonatomic, copy)NSString *key;
 
 @end

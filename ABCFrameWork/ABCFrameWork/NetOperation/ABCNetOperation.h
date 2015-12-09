@@ -22,8 +22,8 @@ typedef NS_ENUM(NSUInteger, OperationMethod){
 @required
 
 - (void)netOperationStarted:(ABCNetOperation*)operation;
-- (void)netOperationSuccess:(id)result;
-- (void)netOperationFail:(NSError*)error;
+- (void)netOperationSuccess:(ABCNetOperation*)operation result:(id)result;
+- (void)netOperationFail:(ABCNetOperation*)operation error:(NSError*)error;
 
 @end
 

@@ -31,6 +31,8 @@
 		57F72CD71C17D08600C0F36E /* ABCCallBackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CD61C17D08600C0F36E /* ABCCallBackModel.m */; };
 		57F72CDD1C17DB2400C0F36E /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CDC1C17DB2400C0F36E /* NSString+Additions.m */; };
 		57F72CE01C17DB2D00C0F36E /* UIView+DDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CDF1C17DB2D00C0F36E /* UIView+DDAddition.m */; };
+		57F72CE91C17FF9700C0F36E /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CE81C17FF9700C0F36E /* TestViewController.m */; };
+		57F72CEE1C180C8B00C0F36E /* ABCHub.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CED1C180C8B00C0F36E /* ABCHub.m */; };
 		869580797A879786C12CFB2B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 985F236AC74D8B3B3182C61E /* libPods.a */; };
 		FF195FEB335411A481CD41F1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 985F236AC74D8B3B3182C61E /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -73,8 +75,8 @@
 		574E7BFF1AEF74C40042E538 /* ABCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCImageView.h; sourceTree = "<group>"; };
 		574E7C001AEF74C40042E538 /* ABCImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCImageView.m; sourceTree = "<group>"; };
 		574E7C021AEF77F00042E538 /* ABCRequestModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCRequestModelTest.m; sourceTree = "<group>"; };
-		574E7C051AEF7D0E0042E538 /* ABCRequestTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCRequestTestModel.h; sourceTree = "<group>"; };
-		574E7C061AEF7D0E0042E538 /* ABCRequestTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCRequestTestModel.m; sourceTree = "<group>"; };
+		574E7C051AEF7D0E0042E538 /* ABCRequestTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCRequestTestModel.h; path = TestModel/ABCRequestTestModel.h; sourceTree = "<group>"; };
+		574E7C061AEF7D0E0042E538 /* ABCRequestTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCRequestTestModel.m; path = TestModel/ABCRequestTestModel.m; sourceTree = "<group>"; };
 		574E7C081AEF7F680042E538 /* ABCNetObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCNetObserver.h; sourceTree = "<group>"; };
 		574E7C091AEF7F690042E538 /* ABCNetObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCNetObserver.m; sourceTree = "<group>"; };
 		574E7C0F1AF0829C0042E538 /* ABCPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCPhotoAlbum.h; sourceTree = "<group>"; };
@@ -98,6 +100,10 @@
 		57F72CDC1C17DB2400C0F36E /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Additions.m"; path = "NSString/NSString+Additions.m"; sourceTree = "<group>"; };
 		57F72CDE1C17DB2D00C0F36E /* UIView+DDAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+DDAddition.h"; path = "UIView/UIView+DDAddition.h"; sourceTree = "<group>"; };
 		57F72CDF1C17DB2D00C0F36E /* UIView+DDAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+DDAddition.m"; path = "UIView/UIView+DDAddition.m"; sourceTree = "<group>"; };
+		57F72CE71C17FF9700C0F36E /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		57F72CE81C17FF9700C0F36E /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		57F72CEC1C180C8B00C0F36E /* ABCHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCHub.h; path = HUB/ABCHub.h; sourceTree = "<group>"; };
+		57F72CED1C180C8B00C0F36E /* ABCHub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCHub.m; path = HUB/ABCHub.m; sourceTree = "<group>"; };
 		985F236AC74D8B3B3182C61E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C15D63DE3998204D8FA22996 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +155,8 @@
 				574E7BB81AEF29B30042E538 /* AppDelegate.m */,
 				574E7BDB1AEF2DB20042E538 /* ABCFrameWork.h */,
 				570272231C17C7EE000AD144 /* ABCPrecompile.h */,
+				57F72CE71C17FF9700C0F36E /* TestViewController.h */,
+				57F72CE81C17FF9700C0F36E /* TestViewController.m */,
 				574E7C151AF0A2BF0042E538 /* MVC */,
 				574E7BFB1AEF73DB0042E538 /* Utils */,
 				574E7C361AF0C9D70042E538 /* Category */,
@@ -173,8 +181,7 @@
 		574E7BCC1AEF29B30042E538 /* ABCFrameWorkTests */ = {
 			isa = PBXGroup;
 			children = (
-				574E7C041AEF7CE60042E538 /* TestModel */,
-				574E7C021AEF77F00042E538 /* ABCRequestModelTest.m */,
+				57F72CE11C17F89200C0F36E /* ABCRequestModelTest */,
 				574E7BCD1AEF29B30042E538 /* Supporting Files */,
 			);
 			path = ABCFrameWorkTests;
@@ -243,20 +250,12 @@
 		574E7BFB1AEF73DB0042E538 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				57F72CEB1C180C6200C0F36E /* Hub */,
 				574E7C191AF0AC7B0042E538 /* UserInfo */,
 				574E7BF71AEF70BE0042E538 /* ImageLoader */,
 				574E7C0E1AF082140042E538 /* PhotoAlbum */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		574E7C041AEF7CE60042E538 /* TestModel */ = {
-			isa = PBXGroup;
-			children = (
-				574E7C051AEF7D0E0042E538 /* ABCRequestTestModel.h */,
-				574E7C061AEF7D0E0042E538 /* ABCRequestTestModel.m */,
-			);
-			path = TestModel;
 			sourceTree = "<group>";
 		};
 		574E7C0E1AF082140042E538 /* PhotoAlbum */ = {
@@ -367,6 +366,25 @@
 			name = NSString;
 			sourceTree = "<group>";
 		};
+		57F72CE11C17F89200C0F36E /* ABCRequestModelTest */ = {
+			isa = PBXGroup;
+			children = (
+				574E7C021AEF77F00042E538 /* ABCRequestModelTest.m */,
+				574E7C051AEF7D0E0042E538 /* ABCRequestTestModel.h */,
+				574E7C061AEF7D0E0042E538 /* ABCRequestTestModel.m */,
+			);
+			name = ABCRequestModelTest;
+			sourceTree = "<group>";
+		};
+		57F72CEB1C180C6200C0F36E /* Hub */ = {
+			isa = PBXGroup;
+			children = (
+				57F72CEC1C180C8B00C0F36E /* ABCHub.h */,
+				57F72CED1C180C8B00C0F36E /* ABCHub.m */,
+			);
+			name = Hub;
+			sourceTree = "<group>";
+		};
 		868EEE91219003C97E9EA33E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +457,7 @@
 				TargetAttributes = {
 					574E7BAF1AEF29B30042E538 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = FJXM979Q77;
 					};
 					574E7BC81AEF29B30042E538 = {
 						CreatedOnToolsVersion = 6.3;
@@ -590,7 +609,9 @@
 				570272311C17C9DF000AD144 /* ABCDataBase.m in Sources */,
 				574E7C111AF0829C0042E538 /* ABCPhotoAlbum.m in Sources */,
 				574E7C2D1AF0C28F0042E538 /* UIButton+ArrayButton.m in Sources */,
+				57F72CEE1C180C8B00C0F36E /* ABCHub.m in Sources */,
 				570272321C17C9DF000AD144 /* ABCSqlHandler.m in Sources */,
+				57F72CE91C17FF9700C0F36E /* TestViewController.m in Sources */,
 				574E7BB61AEF29B30042E538 /* main.m in Sources */,
 				574E7BE71AEF39090042E538 /* ABCNetOperation.m in Sources */,
 				57F72CD71C17D08600C0F36E /* ABCCallBackModel.m in Sources */,
@@ -711,11 +732,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "ABCFrameWork/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "ABCFrameWork/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
@@ -726,11 +750,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "ABCFrameWork/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "ABCFrameWork/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;

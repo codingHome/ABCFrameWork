@@ -10,5 +10,7 @@
 #define ABCFrameWork_ABCFrameWork_h
 
 #import "ABCPrecompile.h"
+#import "ABCRequestModel.h"
+#import "ABCNetOperation.h"
 
 #endif

@@ -21,8 +21,8 @@
     [super setUp];
     
     self.requestModel = [[ABCRequestTestModel alloc] init];
-    self.requestModel.name = @"robert";
-    self.requestModel.school = @"cug";
+    self.requestModel.city = @"北京";
+    self.requestModel.key = @"ec1c681fdacfcc3d4dfc530981b86a82";
 }
 
 - (void)tearDown {

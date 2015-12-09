@@ -7,9 +7,8 @@
 //
 
 #import "ABCNetOperation.h"
-#import "SVProgressHUD.h"
+#import "ABCHub.h"
 #import "ABCCallBackModel.h"
-#import "ABCNetObserver.h"
 
 @interface ABCNetOperation ()
 
@@ -19,10 +18,6 @@
 @end
 
 @implementation ABCNetOperation
-
--(void)dealloc {
-    [[ABCNetObserver sharedNetObserver] removeNotification:self];
-}
 
 - (instancetype)initWithUrl:(NSString *)url Model:(ABCRequestModel *)model OperationMethod:(OperationMethod)method {
     self = [super init];
@@ -37,22 +32,8 @@
 }
 
 - (void)startOperation {
-    //获取网络状态
-    [[ABCNetObserver sharedNetObserver] registNotification:self selector:@selector(getNetWorkStatus:)];
-    [[ABCNetObserver sharedNetObserver] startNotifier];
-}
-
-- (void)getNetWorkStatus:(NSNotification *)notification {
-    ABCNetObserver *observer = notification.object;
-    if (observer.status == ABCNetStatusWifi || observer.status == ABCNetStatusWWAN) {
-        [self startRequest];
-    }else {
-        [SVProgressHUD showWithStatus:@"网络异常"];
-    }
-}
-
-- (void)startRequest {
     if (_progressHUB) {
+        [ABCHub abc_show];
         switch (_method) {
             case ABCNetOperationGetMethod:
                 [self getRequest];
@@ -66,6 +47,7 @@
         }
     }
 }
+
 
 - (void)getRequest {
     [[ABCNetRequest sharedNetRequest]GetUrl:_url
@@ -106,18 +88,21 @@
 
 - (void)callBackResult:(id)result Error:(NSError *)error {
     
-    ABCCallBackModel *callBackModel = [self transformCallBackResult:result];
+//    ABCCallBackModel *callBackModel = [self transformCallBackResult:result];
     
-    [SVProgressHUD dismiss];
+    [ABCHub dismiss];
     //delegate回调
-    if (result&&!error) {
-        [_delegate netOperationSuccess:callBackModel];
-    }else if (error){
-        [_delegate netOperationFail:error];
+    if (_delegate) {
+        if (result&&!error) {
+            [_delegate netOperationSuccess:self result:result];
+        }else if (error){
+            [_delegate netOperationFail:self error:error];
+        }
     }
 }
 
 - (ABCCallBackModel *)transformCallBackResult:(NSDictionary *)result {
+    
     NSString *modelClassStr = [NSStringFromClass(self.requestModel.class) stringByReplacingOccurrencesOfString:@"RequestModel" withString:@"CallBackModel"];
     
     Class ModelClass = NSClassFromString(modelClassStr);

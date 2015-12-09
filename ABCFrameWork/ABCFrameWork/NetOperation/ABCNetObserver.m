@@ -9,6 +9,8 @@
 #import "ABCNetObserver.h"
 #import "Reachability.h"
 
+NSString *const kABCNetStatusChangeNotification= @"kABCNetStatusChangeNotification";
+
 @interface ABCNetObserver ()
 
 @property (nonatomic, strong)Reachability *reach;

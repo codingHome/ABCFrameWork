@@ -10,6 +10,9 @@
 
 @interface ABCRequestModel : NSObject
 
+@property (nonatomic, copy)NSString *city;
+@property (nonatomic, copy)NSString *key;
+
 /**
  *  获取对象属性和值
  *

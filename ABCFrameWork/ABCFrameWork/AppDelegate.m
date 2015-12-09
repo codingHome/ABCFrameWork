@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "TestViewController.h"
 
 @interface AppDelegate ()
 
@@ -15,8 +15,15 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, ABC_SCREEN_WIDTH, ABC_SCREEN_HEIGHT)];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    TestViewController *vc = [[TestViewController alloc] init];
+    
+    self.window.rootViewController = vc;
+    
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
