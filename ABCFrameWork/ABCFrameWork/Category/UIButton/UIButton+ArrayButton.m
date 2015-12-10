@@ -29,10 +29,10 @@ int Top = 50;
         button.frame = CGRectMake(0, 0, KSCREENWIDTH, ButtonHeight);
         [button sizeToFit];
         
-        int ButtonX = Left + totalX;
-        int ButtonY = Top + totalY;
+        NSUInteger ButtonX = Left + totalX;
+        NSUInteger ButtonY = Top + totalY;
         
-        int ButtonWidth = button.bounds.size.width;
+        NSUInteger ButtonWidth = button.bounds.size.width;
         totalX += ButtonWidth + gap;
         
         if (totalX >= KSCREENWIDTH) {

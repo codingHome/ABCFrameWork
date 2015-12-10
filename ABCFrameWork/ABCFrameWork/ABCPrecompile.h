@@ -93,4 +93,9 @@
 #define ABC_PATH_RESOURCE(resource, type) \
 [[NSBundle mainBundle] pathForResource:resource ofType:type]
 
+/**
+ *  weakSelf
+ */
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
 #endif /* ABCPrecompile_h */

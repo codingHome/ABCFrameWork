@@ -28,6 +28,9 @@
 		574E7C2D1AF0C28F0042E538 /* UIButton+ArrayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E7C2C1AF0C28F0042E538 /* UIButton+ArrayButton.m */; };
 		574E7C341AF0C6E80042E538 /* ABCSearchTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E7C321AF0C6E80042E538 /* ABCSearchTableCell.m */; };
 		574E7C351AF0C6E80042E538 /* ABCSearchTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 574E7C331AF0C6E80042E538 /* ABCSearchTableCell.xib */; };
+		577072611C191E2E00EDDD72 /* 150511_JiveBike.mov in Resources */ = {isa = PBXBuildFile; fileRef = 577072601C191E2E00EDDD72 /* 150511_JiveBike.mov */; };
+		5770726D1C19256600EDDD72 /* ABCVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5770726C1C19256600EDDD72 /* ABCVideoPlayerControlView.m */; };
+		577072701C19258D00EDDD72 /* ABCVidepPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5770726F1C19258D00EDDD72 /* ABCVidepPlayerController.m */; };
 		57F664541C1816A7003F4899 /* TestRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F664531C1816A7003F4899 /* TestRequestModel.m */; };
 		57F664571C1816BD003F4899 /* TestCallBackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F664561C1816BD003F4899 /* TestCallBackModel.m */; };
 		57F6645B1C18202C003F4899 /* ABCCallBackModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F6645A1C18202C003F4899 /* ABCCallBackModelTest.m */; };
@@ -98,6 +101,11 @@
 		574E7C311AF0C6E80042E538 /* ABCSearchTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCSearchTableCell.h; sourceTree = "<group>"; };
 		574E7C321AF0C6E80042E538 /* ABCSearchTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCSearchTableCell.m; sourceTree = "<group>"; };
 		574E7C331AF0C6E80042E538 /* ABCSearchTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABCSearchTableCell.xib; sourceTree = "<group>"; };
+		577072601C191E2E00EDDD72 /* 150511_JiveBike.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 150511_JiveBike.mov; sourceTree = "<group>"; };
+		5770726B1C19256600EDDD72 /* ABCVideoPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCVideoPlayerControlView.h; path = VideoPlayer/ABCVideoPlayerControlView.h; sourceTree = "<group>"; };
+		5770726C1C19256600EDDD72 /* ABCVideoPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCVideoPlayerControlView.m; path = VideoPlayer/ABCVideoPlayerControlView.m; sourceTree = "<group>"; };
+		5770726E1C19258D00EDDD72 /* ABCVidepPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCVidepPlayerController.h; path = VideoPlayer/ABCVidepPlayerController.h; sourceTree = "<group>"; };
+		5770726F1C19258D00EDDD72 /* ABCVidepPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCVidepPlayerController.m; path = VideoPlayer/ABCVidepPlayerController.m; sourceTree = "<group>"; };
 		57F664521C1816A7003F4899 /* TestRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRequestModel.h; sourceTree = "<group>"; };
 		57F664531C1816A7003F4899 /* TestRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRequestModel.m; sourceTree = "<group>"; };
 		57F664551C1816BD003F4899 /* TestCallBackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCallBackModel.h; sourceTree = "<group>"; };
@@ -162,6 +170,7 @@
 		574E7BB21AEF29B30042E538 /* ABCFrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				577072621C19226B00EDDD72 /* Vendor */,
 				574E7BEB1AEF40410042E538 /* Cache */,
 				574E7C361AF0C9D70042E538 /* Category */,
 				574E7C151AF0A2BF0042E538 /* MVC */,
@@ -174,6 +183,7 @@
 				574E7BB81AEF29B30042E538 /* AppDelegate.m */,
 				57F72CE71C17FF9700C0F36E /* TestViewController.h */,
 				57F72CE81C17FF9700C0F36E /* TestViewController.m */,
+				577072601C191E2E00EDDD72 /* 150511_JiveBike.mov */,
 				57F664521C1816A7003F4899 /* TestRequestModel.h */,
 				57F664531C1816A7003F4899 /* TestRequestModel.m */,
 				57F664551C1816BD003F4899 /* TestCallBackModel.h */,
@@ -265,6 +275,7 @@
 		574E7BFB1AEF73DB0042E538 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5770726A1C19252E00EDDD72 /* VideoPlayer */,
 				57F72CEB1C180C6200C0F36E /* Hub */,
 				574E7BF71AEF70BE0042E538 /* ImageLoader */,
 				574E7C0E1AF082140042E538 /* PhotoAlbum */,
@@ -342,6 +353,24 @@
 				57F72CD91C17DAAE00C0F36E /* UIView */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		577072621C19226B00EDDD72 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		5770726A1C19252E00EDDD72 /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				5770726B1C19256600EDDD72 /* ABCVideoPlayerControlView.h */,
+				5770726C1C19256600EDDD72 /* ABCVideoPlayerControlView.m */,
+				5770726E1C19258D00EDDD72 /* ABCVidepPlayerController.h */,
+				5770726F1C19258D00EDDD72 /* ABCVidepPlayerController.m */,
+			);
+			name = VideoPlayer;
 			sourceTree = "<group>";
 		};
 		57F664591C181FFE003F4899 /* ABCCallBackModelTest */ = {
@@ -513,6 +542,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				577072611C191E2E00EDDD72 /* 150511_JiveBike.mov in Resources */,
 				574E7BC11AEF29B30042E538 /* Images.xcassets in Resources */,
 				574E7C351AF0C6E80042E538 /* ABCSearchTableCell.xib in Resources */,
 			);
@@ -625,6 +655,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				577072701C19258D00EDDD72 /* ABCVidepPlayerController.m in Sources */,
 				574E7BE41AEF336E0042E538 /* ABCRequestModel.m in Sources */,
 				57F664541C1816A7003F4899 /* TestRequestModel.m in Sources */,
 				574E7C0A1AEF7F690042E538 /* ABCNetObserver.m in Sources */,
@@ -634,6 +665,7 @@
 				570272311C17C9DF000AD144 /* ABCDataBase.m in Sources */,
 				574E7C111AF0829C0042E538 /* ABCPhotoAlbum.m in Sources */,
 				574E7C2D1AF0C28F0042E538 /* UIButton+ArrayButton.m in Sources */,
+				5770726D1C19256600EDDD72 /* ABCVideoPlayerControlView.m in Sources */,
 				57F72CEE1C180C8B00C0F36E /* ABCHub.m in Sources */,
 				570272321C17C9DF000AD144 /* ABCSqlHandler.m in Sources */,
 				57F72CE91C17FF9700C0F36E /* TestViewController.m in Sources */,
