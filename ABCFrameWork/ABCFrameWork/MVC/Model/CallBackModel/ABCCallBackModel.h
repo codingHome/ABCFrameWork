@@ -7,18 +7,16 @@
 //
 
 #import <JSONModel/JSONModel.h>
+#import "ABCCallBackModelDelegate.h"
 
-@interface ABCCallBackModel : JSONModel
+@interface ABCCallBackModel : JSONModel <ABCCallBackModelDelegate>
 
-/**
- *  主键ID
- */
-@property (nonatomic, assign) long abc_id;
+{
+    @public
+    long abc_id;
+}
 
-/**
- *  索引 子类需要重写索引的get方法
- */
-@property (nonatomic, copy, readonly) NSString *uniqueIndex;
+- (long)abd_id;
 
 #pragma mark - 表操作
 /**

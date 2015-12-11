@@ -30,8 +30,8 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [self test];
-    [self testVidio];
+    [self test];
+//    [self testVidio];
 }
 
 - (void)testVidio {
@@ -61,8 +61,8 @@
 //    ABCNetOperation *testOperation = [[ABCNetOperation alloc] initWithUrl:@"http://web.juhe.cn:8080/environment/air/cityair?" Model:testModel OperationMethod:ABCNetOperationGetMethod];
 //    testOperation.delegate = self;
 //    [testOperation startOperation];
-    ABCNetOperation *testOperation = [[ABCNetOperation alloc] init];
-    [testOperation operationWithUrl:@"http://web.juhe.cn:8080/environment/air/cityair?" Model:testModel OperationMethod:ABCNetOperationGetMethod CallBack:^(id result, NSError *error) {
+    
+    [ABCNetOperation operationWithUrl:@"http://web.juhe.cn:8080/environment/air/cityair?" Model:testModel OperationMethod:ABCNetOperationGetMethod CallBack:^(id result, NSError *error) {
         
     }];
 }

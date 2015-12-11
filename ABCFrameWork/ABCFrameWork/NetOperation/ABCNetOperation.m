@@ -32,14 +32,10 @@
     return self;
 }
 
-- (void)operationWithUrl:(NSString *)url Model:(ABCRequestModel *)model OperationMethod:(OperationMethod)method CallBack:(void(^)(id result, NSError *error))callBack {
-    _url = url;
-    _requestModel = model;
-    _method = method;
-    _progressHUB = YES;
-    _cache = YES;
-    _callBack = callBack;
-    [self startOperation];
++ (void)operationWithUrl:(NSString *)url Model:(ABCRequestModel *)model OperationMethod:(OperationMethod)method CallBack:(void(^)(id result, NSError *error))callBack {
+    ABCNetOperation *operation = [[ABCNetOperation alloc] initWithUrl:url Model:model OperationMethod:method];
+    operation.callBack = callBack;
+    [operation startOperation];
 }
 
 - (void)startOperation {

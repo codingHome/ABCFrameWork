@@ -20,7 +20,7 @@
 
 - (void)setUp {
     [super setUp];
-    
+    NSLog(@"%@",NSHomeDirectory());
     NSDictionary *params = @{
                              @"uid"           : @(1),
                              @"q_char"        : @"c",

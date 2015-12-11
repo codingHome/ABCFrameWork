@@ -28,6 +28,8 @@
 		574E7C2D1AF0C28F0042E538 /* UIButton+ArrayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E7C2C1AF0C28F0042E538 /* UIButton+ArrayButton.m */; };
 		574E7C341AF0C6E80042E538 /* ABCSearchTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E7C321AF0C6E80042E538 /* ABCSearchTableCell.m */; };
 		574E7C351AF0C6E80042E538 /* ABCSearchTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 574E7C331AF0C6E80042E538 /* ABCSearchTableCell.xib */; };
+		57526FDB1C1A965D00FAD42C /* ABCRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 57526FDA1C1A965D00FAD42C /* ABCRoundButton.m */; };
+		57526FDE1C1A968600FAD42C /* ABCRoundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57526FDD1C1A968600FAD42C /* ABCRoundImageView.m */; };
 		577072611C191E2E00EDDD72 /* 150511_JiveBike.mov in Resources */ = {isa = PBXBuildFile; fileRef = 577072601C191E2E00EDDD72 /* 150511_JiveBike.mov */; };
 		5770726D1C19256600EDDD72 /* ABCVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5770726C1C19256600EDDD72 /* ABCVideoPlayerControlView.m */; };
 		577072701C19258D00EDDD72 /* ABCVidepPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5770726F1C19258D00EDDD72 /* ABCVidepPlayerController.m */; };
@@ -61,6 +63,7 @@
 		5702722E1C17C9DF000AD144 /* ABCDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCDataBase.m; sourceTree = "<group>"; };
 		5702722F1C17C9DF000AD144 /* ABCSqlHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCSqlHandler.h; sourceTree = "<group>"; };
 		570272301C17C9DF000AD144 /* ABCSqlHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCSqlHandler.m; sourceTree = "<group>"; };
+		5726DF941C1A67DD00D6ACB3 /* ABCCallBackModelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCCallBackModelDelegate.h; sourceTree = "<group>"; };
 		574E7BB01AEF29B30042E538 /* ABCFrameWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABCFrameWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		574E7BB41AEF29B30042E538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		574E7BB51AEF29B30042E538 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -101,6 +104,11 @@
 		574E7C311AF0C6E80042E538 /* ABCSearchTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCSearchTableCell.h; sourceTree = "<group>"; };
 		574E7C321AF0C6E80042E538 /* ABCSearchTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCSearchTableCell.m; sourceTree = "<group>"; };
 		574E7C331AF0C6E80042E538 /* ABCSearchTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABCSearchTableCell.xib; sourceTree = "<group>"; };
+		57526FD91C1A965D00FAD42C /* ABCRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCRoundButton.h; path = ABCRoundButton/ABCRoundButton.h; sourceTree = "<group>"; };
+		57526FDA1C1A965D00FAD42C /* ABCRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCRoundButton.m; path = ABCRoundButton/ABCRoundButton.m; sourceTree = "<group>"; };
+		57526FDC1C1A968600FAD42C /* ABCRoundImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCRoundImageView.h; path = ABCRoundImageView/ABCRoundImageView.h; sourceTree = "<group>"; };
+		57526FDD1C1A968600FAD42C /* ABCRoundImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCRoundImageView.m; path = ABCRoundImageView/ABCRoundImageView.m; sourceTree = "<group>"; };
+		57526FDF1C1A97AD00FAD42C /* ABCUtilExtend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCUtilExtend.h; sourceTree = "<group>"; };
 		577072601C191E2E00EDDD72 /* 150511_JiveBike.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 150511_JiveBike.mov; sourceTree = "<group>"; };
 		5770726B1C19256600EDDD72 /* ABCVideoPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCVideoPlayerControlView.h; path = VideoPlayer/ABCVideoPlayerControlView.h; sourceTree = "<group>"; };
 		5770726C1C19256600EDDD72 /* ABCVideoPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCVideoPlayerControlView.m; path = VideoPlayer/ABCVideoPlayerControlView.m; sourceTree = "<group>"; };
@@ -179,6 +187,7 @@
 				574E7BFB1AEF73DB0042E538 /* Utils */,
 				574E7BDB1AEF2DB20042E538 /* ABCFrameWork.h */,
 				570272231C17C7EE000AD144 /* ABCPrecompile.h */,
+				57526FDF1C1A97AD00FAD42C /* ABCUtilExtend.h */,
 				574E7BB71AEF29B30042E538 /* AppDelegate.h */,
 				574E7BB81AEF29B30042E538 /* AppDelegate.m */,
 				57F72CE71C17FF9700C0F36E /* TestViewController.h */,
@@ -315,6 +324,8 @@
 		574E7C171AF0A2E30042E538 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				57526FD81C1A962700FAD42C /* ABCRoundImageView */,
+				57526FD71C1A961300FAD42C /* ABCRoundButton */,
 				574E7C1D1AF0BA300042E538 /* ABCSearch */,
 			);
 			path = View;
@@ -355,6 +366,24 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		57526FD71C1A961300FAD42C /* ABCRoundButton */ = {
+			isa = PBXGroup;
+			children = (
+				57526FD91C1A965D00FAD42C /* ABCRoundButton.h */,
+				57526FDA1C1A965D00FAD42C /* ABCRoundButton.m */,
+			);
+			name = ABCRoundButton;
+			sourceTree = "<group>";
+		};
+		57526FD81C1A962700FAD42C /* ABCRoundImageView */ = {
+			isa = PBXGroup;
+			children = (
+				57526FDC1C1A968600FAD42C /* ABCRoundImageView.h */,
+				57526FDD1C1A968600FAD42C /* ABCRoundImageView.m */,
+			);
+			name = ABCRoundImageView;
+			sourceTree = "<group>";
+		};
 		577072621C19226B00EDDD72 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +417,7 @@
 			children = (
 				57F72CD51C17D08600C0F36E /* ABCCallBackModel.h */,
 				57F72CD61C17D08600C0F36E /* ABCCallBackModel.m */,
+				5726DF941C1A67DD00D6ACB3 /* ABCCallBackModelDelegate.h */,
 			);
 			path = CallBackModel;
 			sourceTree = "<group>";
@@ -672,6 +702,8 @@
 				574E7BB61AEF29B30042E538 /* main.m in Sources */,
 				574E7BE71AEF39090042E538 /* ABCNetOperation.m in Sources */,
 				57F72CD71C17D08600C0F36E /* ABCCallBackModel.m in Sources */,
+				57526FDB1C1A965D00FAD42C /* ABCRoundButton.m in Sources */,
+				57526FDE1C1A968600FAD42C /* ABCRoundImageView.m in Sources */,
 				574E7BDE1AEF2E1E0042E538 /* ABCNetRequest.m in Sources */,
 				574E7C231AF0C2140042E538 /* ABCSearchBar.m in Sources */,
 				574E7C341AF0C6E80042E538 /* ABCSearchTableCell.m in Sources */,

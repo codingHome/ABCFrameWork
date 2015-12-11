@@ -14,7 +14,7 @@
     static ABCDataBase *instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [[self alloc] initWithPath:ABC_PATH_FORMAT(ABC_PATH_LIBRARY, @"data.db")];
+        instance = [[self alloc] initWithPath:ABC_PATH_FORMAT(ABC_PATH_DOCUMENTS, @"data.db")];
     });
     return instance;
 }

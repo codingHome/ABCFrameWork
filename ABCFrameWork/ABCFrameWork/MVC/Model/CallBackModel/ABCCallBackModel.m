@@ -44,6 +44,10 @@
     return nil;
 }
 
+- (long)abd_id {
+    return abc_id;
+}
+
 #pragma mark -
 #pragma mark SQL Public Methods
 
@@ -128,7 +132,7 @@
 {
     [self inDatabase:^(FMDatabase *db) {
         NSString *sql = [ABCSqlHandler deleteSql:[self class]
-                                         conditions:[NSString stringWithFormat:@"abc_id=%ld",self.abc_id]];
+                                         conditions:[NSString stringWithFormat:@"abc_id=%ld",self->abc_id]];
         [db executeUpdate:sql withArgumentsInArray:@[@(2)]];
     }];
     return YES;
@@ -232,8 +236,9 @@ va_list args_update;
     NSMutableArray *array = [NSMutableArray array];
     
     while ([result next]) {
-        NSObject *obj=[[[self class] alloc] init];
+        ABCCallBackModel *obj=[[[self class] alloc] init];
         NSDictionary *dictionary=[result resultDictionary];
+        obj->abc_id = [[dictionary valueForKey:@"abc_id"] longValue];
         for (NSString *key in dictionary) {
             NSString *method=[NSString stringWithFormat:@"set%@%@",[[key substringToIndex:1] uppercaseString],[key substringFromIndex:1]];
             SEL selector = NSSelectorFromString([NSString stringWithFormat:@"%@:",method]);
@@ -314,11 +319,6 @@ va_list args_update;
                 @finally {
                     
                 }
-            }else {
-                if (![method isEqualToString:@"setAbc_id"]) {
-                    ABC_LOG(@"%@ no found" ,method);
-                }
-                
             }
         }
         

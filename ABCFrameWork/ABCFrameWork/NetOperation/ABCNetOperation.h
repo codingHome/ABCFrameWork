@@ -80,6 +80,6 @@ typedef void(^CallBack)(id result, NSError *error);
  *  @param method   请求方式
  *  @param callBack 请求回调
  */
-- (void)operationWithUrl:(NSString *)url Model:(ABCRequestModel *)model OperationMethod:(OperationMethod)method CallBack:(CallBack)callBack;
++ (void)operationWithUrl:(NSString *)url Model:(ABCRequestModel *)model OperationMethod:(OperationMethod)method CallBack:(CallBack)callBack;
 
 @end
