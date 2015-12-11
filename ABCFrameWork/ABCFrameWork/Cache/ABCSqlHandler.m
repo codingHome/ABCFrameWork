@@ -139,10 +139,14 @@
     [sql appendFormat:@"update %@ set ",[myClass description]];
     NSMutableArray *keys=[[NSMutableArray alloc] init];
     
-    NSString *idKey=nil;
     unsigned int outCount, i;
     objc_property_t *properties = class_copyPropertyList(myClass, &outCount);        //反射出类的所有属性
     NSMutableArray *propertiesArray=[NSMutableArray array];
+    
+    [keys addObject:@"abc_id"];
+    [propertiesArray addObject:@"abc_id"];
+    NSString *idKey= @"abc_id";
+    
     for (i = 0; i < outCount; i++) {
         objc_property_t property = properties[i];
         NSString *name=[NSString stringWithFormat:@"%s",property_getName(property)];        //字段的名称
@@ -150,10 +154,10 @@
         if ([dictionary objectForKey:name]==nil || ![[dictionary allKeys] containsObject:name]) {
             continue;
         }
-        if ([name hasPrefix:@"abc_id"]) {
-            idKey=[NSString stringWithFormat:@"%@",name];
-            
-        }
+//        if ([name hasPrefix:@"abc_id"]) {
+//            idKey=[NSString stringWithFormat:@"%@",name];
+//            
+//        }
         [keys addObject:name];
     }
     

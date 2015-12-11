@@ -16,7 +16,7 @@
     long abc_id;
 }
 
-- (long)abd_id;
+- (long)abc_id;
 
 #pragma mark - 表操作
 /**

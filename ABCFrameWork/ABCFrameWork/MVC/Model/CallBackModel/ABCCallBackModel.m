@@ -44,7 +44,7 @@
     return nil;
 }
 
-- (long)abd_id {
+- (long)abc_id {
     return abc_id;
 }
 
@@ -96,6 +96,7 @@
              }
              _retry = NO;
          }
+         [rs close];
      }];
     
     while (_retry) {}

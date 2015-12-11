@@ -30,6 +30,13 @@
 		574E7C351AF0C6E80042E538 /* ABCSearchTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 574E7C331AF0C6E80042E538 /* ABCSearchTableCell.xib */; };
 		57526FDB1C1A965D00FAD42C /* ABCRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 57526FDA1C1A965D00FAD42C /* ABCRoundButton.m */; };
 		57526FDE1C1A968600FAD42C /* ABCRoundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57526FDD1C1A968600FAD42C /* ABCRoundImageView.m */; };
+		57526FE41C1AA15100FAD42C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57526FE11C1AA15100FAD42C /* Default-568h@2x.png */; };
+		57526FE51C1AA15100FAD42C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 57526FE21C1AA15100FAD42C /* Default.png */; };
+		57526FE61C1AA15100FAD42C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57526FE31C1AA15100FAD42C /* Default@2x.png */; };
+		57526FEE1C1AA8DC00FAD42C /* ABCMosiacDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57526FED1C1AA8DC00FAD42C /* ABCMosiacDataModel.m */; };
+		57526FF11C1AA8F300FAD42C /* ABCMosiacDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57526FF01C1AA8F300FAD42C /* ABCMosiacDataView.m */; };
+		57526FF91C1AC91E00FAD42C /* ABCMosiacDataArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 57526FF81C1AC91E00FAD42C /* ABCMosiacDataArray.m */; };
+		57526FFC1C1AC95200FAD42C /* ABCMosiacView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57526FFB1C1AC95200FAD42C /* ABCMosiacView.m */; };
 		577072611C191E2E00EDDD72 /* 150511_JiveBike.mov in Resources */ = {isa = PBXBuildFile; fileRef = 577072601C191E2E00EDDD72 /* 150511_JiveBike.mov */; };
 		5770726D1C19256600EDDD72 /* ABCVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5770726C1C19256600EDDD72 /* ABCVideoPlayerControlView.m */; };
 		577072701C19258D00EDDD72 /* ABCVidepPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5770726F1C19258D00EDDD72 /* ABCVidepPlayerController.m */; };
@@ -109,6 +116,17 @@
 		57526FDC1C1A968600FAD42C /* ABCRoundImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCRoundImageView.h; path = ABCRoundImageView/ABCRoundImageView.h; sourceTree = "<group>"; };
 		57526FDD1C1A968600FAD42C /* ABCRoundImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCRoundImageView.m; path = ABCRoundImageView/ABCRoundImageView.m; sourceTree = "<group>"; };
 		57526FDF1C1A97AD00FAD42C /* ABCUtilExtend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCUtilExtend.h; sourceTree = "<group>"; };
+		57526FE11C1AA15100FAD42C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		57526FE21C1AA15100FAD42C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		57526FE31C1AA15100FAD42C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		57526FEC1C1AA8DC00FAD42C /* ABCMosiacDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCMosiacDataModel.h; path = ABCMosiacView/ABCMosiacDataModel.h; sourceTree = "<group>"; };
+		57526FED1C1AA8DC00FAD42C /* ABCMosiacDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCMosiacDataModel.m; path = ABCMosiacView/ABCMosiacDataModel.m; sourceTree = "<group>"; };
+		57526FEF1C1AA8F300FAD42C /* ABCMosiacDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCMosiacDataView.h; path = ABCMosiacView/ABCMosiacDataView.h; sourceTree = "<group>"; };
+		57526FF01C1AA8F300FAD42C /* ABCMosiacDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCMosiacDataView.m; path = ABCMosiacView/ABCMosiacDataView.m; sourceTree = "<group>"; };
+		57526FF71C1AC91E00FAD42C /* ABCMosiacDataArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCMosiacDataArray.h; path = ABCMosiacView/ABCMosiacDataArray.h; sourceTree = "<group>"; };
+		57526FF81C1AC91E00FAD42C /* ABCMosiacDataArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCMosiacDataArray.m; path = ABCMosiacView/ABCMosiacDataArray.m; sourceTree = "<group>"; };
+		57526FFA1C1AC95200FAD42C /* ABCMosiacView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCMosiacView.h; path = ABCMosiacView/ABCMosiacView.h; sourceTree = "<group>"; };
+		57526FFB1C1AC95200FAD42C /* ABCMosiacView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCMosiacView.m; path = ABCMosiacView/ABCMosiacView.m; sourceTree = "<group>"; };
 		577072601C191E2E00EDDD72 /* 150511_JiveBike.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 150511_JiveBike.mov; sourceTree = "<group>"; };
 		5770726B1C19256600EDDD72 /* ABCVideoPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCVideoPlayerControlView.h; path = VideoPlayer/ABCVideoPlayerControlView.h; sourceTree = "<group>"; };
 		5770726C1C19256600EDDD72 /* ABCVideoPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCVideoPlayerControlView.m; path = VideoPlayer/ABCVideoPlayerControlView.m; sourceTree = "<group>"; };
@@ -204,6 +222,9 @@
 		574E7BB31AEF29B30042E538 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				57526FE11C1AA15100FAD42C /* Default-568h@2x.png */,
+				57526FE21C1AA15100FAD42C /* Default.png */,
+				57526FE31C1AA15100FAD42C /* Default@2x.png */,
 				574E7BC01AEF29B30042E538 /* Images.xcassets */,
 				574E7BB41AEF29B30042E538 /* Info.plist */,
 				574E7BD91AEF29F50042E538 /* PrefixHeader.pch */,
@@ -324,6 +345,7 @@
 		574E7C171AF0A2E30042E538 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				57526FE81C1AA84800FAD42C /* ABCMosiacView */,
 				57526FD81C1A962700FAD42C /* ABCRoundImageView */,
 				57526FD71C1A961300FAD42C /* ABCRoundButton */,
 				574E7C1D1AF0BA300042E538 /* ABCSearch */,
@@ -382,6 +404,21 @@
 				57526FDD1C1A968600FAD42C /* ABCRoundImageView.m */,
 			);
 			name = ABCRoundImageView;
+			sourceTree = "<group>";
+		};
+		57526FE81C1AA84800FAD42C /* ABCMosiacView */ = {
+			isa = PBXGroup;
+			children = (
+				57526FEC1C1AA8DC00FAD42C /* ABCMosiacDataModel.h */,
+				57526FED1C1AA8DC00FAD42C /* ABCMosiacDataModel.m */,
+				57526FF71C1AC91E00FAD42C /* ABCMosiacDataArray.h */,
+				57526FF81C1AC91E00FAD42C /* ABCMosiacDataArray.m */,
+				57526FEF1C1AA8F300FAD42C /* ABCMosiacDataView.h */,
+				57526FF01C1AA8F300FAD42C /* ABCMosiacDataView.m */,
+				57526FFA1C1AC95200FAD42C /* ABCMosiacView.h */,
+				57526FFB1C1AC95200FAD42C /* ABCMosiacView.m */,
+			);
+			name = ABCMosiacView;
 			sourceTree = "<group>";
 		};
 		577072621C19226B00EDDD72 /* Vendor */ = {
@@ -572,9 +609,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57526FE61C1AA15100FAD42C /* Default@2x.png in Resources */,
 				577072611C191E2E00EDDD72 /* 150511_JiveBike.mov in Resources */,
+				57526FE41C1AA15100FAD42C /* Default-568h@2x.png in Resources */,
 				574E7BC11AEF29B30042E538 /* Images.xcassets in Resources */,
 				574E7C351AF0C6E80042E538 /* ABCSearchTableCell.xib in Resources */,
+				57526FE51C1AA15100FAD42C /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,6 +732,8 @@
 				57F72CE01C17DB2D00C0F36E /* UIView+DDAddition.m in Sources */,
 				574E7C201AF0C1EC0042E538 /* ABCSearchDelegate.m in Sources */,
 				574E7BB91AEF29B30042E538 /* AppDelegate.m in Sources */,
+				57526FFC1C1AC95200FAD42C /* ABCMosiacView.m in Sources */,
+				57526FEE1C1AA8DC00FAD42C /* ABCMosiacDataModel.m in Sources */,
 				570272311C17C9DF000AD144 /* ABCDataBase.m in Sources */,
 				574E7C111AF0829C0042E538 /* ABCPhotoAlbum.m in Sources */,
 				574E7C2D1AF0C28F0042E538 /* UIButton+ArrayButton.m in Sources */,
@@ -704,11 +746,13 @@
 				57F72CD71C17D08600C0F36E /* ABCCallBackModel.m in Sources */,
 				57526FDB1C1A965D00FAD42C /* ABCRoundButton.m in Sources */,
 				57526FDE1C1A968600FAD42C /* ABCRoundImageView.m in Sources */,
+				57526FF91C1AC91E00FAD42C /* ABCMosiacDataArray.m in Sources */,
 				574E7BDE1AEF2E1E0042E538 /* ABCNetRequest.m in Sources */,
 				574E7C231AF0C2140042E538 /* ABCSearchBar.m in Sources */,
 				574E7C341AF0C6E80042E538 /* ABCSearchTableCell.m in Sources */,
 				574E7BFE1AEF74450042E538 /* ViewControllerIntercept.m in Sources */,
 				574E7C261AF0C22F0042E538 /* ABCSearchTagView.m in Sources */,
+				57526FF11C1AA8F300FAD42C /* ABCMosiacDataView.m in Sources */,
 				57F664571C1816BD003F4899 /* TestCallBackModel.m in Sources */,
 				574E7C1C1AF0AC9E0042E538 /* ABCUserInfo.m in Sources */,
 				574E7C011AEF74C40042E538 /* ABCImageView.m in Sources */,
