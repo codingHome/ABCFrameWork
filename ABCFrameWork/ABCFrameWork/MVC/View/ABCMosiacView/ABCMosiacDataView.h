@@ -7,7 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ABCMosiacDataModel.h"
+
+@class ABCMosiacDataView;
+
+@protocol ABCMosiacDataViewDelegate <NSObject>
+
+- (void)didTapDataView:(ABCMosiacDataView *)dataView;
+
+@end
 
 @interface ABCMosiacDataView : UIView
+
+/**
+ *  数据源
+ */
+@property (nonatomic, strong)ABCMosiacDataModel *dataModel;
+
+@property (nonatomic, weak)id<ABCMosiacDataViewDelegate> delegate;
 
 @end

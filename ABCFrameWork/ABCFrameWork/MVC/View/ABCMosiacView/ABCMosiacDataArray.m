@@ -8,6 +8,69 @@
 
 #import "ABCMosiacDataArray.h"
 
+#define INVALID_ELEMENT_INDEX -1
+
+@interface ABCMosiacDataArray ()
+
+/**
+ *  元素集合
+ */
+@property (nonatomic, strong) NSMutableArray *elements;
+
+/**
+ *  行
+ */
+@property (nonatomic, assign) NSUInteger rows;
+
+/**
+ *  列
+ */
+@property (nonatomic, assign) NSUInteger columns;
+
+@end
+
 @implementation ABCMosiacDataArray
+
+-(NSInteger)elementIndexWithColumn:(NSUInteger)xIndex andRow:(NSUInteger)yIndex{
+    NSInteger retVal = 0;
+    if (xIndex >= _columns || yIndex >= _rows){
+        retVal = INVALID_ELEMENT_INDEX;
+    }else{
+        retVal = xIndex + (yIndex * self.columns);
+    }
+    return retVal;
+}
+
+#pragma mark - Public
+
+-(id)initWithColumns:(NSUInteger)numberOfColumns andRows:(NSUInteger)numberOfRows{
+    self = [super init];
+    if (self){
+        NSUInteger capacity = numberOfColumns * numberOfRows;
+        _columns = numberOfColumns;
+        _rows = numberOfRows;
+        _elements = [[NSMutableArray alloc] initWithCapacity:capacity];
+    }
+    return self;
+}
+
+-(id)objectAtColumn:(NSUInteger)xIndex andRow:(NSUInteger)yIndex{
+    id retVal = nil;
+    
+    NSInteger elementIndex = [self elementIndexWithColumn:xIndex andRow:yIndex];
+    
+    if (elementIndex != INVALID_ELEMENT_INDEX){
+        
+        retVal = [_elements objectAtIndex:elementIndex];
+    }
+    
+    return retVal;
+}
+
+-(void)setObject:(id)anObject atColumn:(NSUInteger)xIndex andRow:(NSUInteger)yIndex{
+    NSInteger elementIndex = [self elementIndexWithColumn:xIndex andRow:yIndex];
+    
+    [_elements replaceObjectAtIndex:elementIndex withObject:anObject];
+}
 
 @end

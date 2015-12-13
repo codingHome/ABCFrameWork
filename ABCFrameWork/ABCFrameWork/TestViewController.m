@@ -20,13 +20,11 @@
 @implementation TestViewController
 
 - (void)viewDidLoad {
-    PNCircleChart * circleChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 80, ABC_SCREEN_WIDTH, 100) total:@(100) current:@(60) clockwise:NO shadow:NO shadowColor:[UIColor whiteColor]];
-//    circleChart.countingLabel.textColor = [UIColor blackColor];
-    circleChart.backgroundColor = [UIColor clearColor];
-    [circleChart setStrokeColor:PNGreen];
-    [circleChart strokeChart];
-    
-    [self.view addSubview:circleChart];
+//    PNCircleChart * circleChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 80, ABC_SCREEN_WIDTH, 100) total:@(100) current:@(60) clockwise:NO shadow:NO shadowColor:[UIColor whiteColor]];
+//    circleChart.backgroundColor = [UIColor clearColor];
+//    [circleChart setStrokeColor:PNGreen];
+//    [circleChart strokeChart];
+//    [self.view addSubview:circleChart];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

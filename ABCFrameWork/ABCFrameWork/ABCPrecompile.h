@@ -98,4 +98,8 @@
  */
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
+/**
+ *  程序主代理
+ */
+#define APP_DELEGATE    ((AppDelegate *)[UIApplication sharedApplication].delegate)
 #endif /* ABCPrecompile_h */

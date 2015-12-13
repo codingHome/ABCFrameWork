@@ -7,7 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ABCMosiacDataView.h"
+
+@protocol ABCMosiacViewDataSource <NSObject>
+
+-(NSArray *)mosaicElements;
+
+@end
+
+@protocol ABCMosiacViewDelegate <NSObject>
+
+-(void)mosaicViewDidTap:(ABCMosiacDataView *)dataView;
+
+@end
 
 @interface ABCMosiacView : UIView
+
+@property (nonatomic, weak) id<ABCMosiacViewDelegate> delegate;
+
+@property (nonatomic, weak) id<ABCMosiacViewDataSource> dataSource;
 
 @end
