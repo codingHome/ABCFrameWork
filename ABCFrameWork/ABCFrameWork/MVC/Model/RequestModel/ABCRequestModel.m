@@ -11,6 +11,14 @@
 
 @implementation ABCRequestModel
 
+- (NSString *)URL {
+    return nil;
+}
+
+- (ABCOperationMethod)method {
+    return 0;
+}
+
 - (NSString *)operationURL {
     NSMutableString *url = [NSMutableString string];
     NSArray *classProperty = [self classPropertyList];

@@ -6,9 +6,9 @@
 //  Copyright © 2015年 NationSky. All rights reserved.
 //
 
-#import "ABCCallBackModel.h"
+#import "ABCModel.h"
 
-@interface TestCallBackModel : ABCCallBackModel
+@interface TestCallBackModel : ABCModel
 
 @property (nonatomic, copy)NSString *error_code;
 @property (nonatomic, copy)NSString *reason;

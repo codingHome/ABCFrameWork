@@ -8,7 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, ABCOperationMethod){
+    ABCNetOperationGetMethod = 1,
+    ABCNetOperationPostMethod,
+    ABCNetOperationPostDataMethod
+};
+
 @interface ABCRequestModel : NSObject
+
+/**
+ *  请求URL 需要子类重写get方法
+ */
+@property (nonatomic, copy, readonly) NSString *URL;
+
+/**
+ *  请求方式
+ */
+@property (nonatomic, assign, readonly)ABCOperationMethod method;
 
 /**
  *  获取对象属性和值

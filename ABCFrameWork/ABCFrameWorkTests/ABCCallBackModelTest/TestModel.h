@@ -6,9 +6,9 @@
 //  Copyright © 2015年 NationSky. All rights reserved.
 //
 
-#import "ABCCallBackModel.h"
+#import "ABCModel.h"
 
-@interface TestModel : ABCCallBackModel
+@interface TestModel : ABCModel
 
 @property (nonatomic, assign) int uid;
 

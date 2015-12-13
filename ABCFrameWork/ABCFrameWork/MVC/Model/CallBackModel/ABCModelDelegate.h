@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol ABCCallBackModelDelegate <NSObject>
+@protocol ABCModelDelegate <NSObject>
 
 @optional
 

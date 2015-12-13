@@ -44,7 +44,7 @@
 		57F664571C1816BD003F4899 /* TestCallBackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F664561C1816BD003F4899 /* TestCallBackModel.m */; };
 		57F6645B1C18202C003F4899 /* ABCCallBackModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F6645A1C18202C003F4899 /* ABCCallBackModelTest.m */; };
 		57F664611C18209C003F4899 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F664601C18209C003F4899 /* TestModel.m */; };
-		57F72CD71C17D08600C0F36E /* ABCCallBackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CD61C17D08600C0F36E /* ABCCallBackModel.m */; };
+		57F72CD71C17D08600C0F36E /* ABCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CD61C17D08600C0F36E /* ABCModel.m */; };
 		57F72CDD1C17DB2400C0F36E /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CDC1C17DB2400C0F36E /* NSString+Additions.m */; };
 		57F72CE01C17DB2D00C0F36E /* UIView+DDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CDF1C17DB2D00C0F36E /* UIView+DDAddition.m */; };
 		57F72CE91C17FF9700C0F36E /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CE81C17FF9700C0F36E /* TestViewController.m */; };
@@ -70,7 +70,7 @@
 		5702722E1C17C9DF000AD144 /* ABCDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCDataBase.m; sourceTree = "<group>"; };
 		5702722F1C17C9DF000AD144 /* ABCSqlHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCSqlHandler.h; sourceTree = "<group>"; };
 		570272301C17C9DF000AD144 /* ABCSqlHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCSqlHandler.m; sourceTree = "<group>"; };
-		5726DF941C1A67DD00D6ACB3 /* ABCCallBackModelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCCallBackModelDelegate.h; sourceTree = "<group>"; };
+		5726DF941C1A67DD00D6ACB3 /* ABCModelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCModelDelegate.h; sourceTree = "<group>"; };
 		574E7BB01AEF29B30042E538 /* ABCFrameWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABCFrameWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		574E7BB41AEF29B30042E538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		574E7BB51AEF29B30042E538 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -139,8 +139,8 @@
 		57F6645A1C18202C003F4899 /* ABCCallBackModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCCallBackModelTest.m; path = ABCCallBackModelTest/ABCCallBackModelTest.m; sourceTree = "<group>"; };
 		57F6645F1C18209C003F4899 /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestModel.h; path = ABCCallBackModelTest/TestModel.h; sourceTree = "<group>"; };
 		57F664601C18209C003F4899 /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestModel.m; path = ABCCallBackModelTest/TestModel.m; sourceTree = "<group>"; };
-		57F72CD51C17D08600C0F36E /* ABCCallBackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCCallBackModel.h; sourceTree = "<group>"; };
-		57F72CD61C17D08600C0F36E /* ABCCallBackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCCallBackModel.m; sourceTree = "<group>"; };
+		57F72CD51C17D08600C0F36E /* ABCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCModel.h; sourceTree = "<group>"; };
+		57F72CD61C17D08600C0F36E /* ABCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCModel.m; sourceTree = "<group>"; };
 		57F72CDB1C17DB2400C0F36E /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		57F72CDC1C17DB2400C0F36E /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		57F72CDE1C17DB2D00C0F36E /* UIView+DDAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DDAddition.h"; sourceTree = "<group>"; };
@@ -452,9 +452,9 @@
 		57F72CD41C17D05F00C0F36E /* CallBackModel */ = {
 			isa = PBXGroup;
 			children = (
-				57F72CD51C17D08600C0F36E /* ABCCallBackModel.h */,
-				57F72CD61C17D08600C0F36E /* ABCCallBackModel.m */,
-				5726DF941C1A67DD00D6ACB3 /* ABCCallBackModelDelegate.h */,
+				57F72CD51C17D08600C0F36E /* ABCModel.h */,
+				57F72CD61C17D08600C0F36E /* ABCModel.m */,
+				5726DF941C1A67DD00D6ACB3 /* ABCModelDelegate.h */,
 			);
 			path = CallBackModel;
 			sourceTree = "<group>";
@@ -743,7 +743,7 @@
 				57F72CE91C17FF9700C0F36E /* TestViewController.m in Sources */,
 				574E7BB61AEF29B30042E538 /* main.m in Sources */,
 				574E7BE71AEF39090042E538 /* ABCNetOperation.m in Sources */,
-				57F72CD71C17D08600C0F36E /* ABCCallBackModel.m in Sources */,
+				57F72CD71C17D08600C0F36E /* ABCModel.m in Sources */,
 				57526FDB1C1A965D00FAD42C /* ABCRoundButton.m in Sources */,
 				57526FDE1C1A968600FAD42C /* ABCRoundImageView.m in Sources */,
 				57526FF91C1AC91E00FAD42C /* ABCMosiacDataArray.m in Sources */,

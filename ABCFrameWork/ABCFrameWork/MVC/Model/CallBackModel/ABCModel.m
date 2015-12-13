@@ -1,19 +1,19 @@
 //
-//  ABCCallBackModel.m
+//  ABCModel.m
 //  ABCFrameWork
 //
 //  Created by Robert on 15/12/9.
 //  Copyright © 2015年 NationSky. All rights reserved.
 //
 
-#import "ABCCallBackModel.h"
+#import "ABCModel.h"
 #import "ABCSqlHandler.h"
 #import "ABCDataBase.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import "FMDB.h"
 
-@interface ABCCallBackModel ()
+@interface ABCModel ()
 
 {
 @protected
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation ABCCallBackModel
+@implementation ABCModel
 
 - (id)init
 {
@@ -237,7 +237,7 @@ va_list args_update;
     NSMutableArray *array = [NSMutableArray array];
     
     while ([result next]) {
-        ABCCallBackModel *obj=[[[self class] alloc] init];
+        ABCModel *obj=[[[self class] alloc] init];
         NSDictionary *dictionary=[result resultDictionary];
         obj->abc_id = [[dictionary valueForKey:@"abc_id"] longValue];
         for (NSString *key in dictionary) {
@@ -328,6 +328,7 @@ va_list args_update;
             [array addObject:obj];
         }
     }
+    [result close];
     return array;
 }
 

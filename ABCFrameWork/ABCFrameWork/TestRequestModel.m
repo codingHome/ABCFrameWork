@@ -10,4 +10,12 @@
 
 @implementation TestRequestModel
 
+- (NSString *)URL {
+    return @"http://web.juhe.cn:8080/environment/air/cityair?";
+}
+
+- (ABCOperationMethod)method {
+    return ABCNetOperationGetMethod;
+}
+
 @end

@@ -58,12 +58,13 @@
     testModel.city = @"beijing";
     testModel.key = @"ec1c681fdacfcc3d4dfc530981b86a82";
     
-//    ABCNetOperation *testOperation = [[ABCNetOperation alloc] initWithUrl:@"http://web.juhe.cn:8080/environment/air/cityair?" Model:testModel OperationMethod:ABCNetOperationGetMethod];
+    
+//    ABCNetOperation *testOperation = [[ABCNetOperation alloc] initWithModel:testModel];
 //    testOperation.delegate = self;
 //    [testOperation startOperation];
     
-    [ABCNetOperation operationWithUrl:@"http://web.juhe.cn:8080/environment/air/cityair?" Model:testModel OperationMethod:ABCNetOperationGetMethod CallBack:^(id result, NSError *error) {
-        
+    [ABCNetOperation operationWithModel:testModel CallBack:^(id result, NSError *error) {
+    
     }];
 }
 

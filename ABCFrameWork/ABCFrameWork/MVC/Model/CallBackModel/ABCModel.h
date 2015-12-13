@@ -1,5 +1,5 @@
 //
-//  ABCCallBackModel.h
+//  ABCModel.h
 //  ABCFrameWork
 //
 //  Created by Robert on 15/12/9.
@@ -7,9 +7,9 @@
 //
 
 #import <JSONModel/JSONModel.h>
-#import "ABCCallBackModelDelegate.h"
+#import "ABCModelDelegate.h"
 
-@interface ABCCallBackModel : JSONModel <ABCCallBackModelDelegate>
+@interface ABCModel : JSONModel <ABCModelDelegate>
 
 {
     @public

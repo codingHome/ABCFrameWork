@@ -9,12 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "ABCNetRequest.h"
 
-typedef NS_ENUM(NSUInteger, OperationMethod){
-    ABCNetOperationGetMethod = 1,
-    ABCNetOperationPostMethod,
-    ABCNetOperationPostDataMethod
-};
-
 typedef void(^CallBack)(id result, NSError *error);
 
 @class ABCNetOperation;
@@ -32,21 +26,6 @@ typedef void(^CallBack)(id result, NSError *error);
 @interface ABCNetOperation : NSObject
 
 /**
- *  是否需要缓存 默认缓存
- */
-@property (nonatomic, assign)BOOL cache;
-
-/**
- *  是否显示菊花界面 默认显示
- */
-@property (nonatomic, assign)BOOL progressHUB;
-
-/**
- *  请求方式
- */
-@property (nonatomic, assign)OperationMethod method;
-
-/**
  *  请求体
  */
 @property (nonatomic, strong)RequestBodyBlock bodyBlock;
@@ -61,11 +40,10 @@ typedef void(^CallBack)(id result, NSError *error);
  *
  *  @param url    请求地址
  *  @param model  请求对象
- *  @param method 请求方式
  *
  *  @return 实例对象
  */
-- (instancetype)initWithUrl:(NSString *)url Model:(ABCRequestModel *)model OperationMethod:(OperationMethod)method;
+- (instancetype)initWithModel:(ABCRequestModel *)model;
 
 /**
  *  开始请求
@@ -80,6 +58,6 @@ typedef void(^CallBack)(id result, NSError *error);
  *  @param method   请求方式
  *  @param callBack 请求回调
  */
-+ (void)operationWithUrl:(NSString *)url Model:(ABCRequestModel *)model OperationMethod:(OperationMethod)method CallBack:(CallBack)callBack;
++ (void)operationWithModel:(ABCRequestModel *)model CallBack:(CallBack)callBack;
 
 @end
