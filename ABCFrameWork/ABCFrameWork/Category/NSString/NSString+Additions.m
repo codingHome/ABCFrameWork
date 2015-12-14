@@ -120,8 +120,8 @@
 - (NSString *) escapeHTML{
 	NSMutableString *s = [NSMutableString string];
 	
-	int start = 0;
-	int len = [self length];
+	NSUInteger start = 0;
+	NSUInteger len = [self length];
 	NSCharacterSet *chs = [NSCharacterSet characterSetWithCharactersInString:@"<>&\""];
 	
 	while (start < len) {

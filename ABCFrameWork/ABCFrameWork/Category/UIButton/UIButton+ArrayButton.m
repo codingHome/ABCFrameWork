@@ -18,8 +18,8 @@ int Top = 50;
 + (NSArray *)ButtonWithArray:(NSArray *)array Gap:(NSUInteger)gap {
     NSMutableArray *buttonArray = [NSMutableArray array];
     
-    int totalX = 0;
-    int totalY = 0;
+    NSUInteger totalX = 0;
+    NSUInteger totalY = 0;
     for (int i = 0; i < array.count; i++) {
         NSString *title = array[i];
         UIButton *button = [[self alloc] buttonSetting];

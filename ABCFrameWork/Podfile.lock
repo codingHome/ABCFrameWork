@@ -44,6 +44,7 @@ PODS:
   - IBActionSheet (0.0.2)
   - JSONModel (1.1.2)
   - Masonry (0.6.2)
+  - MJRefresh (3.0.7)
   - PNChart (0.8.7):
     - UICountingLabel (~> 1.2.0)
   - pop (1.0.7)
@@ -62,6 +63,7 @@ DEPENDENCIES:
   - IBActionSheet
   - JSONModel
   - Masonry
+  - MJRefresh
   - PNChart
   - pop
   - Reachability
@@ -76,6 +78,7 @@ SPEC CHECKSUMS:
   IBActionSheet: 4028206b0561772c3674a339fb4a7265d55a6f8b
   JSONModel: 216584d0311b053ff714f1d6cb700dbf890847bc
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
+  MJRefresh: f3e1228ec3d38c7ba5208d58032631a52f39f495
   PNChart: c1755716bbd45386d2035b2bf2ce73e6d3f8cb22
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96

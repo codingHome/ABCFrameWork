@@ -26,6 +26,10 @@
  */
 @property (nonatomic, strong) UITapGestureRecognizer *tapGR;
 
+@property (nonatomic, assign) CGSize imageSize;
+
+@property (nonatomic, assign) CGFloat titleHeight;
+
 @end
 
 @implementation ABCMosiacDataView
@@ -36,12 +40,16 @@
         self.layer.borderWidth = 1;
         self.layer.borderColor = [UIColor blackColor].CGColor;
         self.clipsToBounds = YES;
+
+        [self addGestureRecognizer:self.tapGR];
         
-        [self addGestureRecognizer:_tapGR];
+        [self addSubview:self.imageView];
         
-        [self addSubview:_imageView];
+        [self addSubview:self.titleLabel];
         
-        [self addSubview:_titleLabel];
+        _imageSize = CGSizeMake(self.width, self.height);
+        
+        _titleHeight = 15;
     }
     return self;
 }
@@ -55,13 +63,16 @@
     
     WS(weakSelf);
     [_imageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(weakSelf);
+        make.top.mas_equalTo(weakSelf.mas_top);
+        make.left.mas_equalTo(weakSelf.mas_left);
+        make.width.mas_equalTo(weakSelf.imageSize.width);
+        make.height.mas_equalTo(weakSelf.imageSize.height);
     }];
     
     [_titleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.and.right.mas_equalTo(weakSelf);
-        make.bottom.mas_equalTo(weakSelf.mas_bottom);
-        make.top.mas_equalTo(weakSelf.top).offset(weakSelf.width / 2);
+        make.left.and.right.mas_equalTo(weakSelf).offset(5);
+        make.bottom.mas_equalTo(weakSelf.mas_bottom).offset(-5);
+        make.height.mas_equalTo(weakSelf.titleHeight);
     }];
     
     [super updateConstraints];
@@ -96,18 +107,23 @@
     switch (aSize) {
         case 0:
             retVal = [UIFont systemFontOfSize:36];
+            self.titleHeight = 36;
             break;
         case 1:
             retVal = [UIFont systemFontOfSize:18];
+            self.titleHeight = 18;
             break;
         case 2:
             retVal = [UIFont systemFontOfSize:18];
+            self.titleHeight = 18;
             break;
         case 3:
             retVal = [UIFont systemFontOfSize:15];
+            self.titleHeight = 15;
             break;
         default:
             retVal = [UIFont systemFontOfSize:15];
+            self.titleHeight = 15;
             break;
     }
     
@@ -118,7 +134,6 @@
 - (UIImageView *)imageView {
     if (!_imageView) {
         _imageView = [[UIImageView alloc] init];
-        _imageView.contentMode = UIViewContentModeScaleAspectFit;
         _imageView.alpha = 0.0;
     }
     return _imageView;
@@ -151,20 +166,56 @@
 - (void)setDataModel:(ABCMosiacDataModel *)dataModel {
     _dataModel = dataModel;
     
+    
+    _titleLabel.text = _dataModel.title;
+    _titleLabel.font = [self fontWithModuleSize:_dataModel.imageSize];
+    
+    NSDictionary *attribute = @{NSFontAttributeName: self.titleLabel.font};
+    
+    CGSize newSize = [dataModel.title boundingRectWithSize:self.titleLabel.size
+                                                   options:
+                      NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                                attributes:attribute context:nil].size;
+    
+    self.titleHeight = newSize.height;
+    
     [_imageView sd_setImageWithURL:[NSURL URLWithString:_dataModel.imageUrl] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         if (!error) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                
+                CGSize imgFinalSize = CGSizeZero;
+                
+                if (image.size.width < image.size.height){
+                    imgFinalSize.width = self.bounds.size.width;
+                    imgFinalSize.height = self.bounds.size.width * image.size.height / image.size.width;
+                    
+                    if (imgFinalSize.height < self.bounds.size.height){
+                        imgFinalSize.width = self.bounds.size.height * self.bounds.size.width / imgFinalSize.height;
+                        imgFinalSize.height = self.bounds.size.height;
+                    }
+                }else{
+                    imgFinalSize.height = self.bounds.size.height;
+                    imgFinalSize.width = self.bounds.size.height * image.size.width / image.size.height;
+                    
+                    if (imgFinalSize.width < self.bounds.size.width){
+                        imgFinalSize.height = self.bounds.size.height * self.bounds.size.width / imgFinalSize.height;
+                        imgFinalSize.width = self.bounds.size.width;
+                    }
+                }
+                
+                self.imageSize = imgFinalSize;
+                
+                [self setNeedsUpdateConstraints];
+                
                 [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                     _imageView.alpha = 1.0;
                 } completion:^(BOOL finished) {
                     
                 }];
+                
             });
         }
     }];
-    
-    _titleLabel.text = _dataModel.title;
-    _titleLabel.font = [self fontWithModuleSize:_dataModel.imageSize];
 }
 
 @end

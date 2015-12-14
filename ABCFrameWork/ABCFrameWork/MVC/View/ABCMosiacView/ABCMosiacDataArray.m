@@ -50,6 +50,9 @@
         _columns = numberOfColumns;
         _rows = numberOfRows;
         _elements = [[NSMutableArray alloc] initWithCapacity:capacity];
+        for(NSInteger i=0; i<capacity; i++){
+            [_elements addObject:[NSNull null]];
+        }
     }
     return self;
 }
@@ -61,7 +64,9 @@
     
     if (elementIndex != INVALID_ELEMENT_INDEX){
         
-        retVal = [_elements objectAtIndex:elementIndex];
+        if ([_elements objectAtIndex:elementIndex] != [NSNull null]){
+            retVal = [_elements objectAtIndex:elementIndex];
+        }
     }
     
     return retVal;

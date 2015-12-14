@@ -10,10 +10,14 @@
 #import "TestRequestModel.h"
 #import "PNChart.h"
 #import "ABCVidepPlayerController.h"
+#import "ABCMosiacDataModel.h"
+#import "ABCMosiacView.h"
 
-@interface TestViewController ()
+@interface TestViewController () <ABCMosiacViewDataSource, ABCMosiacViewDelegate>
 
 @property (nonatomic, strong) ABCVidepPlayerController *videoController;
+
+@property (nonatomic, strong) NSMutableArray *elements;
 
 @end
 
@@ -25,6 +29,27 @@
 //    [circleChart setStrokeColor:PNGreen];
 //    [circleChart strokeChart];
 //    [self.view addSubview:circleChart];
+    self.elements = [NSMutableArray array];
+    ABCMosiacView *mosaicView = [[ABCMosiacView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
+    [self.view addSubview:mosaicView];
+    mosaicView.dataSource = self;
+    mosaicView.delegate = self;
+}
+
+- (NSArray *)mosaicElements {
+    return self.elements;
+}
+
+- (void)mosaicViewDidTap:(ABCMosiacDataView *)dataView {
+    
+}
+
+- (void)mosaicViewHeaderRefresh:(ABCMosiacView *)dataView {
+    
+}
+
+- (void)mosaicViewFooterRefresh:(ABCMosiacView *)dataView {
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

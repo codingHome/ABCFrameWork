@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ABCMosiacDataView.h"
 
+@class ABCMosiacView;
+
 @protocol ABCMosiacViewDataSource <NSObject>
 
 -(NSArray *)mosaicElements;
@@ -17,7 +19,11 @@
 
 @protocol ABCMosiacViewDelegate <NSObject>
 
--(void)mosaicViewDidTap:(ABCMosiacDataView *)dataView;
+- (void)mosaicViewDidTap:(ABCMosiacDataView *)dataView;
+
+- (void)mosaicViewHeaderRefresh:(ABCMosiacView *)dataView;
+
+- (void)mosaicViewFooterRefresh:(ABCMosiacView *)dataView;
 
 @end
 
@@ -26,5 +32,7 @@
 @property (nonatomic, weak) id<ABCMosiacViewDelegate> delegate;
 
 @property (nonatomic, weak) id<ABCMosiacViewDataSource> dataSource;
+
+- (void)refresh;
 
 @end
