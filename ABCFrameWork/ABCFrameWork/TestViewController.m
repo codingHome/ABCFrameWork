@@ -29,11 +29,12 @@
 //    [circleChart setStrokeColor:PNGreen];
 //    [circleChart strokeChart];
 //    [self.view addSubview:circleChart];
-    self.elements = [NSMutableArray array];
-    ABCMosiacView *mosaicView = [[ABCMosiacView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
-    [self.view addSubview:mosaicView];
-    mosaicView.dataSource = self;
-    mosaicView.delegate = self;
+
+//    self.elements = [NSMutableArray array];
+//    ABCMosiacView *mosaicView = [[ABCMosiacView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
+//    [self.view addSubview:mosaicView];
+//    mosaicView.dataSource = self;
+//    mosaicView.delegate = self;
 }
 
 - (NSArray *)mosaicElements {
@@ -53,8 +54,8 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self test];
-//    [self testVidio];
+//    [self test];
+    [self testVidio];
 }
 
 - (void)testVidio {
@@ -74,6 +75,8 @@
         [self.videoController showInWindow];
     }
     self.videoController.contentURL = url;
+    self.videoController.startTime = 8.71794891;
+    [self.videoController startPlay];
 }
 
 - (void)test {

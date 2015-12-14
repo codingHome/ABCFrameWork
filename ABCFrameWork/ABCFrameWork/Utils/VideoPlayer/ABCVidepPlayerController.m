@@ -17,7 +17,7 @@ static const CGFloat kVideoPlayerControllerAnimationTimeinterval = 0.3f;
 @property (nonatomic, assign) BOOL isFullscreenMode;
 @property (nonatomic, assign) CGRect originFrame;
 @property (nonatomic, strong) NSTimer *durationTimer;
-
+@property (nonatomic, assign) BOOL playbackDurationSet;
 @end
 
 
@@ -46,9 +46,8 @@ static const CGFloat kVideoPlayerControllerAnimationTimeinterval = 0.3f;
 
 - (void)setContentURL:(NSURL *)contentURL
 {
-//    [self stop];
+    [self stop];
     [super setContentURL:contentURL];
-    [self play];
 }
 
 #pragma mark - Publick Method
@@ -84,11 +83,22 @@ static const CGFloat kVideoPlayerControllerAnimationTimeinterval = 0.3f;
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
 }
 
+- (void)startPlay {
+    [self stop];
+    self.playbackDurationSet = YES;
+    if (_startTime) {
+        [self setInitialPlaybackTime:_startTime];
+        [self play];
+        self.playbackDurationSet = NO;
+    }
+    [self play];
+}
+
 #pragma mark - Private Method
 
 - (void)configObserver
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onMPMoviePlayerPlaybackStateDidChangeNotification) name:MPMoviePlayerPlaybackStateDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onMPMoviePlayerPlaybackStateDidChangeNotification:) name:MPMoviePlayerPlaybackStateDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onMPMoviePlayerLoadStateDidChangeNotification) name:MPMoviePlayerLoadStateDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onMPMoviePlayerReadyForDisplayDidChangeNotification) name:MPMoviePlayerReadyForDisplayDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onMPMovieDurationAvailableNotification) name:MPMovieDurationAvailableNotification object:nil];
@@ -106,9 +116,14 @@ static const CGFloat kVideoPlayerControllerAnimationTimeinterval = 0.3f;
 }
 
 #pragma mark - Notification
-- (void)onMPMoviePlayerPlaybackStateDidChangeNotification
+- (void)onMPMoviePlayerPlaybackStateDidChangeNotification:(NSNotification *)notification
 {
+    MPMoviePlayerController* player = (MPMoviePlayerController*)notification.object;
     if (self.playbackState == MPMoviePlaybackStatePlaying) {
+        if (!self.playbackDurationSet) {
+            [player setCurrentPlaybackTime:player.initialPlaybackTime];
+            self.playbackDurationSet = YES;
+        }
         [self startDurationTimer];
         [self.videoControl playingVideo];
         [self.videoControl autoFadeOutControlBar];

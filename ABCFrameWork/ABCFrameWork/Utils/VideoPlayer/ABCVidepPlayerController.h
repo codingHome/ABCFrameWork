@@ -12,8 +12,12 @@
 
 @property (nonatomic, copy)void(^dimissCompleteBlock)(void);
 
+@property (nonatomic, assign)double startTime;
+
 - (instancetype)initWithFrame:(CGRect)frame;
 - (void)showInWindow;
 - (void)dismiss;
+
+- (void)startPlay;
 
 @end
