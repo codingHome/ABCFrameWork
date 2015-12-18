@@ -12,6 +12,7 @@
 #import "ABCVidepPlayerController.h"
 #import "ABCMosiacDataModel.h"
 #import "ABCMosiacView.h"
+#import "ABCCarouselView.h"
 
 @interface TestViewController () <ABCMosiacViewDataSource, ABCMosiacViewDelegate>
 
@@ -35,6 +36,10 @@
 //    [self.view addSubview:mosaicView];
 //    mosaicView.dataSource = self;
 //    mosaicView.delegate = self;
+    
+    ABCCarouselView *carouseView = [ABCCarouselView carouselViewWithFrame:CGRectMake(0, 100, self.view.width, self.view.height * 0.5) Images:@[@"001.jpg",@"002.jpg",@"003.jpg",@"004.jpg"]];
+//    carouseView.dataArray = @[@"001.jpg",@"002.jpg",@"003.jpg",@"004.jpg"];
+    [self.view addSubview:carouseView];
 }
 
 - (NSArray *)mosaicElements {
@@ -55,7 +60,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self test];
-    [self testVidio];
+//    [self testVidio];
 }
 
 - (void)testVidio {

@@ -36,6 +36,9 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - ChameleonFramework (2.0.4):
+    - ChameleonFramework/Default (= 2.0.4)
+  - ChameleonFramework/Default (2.0.4)
   - FMDB (2.5):
     - FMDB/standard (= 2.5)
   - FMDB/common (2.5)
@@ -59,6 +62,7 @@ DEPENDENCIES:
   - AFNetworking
   - Aspects
   - BlocksKit
+  - ChameleonFramework
   - FMDB
   - IBActionSheet
   - JSONModel
@@ -74,6 +78,7 @@ SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  ChameleonFramework: 5abe69b1f2a6cc79c3c435fcd9d3d855748225ee
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
   IBActionSheet: 4028206b0561772c3674a339fb4a7265d55a6f8b
   JSONModel: 216584d0311b053ff714f1d6cb700dbf890847bc
