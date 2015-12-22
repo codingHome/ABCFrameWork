@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TestViewController : UIViewController <ABCNetOperationProtocol>
+@interface TestViewController : UIViewController
 
 @end

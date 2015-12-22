@@ -6,14 +6,14 @@
 //  Copyright (c) 2015年 NationSky. All rights reserved.
 //
 
-#import "AFHTTPRequestOperationManager.h"
+#import "AFHTTPSessionManager.h"
 #import "ABCRequestModel.h"
 
 typedef void (^RequestSuccessBlock)(id result, NSError *error);
 typedef void (^RequestFailBlock)(id result, NSError *error);
 typedef void (^RequestBodyBlock) (id<AFMultipartFormData> formData);
 
-@interface ABCNetRequest : AFHTTPRequestOperationManager
+@interface ABCNetRequest : AFHTTPSessionManager
 
 /**
  *  单例方法

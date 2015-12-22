@@ -8,7 +8,6 @@
 
 #import "ABCMosiacView.h"
 #import "ABCMosiacDataArray.h"
-#import "MJRefresh.h"
 
 @interface ABCMosiacView () <ABCMosiacDataViewDelegate>
 
@@ -39,23 +38,7 @@
     _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
     _scrollView.backgroundColor = [UIColor blackColor];
     
-    _scrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
-    
-    _scrollView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
-    
     [self addSubview:_scrollView];
-}
-
-- (void)headerRefresh {
-    if (_delegate && [_delegate respondsToSelector:@selector(mosaicViewHeaderRefresh:)]) {
-        [_delegate mosaicViewHeaderRefresh:self];
-    }
-}
-
-- (void)footerRefresh {
-    if (_delegate && [_delegate respondsToSelector:@selector(mosaicViewFooterRefresh:)]) {
-        [_delegate mosaicViewFooterRefresh:self];
-    }
 }
 
 - (void)refresh{

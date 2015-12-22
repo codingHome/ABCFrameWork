@@ -21,10 +21,6 @@
 
 - (void)mosaicViewDidTap:(ABCMosiacDataView *)dataView;
 
-- (void)mosaicViewHeaderRefresh:(ABCMosiacView *)dataView;
-
-- (void)mosaicViewFooterRefresh:(ABCMosiacView *)dataView;
-
 @end
 
 @interface ABCMosiacView : UIView

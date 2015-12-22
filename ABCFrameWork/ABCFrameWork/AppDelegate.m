@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "TestViewController.h"
+#import "TestModel.h"
+#import "ABCDB.h"
+#import "MJExtension.h"
 
 @interface AppDelegate ()
 
@@ -25,7 +28,28 @@
     
     [self.window makeKeyAndVisible];
     
+    [self testDB];
+    
     return YES;
+}
+
+- (void)testDB {
+    NSString * dbPath = [NSString stringWithFormat:@"%@/Documents/data.db", NSHomeDirectory()];
+    
+    NSLog(@"%@",dbPath);
+    
+    [[ABCDB sharedDB] initDBPath:dbPath];
+    [[ABCDB sharedDB] createTable:[TestModel class]];
+    
+    NSDictionary *dic = @{@"name":@"robert",
+                          @"age":@"25",
+                          @"telNumber":@"110"};
+    
+    TestModel *dbModel = [TestModel mj_objectWithKeyValues:dic];
+    
+    NSArray *temp = [[ABCDB sharedDB] queryObjectFromTable:[TestModel class] conditions:@"name = ?" args:@[@"robert"] order:nil];
+    
+    [[ABCDB sharedDB] insertTable:[TestModel class] object:dbModel];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
