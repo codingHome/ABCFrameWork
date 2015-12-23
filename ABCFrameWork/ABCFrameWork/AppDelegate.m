@@ -28,7 +28,7 @@
     
     [self.window makeKeyAndVisible];
     
-    [self testDB];
+//    [self testDB];
     
     return YES;
 }

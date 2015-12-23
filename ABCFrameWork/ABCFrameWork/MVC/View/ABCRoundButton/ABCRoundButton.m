@@ -15,10 +15,10 @@
     [super drawRect:rect];
     CALayer * layer = [self layer];
     [layer setMasksToBounds:YES];
-    [layer setCornerRadius:self.frame.size.height/2.0];
+    [layer setCornerRadius:5];
     
     [layer setBorderWidth:0.1];
-    [layer setBorderColor:[[UIColor clearColor] CGColor]];
+    [layer setBorderColor:[[UIColor whiteColor] CGColor]];
     
     layer.shouldRasterize = YES;
     layer.rasterizationScale = [UIScreen mainScreen].scale;
@@ -29,10 +29,10 @@
     [super awakeFromNib];
     CALayer * layer = [self layer];
     [layer setMasksToBounds:YES];
-    [layer setCornerRadius:self.frame.size.height/2.0];
+    [layer setCornerRadius:5];
     
     [layer setBorderWidth:0.1];
-    [layer setBorderColor:[[UIColor clearColor] CGColor]];
+    [layer setBorderColor:[[UIColor whiteColor] CGColor]];
     
     layer.shouldRasterize = YES;
     layer.rasterizationScale = [UIScreen mainScreen].scale;

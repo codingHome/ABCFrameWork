@@ -20,12 +20,12 @@ typedef void(^QueryResultBlock)(NSArray *results);
 /**
  *	@brief	当前数据库路径
  */
-@property (nonatomic, strong) NSString      *dbPath;
+@property (nonatomic, strong) NSString *dbPath;
 
 /**
  *	@brief	设置数据库密码
  */
-@property (nonatomic, strong) NSString      *password;
+@property (nonatomic, strong) NSString *password;
 
 /**
  *	@brief	单例
