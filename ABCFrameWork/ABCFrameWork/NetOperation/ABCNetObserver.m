@@ -19,7 +19,7 @@ NSString *const kABCNetStatusChangeNotification= @"kABCNetStatusChangeNotificati
 
 @implementation ABCNetObserver
 
-+ (instancetype)sharedNetObserver {
++ (ABCNetObserver *)sharedNetObserver {
     static dispatch_once_t onceToken;
     static ABCNetObserver *sharedNetObserver;
     dispatch_once(&onceToken, ^{

@@ -14,6 +14,6 @@
 /**
  *  单例方法
  */
-+ (instancetype)shareInstance;
++ (ABCSearchDelegate *)sharedDelegate;
 
 @end

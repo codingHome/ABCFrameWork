@@ -11,7 +11,7 @@
 #import "ABCMosiacDataModel.h"
 #import "ABCMosiacView.h"
 #import "ABCCarouselView.h"
-#import "ABCScaleImageView.h"
+#import "ABCScaleImagesViewController.h"
 
 @interface TestViewController ()
 
@@ -22,14 +22,15 @@
 @implementation TestViewController
 
 - (void)viewDidLoad {
-    ABCScaleImageView *imageView = [[ABCScaleImageView alloc] initWithFrame:self.view.bounds];
-    imageView.image = [UIImage imageNamed:@"iosImage.jpg"];
-    [self.view addSubview:imageView];
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self testVidio];
-    
+    ABCScaleImagesViewController *vc = [[ABCScaleImagesViewController alloc] init];
+    vc.imagePaths = @[@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8"];
+    vc.currentImagePath = @"2";
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)testVidio {

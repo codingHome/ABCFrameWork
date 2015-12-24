@@ -23,7 +23,7 @@ extern NSString *const kABCNetStatusChangeNotification;
  *
  *  @return 实例变量
  */
-+ (instancetype)sharedNetObserver;
++ (ABCNetObserver *)sharedNetObserver;
 
 /**
  *  当前网络状态

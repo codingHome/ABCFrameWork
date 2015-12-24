@@ -42,6 +42,10 @@ static const CGFloat KABCMaximumZoomScale = 3.0;
     return self;
 }
 
+- (void)restScale {
+    [self.scrollView setZoomScale:1.0];
+}
+
 #pragma mark - Masonry
 + (BOOL)requiresConstraintBasedLayout {
     return YES;
@@ -53,8 +57,8 @@ static const CGFloat KABCMaximumZoomScale = 3.0;
     [_saveButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(weakSelf.mas_bottom).offset(-10);
         make.centerX.mas_equalTo(weakSelf.mas_centerX);
-        make.width.mas_equalTo(35);
-        make.height.mas_equalTo(25);
+        make.width.mas_equalTo(40);
+        make.height.mas_equalTo(30);
     }];
     
     [super updateConstraints];

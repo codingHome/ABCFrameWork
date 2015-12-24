@@ -20,7 +20,7 @@ typedef void (^RequestBodyBlock) (id<AFMultipartFormData> formData);
  *
  *  @return 网络请求对象
  */
-+ (instancetype)sharedNetRequest;
++ (ABCNetRequest *)sharedNetRequest;
 
 /**
  *  GET请求

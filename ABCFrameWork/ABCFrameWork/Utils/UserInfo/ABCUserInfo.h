@@ -15,7 +15,7 @@
  *
  *  @return 实例变量
  */
-+(instancetype)sharedUserInfo;
++(ABCUserInfo *)sharedUserInfo;
 
 /**
  *  是否首次登陆

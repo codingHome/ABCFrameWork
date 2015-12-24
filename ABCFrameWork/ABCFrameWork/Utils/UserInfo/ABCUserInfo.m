@@ -12,7 +12,7 @@ static NSString *ABC_USER_INFO = @"ABC_USER_INFO";
 
 @implementation ABCUserInfo
 
-+(instancetype)sharedUserInfo {
++(ABCUserInfo *)sharedUserInfo {
     static dispatch_once_t onceToken;
     static ABCUserInfo *sharedUserInfo;
     dispatch_once(&onceToken, ^{

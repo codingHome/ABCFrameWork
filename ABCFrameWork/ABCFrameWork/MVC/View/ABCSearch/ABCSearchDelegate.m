@@ -31,7 +31,7 @@
     self.shadeLabel = nil;
 }
 
-+ (instancetype)shareInstance {
++ (ABCSearchDelegate *)sharedDelegate {
     static ABCSearchDelegate *sharedDelegate;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

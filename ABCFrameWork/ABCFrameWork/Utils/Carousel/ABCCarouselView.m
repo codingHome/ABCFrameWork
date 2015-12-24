@@ -32,6 +32,11 @@ const NSUInteger KABCanimationInterVal = 0.8;
 
 @implementation ABCCarouselView
 
+- (void)dealloc {
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
 + (instancetype)carouselViewWithFrame:(CGRect)frame Images:(NSArray *)images {
     ABCCarouselView *carouselView = [[[self class] alloc] initWithFrame:frame Images:images];
     return carouselView;

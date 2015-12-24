@@ -17,5 +17,6 @@
 
 #import "Masonry.h"
 #import "UIView+DDAddition.h"
+#import "NSString+Additions.h"
 
 #endif

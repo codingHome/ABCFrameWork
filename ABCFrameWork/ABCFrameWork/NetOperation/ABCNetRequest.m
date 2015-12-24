@@ -10,7 +10,7 @@
 
 @implementation ABCNetRequest
 
-+ (instancetype)sharedNetRequest {
++ (ABCNetRequest *)sharedNetRequest {
     static dispatch_once_t onceToken;
     static ABCNetRequest *sharedNetRequest;
     dispatch_once(&onceToken, ^{

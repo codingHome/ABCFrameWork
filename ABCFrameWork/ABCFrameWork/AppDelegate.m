@@ -11,6 +11,7 @@
 #import "TestModel.h"
 #import "ABCDB.h"
 #import "MJExtension.h"
+#import "ABCZipManager.h"
 
 @interface AppDelegate ()
 
@@ -29,6 +30,7 @@
     [self.window makeKeyAndVisible];
     
 //    [self testDB];
+//    [self testZip];
     
     return YES;
 }
@@ -50,6 +52,18 @@
     NSArray *temp = [[ABCDB sharedDB] queryObjectFromTable:[TestModel class] conditions:@"name = ?" args:@[@"robert"] order:nil];
     
     [[ABCDB sharedDB] insertTable:[TestModel class] object:dbModel];
+}
+
+- (void)testZip {
+//    NSString *filePath = @"/Users/yangqihui/Desktop/main.m";
+//    [[ABCZipManager sharedZipManager] zipFile:filePath password:@"123" complete:^(BOOL result, NSString *errorMessage) {
+//        NSLog(@"%d,%@",result, errorMessage);
+//    }];
+
+    NSString *zipFilePath = @"/Users/yangqihui/Desktop/main.zip";
+    [[ABCZipManager sharedZipManager] unZIpFile:zipFilePath password:@"123" complete:^(BOOL result, NSString *errorMessage) {
+        NSLog(@"%d,%@",result, errorMessage);
+    }];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

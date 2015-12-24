@@ -15,4 +15,9 @@
  */
 @property (nonatomic, strong) UIImage *image;
 
+/**
+ *  重置放大倍数
+ */
+- (void)restScale;
+
 @end
