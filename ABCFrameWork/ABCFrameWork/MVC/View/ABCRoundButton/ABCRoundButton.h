@@ -10,4 +10,14 @@
 
 @interface ABCRoundButton : UIButton
 
+/**
+ *  边框颜色
+ */
+@property (nonatomic, strong) UIColor *borderColor;
+
+/**
+ *  边角角度
+ */
+@property (nonatomic, assign) NSUInteger cornerRadius;
+
 @end

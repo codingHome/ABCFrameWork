@@ -10,6 +10,16 @@
 
 @implementation ABCRoundImageView
 
+- (void)setBorderColor:(UIColor *)borderColor {
+    CALayer * layer = [self layer];
+    [layer setBorderColor:[borderColor CGColor]];
+}
+
+-(void)setCornerRadius:(NSUInteger)cornerRadius {
+    CALayer * layer = [self layer];
+    [layer setCornerRadius:cornerRadius];
+}
+
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];

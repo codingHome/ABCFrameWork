@@ -95,6 +95,7 @@
 		57650AFE1C2A33A900B4EB89 /* ABCScaleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57650AFD1C2A33A900B4EB89 /* ABCScaleImageView.m */; };
 		5770726D1C19256600EDDD72 /* ABCVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5770726C1C19256600EDDD72 /* ABCVideoPlayerControlView.m */; };
 		577072701C19258D00EDDD72 /* ABCVidepPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5770726F1C19258D00EDDD72 /* ABCVidepPlayerController.m */; };
+		577A21C01C2CD9830092C7CB /* UIColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A21BF1C2CD9830092C7CB /* UIColor+Utils.m */; };
 		57D17C421C2B8969004A9188 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D17C411C2B8969004A9188 /* libz.1.dylib */; };
 		57D17C581C2B8989004A9188 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 57D17C471C2B8989004A9188 /* ioapi.c */; };
 		57D17C5F1C2B8989004A9188 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 57D17C4F1C2B8989004A9188 /* mztools.c */; };
@@ -301,6 +302,8 @@
 		5770726C1C19256600EDDD72 /* ABCVideoPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCVideoPlayerControlView.m; sourceTree = "<group>"; };
 		5770726E1C19258D00EDDD72 /* ABCVidepPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCVidepPlayerController.h; sourceTree = "<group>"; };
 		5770726F1C19258D00EDDD72 /* ABCVidepPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCVidepPlayerController.m; sourceTree = "<group>"; };
+		577A21BE1C2CD9830092C7CB /* UIColor+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Utils.h"; path = "UIColor/UIColor+Utils.h"; sourceTree = "<group>"; };
+		577A21BF1C2CD9830092C7CB /* UIColor+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Utils.m"; path = "UIColor/UIColor+Utils.m"; sourceTree = "<group>"; };
 		57D17C411C2B8969004A9188 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		57D17C461C2B8989004A9188 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
 		57D17C471C2B8989004A9188 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
@@ -526,6 +529,7 @@
 		574E7C361AF0C9D70042E538 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				577A21BD1C2CD91C0092C7CB /* UIColor */,
 				5722566C1C2A8722005F6D12 /* UIImage */,
 				57F72CDA1C17DAE500C0F36E /* NSString */,
 				57F72CD81C17DA9A00C0F36E /* UIButton */,
@@ -791,6 +795,15 @@
 			path = VideoPlayer;
 			sourceTree = "<group>";
 		};
+		577A21BD1C2CD91C0092C7CB /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				577A21BE1C2CD9830092C7CB /* UIColor+Utils.h */,
+				577A21BF1C2CD9830092C7CB /* UIColor+Utils.m */,
+			);
+			name = UIColor;
+			sourceTree = "<group>";
+		};
 		57D17C431C2B8989004A9188 /* ZipArchive */ = {
 			isa = PBXGroup;
 			children = (
@@ -996,6 +1009,7 @@
 				575270191C1E74C000FAD42C /* ABCCarouselView.m in Sources */,
 				57526FFC1C1AC95200FAD42C /* ABCMosiacView.m in Sources */,
 				57526FEE1C1AA8DC00FAD42C /* ABCMosiacDataModel.m in Sources */,
+				577A21C01C2CD9830092C7CB /* UIColor+Utils.m in Sources */,
 				57D17C661C2B8E12004A9188 /* ABCZipManager.m in Sources */,
 				57650A511C291B0100B4EB89 /* SDWebImageManager.m in Sources */,
 				57650A981C291F2D00B4EB89 /* AFURLResponseSerialization.m in Sources */,

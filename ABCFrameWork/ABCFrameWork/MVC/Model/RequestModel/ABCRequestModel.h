@@ -22,7 +22,7 @@ typedef NS_ENUM(NSUInteger, ABCOperationMethod){
 @property (nonatomic, copy, readonly) NSString *URL;
 
 /**
- *  请求方式
+ *  请求方式 需要子类重写get方法
  */
 @property (nonatomic, assign, readonly)ABCOperationMethod method;
 
