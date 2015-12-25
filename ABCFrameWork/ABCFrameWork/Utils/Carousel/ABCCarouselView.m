@@ -68,7 +68,13 @@ const NSUInteger KABCanimationInterVal = 0.8;
         CGRect currentFrame = CGRectMake(self.width * i, 0, self.width, self.height);
         
         UIImageView *tempImageView = [[UIImageView alloc] initWithFrame:currentFrame];
-
+        
+        tempImageView.userInteractionEnabled = YES;
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImage)];
+        
+        [tempImageView addGestureRecognizer:tap];
+        
         [_scrollView addSubview:tempImageView];
         
         [_imageViewsArray addObject:tempImageView];
@@ -137,6 +143,13 @@ const NSUInteger KABCanimationInterVal = 0.8;
         secondImageView.frame = CGRectMake(self.width, 0, self.width, self.height);
     } else {
         secondImageView.frame = CGRectMake(-self.width, 0, self.width, self.height);
+    }
+}
+
+#pragma mark - Action
+- (void)tapImage {
+    if (_delegate && [_delegate respondsToSelector:@selector(carouselView:didSelectItemAtIndex:)]) {
+        [_delegate carouselView:self didSelectItemAtIndex:self.pageControl.currentPage];
     }
 }
 

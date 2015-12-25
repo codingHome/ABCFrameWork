@@ -9,6 +9,8 @@
 #ifndef ABCPrecompile_h
 #define ABCPrecompile_h
 
+#import "ABCDB.h"
+
 /**
  *  打印日志
  */
@@ -76,6 +78,7 @@
 #define ABC_PATH_SANDBOX ( NSHomeDirectory() )
 #define ABC_PATH_DOCUMENTS ( NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] )
 #define ABC_PATH_LIBRARY   ( NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES)[0] )
+#define ABC_PATH_CACHE  ( NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0] )
 #define ABC_PATH_TMP     ( NSTemporaryDirectory() )
 
 /**
@@ -103,3 +106,28 @@
  */
 #define APP_DELEGATE    ((AppDelegate *)[UIApplication sharedApplication].delegate)
 #endif /* ABCPrecompile_h */
+
+/**
+ *  缓存数据库
+ */
+static ABCDB *cacheDb = nil;
+CG_INLINE ABCDB* getCacheDB() {
+    if (!cacheDb) {
+        cacheDb = [[ABCDB alloc] init];
+        
+        NSString *dbDir = [NSString stringWithFormat:@"%@/%@",ABC_PATH_CACHE, @"com.abc.cache"];
+        
+        BOOL isDir = false;
+        BOOL isExist = [[NSFileManager defaultManager] fileExistsAtPath:dbDir isDirectory:&isDir];
+        
+        if (!isExist || !isDir) {
+            [[NSFileManager defaultManager] createDirectoryAtPath:dbDir withIntermediateDirectories:YES attributes:nil error:nil];
+        }
+        
+        NSString *dbPath = [NSString stringWithFormat:@"%@/%@", dbDir, @"cache.db"];
+        
+        [cacheDb initDBPath:dbPath];
+        cacheDb.password = dbPath;
+    }
+    return cacheDb;
+}

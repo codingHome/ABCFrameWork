@@ -24,8 +24,8 @@
 - (NSString *) stringByRemovingHTML;
 - (NSString *) MD5;
 - (NSString * )URLEncode;
--(NSString *)trim;
+- (NSString *)trim;
 
--(BOOL) isOlderVersionThan:(NSString*)otherVersion;
--(BOOL) isNewerVersionThan:(NSString*)otherVersion;
+- (BOOL) isOlderVersionThan:(NSString*)otherVersion;
+- (BOOL) isNewerVersionThan:(NSString*)otherVersion;
 @end

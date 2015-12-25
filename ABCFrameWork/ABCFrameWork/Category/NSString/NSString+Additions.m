@@ -76,6 +76,7 @@
     
     return result;
 }
+
 +(NSString *)formatCurDay {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];

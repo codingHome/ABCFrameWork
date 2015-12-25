@@ -12,6 +12,8 @@
 #import "ABCMosiacView.h"
 #import "ABCCarouselView.h"
 #import "ABCScaleImagesViewController.h"
+#import "TestRequestModel.h"
+#import "ABCNetRequest.h"
 
 @interface TestViewController ()
 
@@ -26,7 +28,22 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self testRequest];
 //    [self testVidio];
+//    [self testScaleImage];
+}
+
+- (void)testRequest {
+    TestRequestModel *testModel = [[TestRequestModel alloc] init];
+    testModel.city = @"beijing";
+    testModel.key = @"ec1c681fdacfcc3d4dfc530981b86a82";
+    
+    [ABCNetOperation operationWithModel:testModel CallBack:^(id result, NSError *error) {
+        
+    }];
+}
+
+- (void)testScaleImage {
     ABCScaleImagesViewController *vc = [[ABCScaleImagesViewController alloc] init];
     vc.imagePaths = @[@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8"];
     vc.currentImagePath = @"2";

@@ -24,7 +24,7 @@ typedef NS_ENUM(NSUInteger, ABCOperationMethod){
 /**
  *  请求方式 需要子类重写get方法
  */
-@property (nonatomic, assign, readonly)ABCOperationMethod method;
+@property (nonatomic, assign, readonly) ABCOperationMethod method;
 
 /**
  *  获取对象属性和值

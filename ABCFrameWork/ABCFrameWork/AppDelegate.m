@@ -20,6 +20,8 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSLog(@"%@",NSHomeDirectory());
+    
     self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, ABC_SCREEN_WIDTH, ABC_SCREEN_HEIGHT)];
     self.window.backgroundColor = [UIColor whiteColor];
     
