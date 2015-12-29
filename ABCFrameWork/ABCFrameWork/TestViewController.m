@@ -14,6 +14,8 @@
 #import "ABCScaleImagesViewController.h"
 #import "TestRequestModel.h"
 #import "ABCNetRequest.h"
+#import "TestTableViewController.h"
+#import "LCActionSheet.h"
 
 @interface TestViewController ()
 
@@ -28,9 +30,11 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self testRequest];
+//    [self testRequest];
 //    [self testVidio];
 //    [self testScaleImage];
+//    [self testTableView];
+    [self testActionSheet];
 }
 
 - (void)testRequest {
@@ -68,6 +72,18 @@
     self.videoController.contentURL = url;
     self.videoController.startTime = 8.71794891;
     [self.videoController startPlay];
+}
+
+- (void)testTableView {
+    TestTableViewController *tableVC = [[TestTableViewController alloc] init];
+    [self.navigationController pushViewController:tableVC animated:YES];
+}
+
+- (void)testActionSheet {
+    LCActionSheet *sheet = [LCActionSheet sheetWithTitle:@"hello" buttonTitles:@[@"1", @"2"] redButtonIndex:0 clicked:^(NSInteger buttonIndex) {
+        
+    }];
+    [sheet show];
 }
 
 @end

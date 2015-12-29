@@ -10,7 +10,7 @@
 #import "TestViewController.h"
 #import "TestModel.h"
 #import "ABCDB.h"
-#import "MJExtension.h"
+#import "YYModel.h"
 #import "ABCZipManager.h"
 
 @interface AppDelegate ()
@@ -27,7 +27,9 @@
     
     TestViewController *vc = [[TestViewController alloc] init];
     
-    self.window.rootViewController = vc;
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    self.window.rootViewController = navi;
     
     [self.window makeKeyAndVisible];
     
@@ -45,15 +47,20 @@
     [[ABCDB sharedDB] initDBPath:dbPath];
     [[ABCDB sharedDB] createTable:[TestModel class]];
     
-    NSDictionary *dic = @{@"name":@"robert",
-                          @"age":@"25",
-                          @"telNumber":@"110"};
+    for (int i = 0; i < 4; i++) {
+        dispatch_queue_t queue = dispatch_queue_create(nil, DISPATCH_QUEUE_PRIORITY_DEFAULT);
+        
+        dispatch_async(queue, ^{
+            NSDictionary *dic = @{@"name":@"robert",
+                                  @"age":@"25",
+                                  @"telNumber":@"110"};
+            
+            TestModel *dbModel = [TestModel yy_modelWithJSON:dic];
+            
+            [[ABCDB sharedDB] insertTable:[TestModel class] object:dbModel];
+        });
+    }
     
-    TestModel *dbModel = [TestModel mj_objectWithKeyValues:dic];
-    
-    NSArray *temp = [[ABCDB sharedDB] queryObjectFromTable:[TestModel class] conditions:@"name = ?" args:@[@"robert"] order:nil];
-    
-    [[ABCDB sharedDB] insertTable:[TestModel class] object:dbModel];
 }
 
 - (void)testZip {
