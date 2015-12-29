@@ -14,7 +14,7 @@
     static dispatch_once_t onceToken;
     static ABCNetRequest *sharedNetRequest;
     dispatch_once(&onceToken, ^{
-        sharedNetRequest = [self new];
+        sharedNetRequest = [[self alloc] init];
     });
     return sharedNetRequest;
 }
@@ -25,6 +25,7 @@ RequestSuccess:(RequestSuccessBlock)successCallBack
    RequestFail:(RequestFailBlock)failCallBack {
     
     NSDictionary *params = [model instancePropertiesList];
+    self.requestSerializer.timeoutInterval = model.timeoutInterval;
     
     [self GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         successCallBack(responseObject,nil);
@@ -39,6 +40,7 @@ RequestSuccess:(RequestSuccessBlock)successCallBack
     RequestFail:(RequestFailBlock)failCallBack {
     
     NSDictionary *params = [model instancePropertiesList];
+    self.requestSerializer.timeoutInterval = model.timeoutInterval;
     
     [self POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         successCallBack(responseObject,nil);
@@ -54,6 +56,7 @@ RequestSuccess:(RequestSuccessBlock)successCallBack
     RequestFail:(RequestFailBlock)failCallBack {
     
     NSDictionary *params = [model instancePropertiesList];
+    self.requestSerializer.timeoutInterval = model.timeoutInterval;
     
     [self POST:url parameters:params constructingBodyWithBlock:bodyBlock progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         successCallBack(responseObject,nil);

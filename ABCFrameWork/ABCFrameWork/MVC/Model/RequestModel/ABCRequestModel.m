@@ -28,8 +28,6 @@
     return url;
 }
 
-#pragma mark -
-#pragma mark Private Method
 - (NSDictionary *)instancePropertiesList {
     NSMutableDictionary *props = [NSMutableDictionary dictionary];
     unsigned int outCount, i;
@@ -67,7 +65,11 @@
 }
 
 - (ABCOperationMethod)method {
-    return 0;
+    return ABCNetOperationGetMethod;
+}
+
+- (NSTimeInterval)timeoutInterval {
+    return 60.0 * 60;
 }
 
 @end

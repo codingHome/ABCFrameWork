@@ -27,6 +27,11 @@ typedef NS_ENUM(NSUInteger, ABCOperationMethod){
 @property (nonatomic, assign, readonly) ABCOperationMethod method;
 
 /**
+ *  超时时间
+ */
+@property (nonatomic, assign, readonly) NSTimeInterval timeoutInterval;
+
+/**
  *  获取对象属性和值
  *
  *  @return 属性字典
