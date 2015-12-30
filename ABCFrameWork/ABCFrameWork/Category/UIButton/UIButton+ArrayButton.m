@@ -3,7 +3,7 @@
 //  RYSearch
 //
 //  Created by Robert on 15/4/24.
-//  Copyright (c) 2015年 NationSky. All rights reserved.
+//  Copyright (c) 2015年 Robert. All rights reserved.
 //
 
 #import "UIButton+ArrayButton.h"
@@ -26,7 +26,7 @@ int Top = 50;
         [button setTitle:title forState:UIControlStateNormal];
         button.tag = i;
         
-        button.frame = CGRectMake(0, 0, KSCREENWIDTH, ButtonHeight);
+        button.frame = CGRectMake(0, 0, ABC_SCREEN_WIDTH, ButtonHeight);
         [button sizeToFit];
         
         NSUInteger ButtonX = Left + totalX;
@@ -35,7 +35,7 @@ int Top = 50;
         NSUInteger ButtonWidth = button.bounds.size.width;
         totalX += ButtonWidth + gap;
         
-        if (totalX >= KSCREENWIDTH) {
+        if (totalX >= ABC_SCREEN_WIDTH) {
             totalX = ButtonWidth + gap;
             ButtonX = Left;
             totalY += ButtonHeight + 5;

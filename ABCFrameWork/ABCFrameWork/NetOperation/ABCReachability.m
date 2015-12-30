@@ -3,7 +3,7 @@
 //  ABCFrameWork
 //
 //  Created by Robert on 15/12/25.
-//  Copyright © 2015年 NationSky. All rights reserved.
+//  Copyright © 2015年 Robert. All rights reserved.
 //
 
 #import "ABCReachability.h"
@@ -136,7 +136,7 @@ static void myPrintReachabilityFlags(SCNetworkReachabilityFlags flags, const cha
 {
 #if kShouldPrintReachabilityFlags
     
-    NSLog(@"Reachability Flag Status: %c%c %c%c%c%c%c%c%c %s\n",
+    DDLogInfo(@"Reachability Flag Status: %c%c %c%c%c%c%c%c%c %s\n",
           (flags & kSCNetworkReachabilityFlagsIsWWAN)				? 'W' : '-',
           (flags & kSCNetworkReachabilityFlagsReachable)            ? 'R' : '-',
           

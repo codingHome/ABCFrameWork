@@ -97,6 +97,9 @@
 		577A21F31C3103E50092C7CB /* UIView+TYLaunchAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A21EF1C3103E50092C7CB /* UIView+TYLaunchAnimation.m */; };
 		57BDFF7F1C32347C00D11E59 /* LCActionSheet.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 57BDFF7C1C32347C00D11E59 /* LCActionSheet.bundle */; };
 		57BDFF801C32347C00D11E59 /* LCActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BDFF7E1C32347C00D11E59 /* LCActionSheet.m */; };
+		57BDFF861C32677300D11E59 /* ABCFileDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BDFF851C32677300D11E59 /* ABCFileDownloadManager.m */; };
+		57BDFF8A1C327DE300D11E59 /* ABCFileDownloadInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BDFF891C327DE300D11E59 /* ABCFileDownloadInfoModel.m */; };
+		57BDFF8D1C32823200D11E59 /* ABCFileDownloadDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BDFF8C1C32823200D11E59 /* ABCFileDownloadDBModel.m */; };
 		57D17C421C2B8969004A9188 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D17C411C2B8969004A9188 /* libz.1.dylib */; };
 		57D17C581C2B8989004A9188 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 57D17C471C2B8989004A9188 /* ioapi.c */; };
 		57D17C5F1C2B8989004A9188 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 57D17C4F1C2B8989004A9188 /* mztools.c */; };
@@ -104,6 +107,12 @@
 		57D17C611C2B8989004A9188 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 57D17C531C2B8989004A9188 /* zip.c */; };
 		57D17C621C2B8989004A9188 /* ZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D17C561C2B8989004A9188 /* ZipArchive.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		57D17C661C2B8E12004A9188 /* ABCZipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D17C651C2B8E12004A9188 /* ABCZipManager.m */; };
+		57F59A831C336BDF006F1DBC /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F59A741C336BDF006F1DBC /* DDAbstractDatabaseLogger.m */; };
+		57F59A841C336BDF006F1DBC /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F59A761C336BDF006F1DBC /* DDASLLogCapture.m */; };
+		57F59A851C336BDF006F1DBC /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F59A781C336BDF006F1DBC /* DDASLLogger.m */; };
+		57F59A861C336BDF006F1DBC /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F59A7B1C336BDF006F1DBC /* DDFileLogger.m */; };
+		57F59A871C336BDF006F1DBC /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F59A7F1C336BDF006F1DBC /* DDLog.m */; };
+		57F59A881C336BDF006F1DBC /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F59A821C336BDF006F1DBC /* DDTTYLogger.m */; };
 		57F72CDD1C17DB2400C0F36E /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CDC1C17DB2400C0F36E /* NSString+Additions.m */; };
 		57F72CE01C17DB2D00C0F36E /* UIView+DDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CDF1C17DB2D00C0F36E /* UIView+DDAddition.m */; };
 		57F72CE91C17FF9700C0F36E /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CE81C17FF9700C0F36E /* TestViewController.m */; };
@@ -307,6 +316,12 @@
 		57BDFF7C1C32347C00D11E59 /* LCActionSheet.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LCActionSheet.bundle; sourceTree = "<group>"; };
 		57BDFF7D1C32347C00D11E59 /* LCActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActionSheet.h; sourceTree = "<group>"; };
 		57BDFF7E1C32347C00D11E59 /* LCActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCActionSheet.m; sourceTree = "<group>"; };
+		57BDFF841C32677300D11E59 /* ABCFileDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCFileDownloadManager.h; path = ABCFileCenter/ABCFileDownloadManager.h; sourceTree = "<group>"; };
+		57BDFF851C32677300D11E59 /* ABCFileDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCFileDownloadManager.m; path = ABCFileCenter/ABCFileDownloadManager.m; sourceTree = "<group>"; };
+		57BDFF881C327DE300D11E59 /* ABCFileDownloadInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCFileDownloadInfoModel.h; path = ABCFileCenter/Model/ABCFileDownloadInfoModel.h; sourceTree = "<group>"; };
+		57BDFF891C327DE300D11E59 /* ABCFileDownloadInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCFileDownloadInfoModel.m; path = ABCFileCenter/Model/ABCFileDownloadInfoModel.m; sourceTree = "<group>"; };
+		57BDFF8B1C32823200D11E59 /* ABCFileDownloadDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCFileDownloadDBModel.h; path = ABCFileCenter/Model/ABCFileDownloadDBModel.h; sourceTree = "<group>"; };
+		57BDFF8C1C32823200D11E59 /* ABCFileDownloadDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCFileDownloadDBModel.m; path = ABCFileCenter/Model/ABCFileDownloadDBModel.m; sourceTree = "<group>"; };
 		57D17C411C2B8969004A9188 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		57D17C461C2B8989004A9188 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
 		57D17C471C2B8989004A9188 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
@@ -321,6 +336,23 @@
 		57D17C561C2B8989004A9188 /* ZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipArchive.m; sourceTree = "<group>"; };
 		57D17C641C2B8E12004A9188 /* ABCZipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCZipManager.h; path = ZipManager/ABCZipManager.h; sourceTree = "<group>"; };
 		57D17C651C2B8E12004A9188 /* ABCZipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCZipManager.m; path = ZipManager/ABCZipManager.m; sourceTree = "<group>"; };
+		57F59A721C336BDF006F1DBC /* CocoaLumberjack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaLumberjack.h; sourceTree = "<group>"; };
+		57F59A731C336BDF006F1DBC /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		57F59A741C336BDF006F1DBC /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		57F59A751C336BDF006F1DBC /* DDASLLogCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogCapture.h; sourceTree = "<group>"; };
+		57F59A761C336BDF006F1DBC /* DDASLLogCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogCapture.m; sourceTree = "<group>"; };
+		57F59A771C336BDF006F1DBC /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		57F59A781C336BDF006F1DBC /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		57F59A791C336BDF006F1DBC /* DDAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAssertMacros.h; sourceTree = "<group>"; };
+		57F59A7A1C336BDF006F1DBC /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		57F59A7B1C336BDF006F1DBC /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		57F59A7C1C336BDF006F1DBC /* DDLegacyMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLegacyMacros.h; sourceTree = "<group>"; };
+		57F59A7D1C336BDF006F1DBC /* DDLog+LOGV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDLog+LOGV.h"; sourceTree = "<group>"; };
+		57F59A7E1C336BDF006F1DBC /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		57F59A7F1C336BDF006F1DBC /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		57F59A801C336BDF006F1DBC /* DDLogMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLogMacros.h; sourceTree = "<group>"; };
+		57F59A811C336BDF006F1DBC /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		57F59A821C336BDF006F1DBC /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
 		57F72CDB1C17DB2400C0F36E /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		57F72CDC1C17DB2400C0F36E /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		57F72CDE1C17DB2D00C0F36E /* UIView+DDAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DDAddition.h"; sourceTree = "<group>"; };
@@ -439,6 +471,7 @@
 		574E7BDA1AEF2D870042E538 /* NetOperation */ = {
 			isa = PBXGroup;
 			children = (
+				57BDFF831C32670D00D11E59 /* ABCFileCenter */,
 				577A21C51C2CF2FC0092C7CB /* ABCReachability.h */,
 				577A21C61C2CF2FC0092C7CB /* ABCReachability.m */,
 				574E7BE51AEF39090042E538 /* ABCNetOperation.h */,
@@ -744,6 +777,7 @@
 		577072621C19226B00EDDD72 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				57F59A711C336BDF006F1DBC /* CocoaLumberjack */,
 				57BDFF7B1C32347C00D11E59 /* LCActionSheet */,
 				577A21E61C3103E50092C7CB /* TYLaunchAnimation */,
 				577A21D11C30C4D20092C7CB /* YYModel */,
@@ -841,6 +875,27 @@
 			path = LCActionSheet;
 			sourceTree = "<group>";
 		};
+		57BDFF831C32670D00D11E59 /* ABCFileCenter */ = {
+			isa = PBXGroup;
+			children = (
+				57BDFF871C327D9500D11E59 /* Model */,
+				57BDFF841C32677300D11E59 /* ABCFileDownloadManager.h */,
+				57BDFF851C32677300D11E59 /* ABCFileDownloadManager.m */,
+			);
+			name = ABCFileCenter;
+			sourceTree = "<group>";
+		};
+		57BDFF871C327D9500D11E59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57BDFF881C327DE300D11E59 /* ABCFileDownloadInfoModel.h */,
+				57BDFF891C327DE300D11E59 /* ABCFileDownloadInfoModel.m */,
+				57BDFF8B1C32823200D11E59 /* ABCFileDownloadDBModel.h */,
+				57BDFF8C1C32823200D11E59 /* ABCFileDownloadDBModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		57D17C431C2B8989004A9188 /* ZipArchive */ = {
 			isa = PBXGroup;
 			children = (
@@ -874,6 +929,30 @@
 				57D17C651C2B8E12004A9188 /* ABCZipManager.m */,
 			);
 			name = ZipManager;
+			sourceTree = "<group>";
+		};
+		57F59A711C336BDF006F1DBC /* CocoaLumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				57F59A721C336BDF006F1DBC /* CocoaLumberjack.h */,
+				57F59A731C336BDF006F1DBC /* DDAbstractDatabaseLogger.h */,
+				57F59A741C336BDF006F1DBC /* DDAbstractDatabaseLogger.m */,
+				57F59A751C336BDF006F1DBC /* DDASLLogCapture.h */,
+				57F59A761C336BDF006F1DBC /* DDASLLogCapture.m */,
+				57F59A771C336BDF006F1DBC /* DDASLLogger.h */,
+				57F59A781C336BDF006F1DBC /* DDASLLogger.m */,
+				57F59A791C336BDF006F1DBC /* DDAssertMacros.h */,
+				57F59A7A1C336BDF006F1DBC /* DDFileLogger.h */,
+				57F59A7B1C336BDF006F1DBC /* DDFileLogger.m */,
+				57F59A7C1C336BDF006F1DBC /* DDLegacyMacros.h */,
+				57F59A7D1C336BDF006F1DBC /* DDLog+LOGV.h */,
+				57F59A7E1C336BDF006F1DBC /* DDLog.h */,
+				57F59A7F1C336BDF006F1DBC /* DDLog.m */,
+				57F59A801C336BDF006F1DBC /* DDLogMacros.h */,
+				57F59A811C336BDF006F1DBC /* DDTTYLogger.h */,
+				57F59A821C336BDF006F1DBC /* DDTTYLogger.m */,
+			);
+			path = CocoaLumberjack;
 			sourceTree = "<group>";
 		};
 		57F72CD81C17DA9A00C0F36E /* UIButton */ = {
@@ -967,8 +1046,9 @@
 		574E7BA81AEF29B30042E538 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0630;
-				ORGANIZATIONNAME = NationSky;
+				ORGANIZATIONNAME = Robert;
 				TargetAttributes = {
 					574E7BAF1AEF29B30042E538 = {
 						CreatedOnToolsVersion = 6.3;
@@ -1032,12 +1112,15 @@
 				57650A951C291F2D00B4EB89 /* AFNetworkReachabilityManager.m in Sources */,
 				577072701C19258D00EDDD72 /* ABCVidepPlayerController.m in Sources */,
 				57650A9D1C2929BE00B4EB89 /* ABCDB.m in Sources */,
+				57F59A861C336BDF006F1DBC /* DDFileLogger.m in Sources */,
+				57F59A851C336BDF006F1DBC /* DDASLLogger.m in Sources */,
 				57650A7E1C291BCF00B4EB89 /* View+MASAdditions.m in Sources */,
 				577A21F01C3103E50092C7CB /* TYLaunchBaseAnimation.m in Sources */,
 				574E7BE41AEF336E0042E538 /* ABCRequestModel.m in Sources */,
 				57F72CE01C17DB2D00C0F36E /* UIView+DDAddition.m in Sources */,
 				577A21DB1C30DF8D0092C7CB /* TestTableViewController.m in Sources */,
 				57650A241C2917F000B4EB89 /* YYFMResultSet.m in Sources */,
+				57F59A871C336BDF006F1DBC /* DDLog.m in Sources */,
 				574E7C201AF0C1EC0042E538 /* ABCSearchDelegate.m in Sources */,
 				57D17C5F1C2B8989004A9188 /* mztools.c in Sources */,
 				577A21D01C2D2F330092C7CB /* NSDate+util.m in Sources */,
@@ -1058,6 +1141,7 @@
 				57D17C621C2B8989004A9188 /* ZipArchive.m in Sources */,
 				57650A4A1C291B0100B4EB89 /* MKAnnotationView+WebCache.m in Sources */,
 				57650A4B1C291B0100B4EB89 /* NSData+ImageContentType.m in Sources */,
+				57F59A831C336BDF006F1DBC /* DDAbstractDatabaseLogger.m in Sources */,
 				57650A781C291BCF00B4EB89 /* MASConstraintMaker.m in Sources */,
 				57650A211C2917F000B4EB89 /* YYFMDatabaseAdditions.m in Sources */,
 				57D17C611C2B8989004A9188 /* zip.c in Sources */,
@@ -1066,13 +1150,16 @@
 				57F72CE91C17FF9700C0F36E /* TestViewController.m in Sources */,
 				577A21CB1C2D18ED0092C7CB /* ABCCacheModel.m in Sources */,
 				574E7BB61AEF29B30042E538 /* main.m in Sources */,
+				57F59A841C336BDF006F1DBC /* DDASLLogCapture.m in Sources */,
 				57650A501C291B0100B4EB89 /* SDWebImageDownloaderOperation.m in Sources */,
 				574E7BE71AEF39090042E538 /* ABCNetOperation.m in Sources */,
 				57650A7B1C291BCF00B4EB89 /* MASViewConstraint.m in Sources */,
 				57650A7F1C291BCF00B4EB89 /* ViewController+MASAdditions.m in Sources */,
 				577A21F31C3103E50092C7CB /* UIView+TYLaunchAnimation.m in Sources */,
 				57526FDB1C1A965D00FAD42C /* ABCRoundButton.m in Sources */,
+				57BDFF8D1C32823200D11E59 /* ABCFileDownloadDBModel.m in Sources */,
 				57650A7C1C291BCF00B4EB89 /* NSArray+MASAdditions.m in Sources */,
+				57F59A881C336BDF006F1DBC /* DDTTYLogger.m in Sources */,
 				57650A7A1C291BCF00B4EB89 /* MASViewAttribute.m in Sources */,
 				57650A971C291F2D00B4EB89 /* AFURLRequestSerialization.m in Sources */,
 				57650A561C291B0100B4EB89 /* UIImage+WebP.m in Sources */,
@@ -1084,6 +1171,7 @@
 				57650A551C291B0100B4EB89 /* UIImage+MultiFormat.m in Sources */,
 				57650A4E1C291B0100B4EB89 /* SDWebImageDecoder.m in Sources */,
 				577A21D71C30C4D20092C7CB /* NSObject+YYModel.m in Sources */,
+				57BDFF8A1C327DE300D11E59 /* ABCFileDownloadInfoModel.m in Sources */,
 				57BDFF801C32347C00D11E59 /* LCActionSheet.m in Sources */,
 				5722566F1C2A8750005F6D12 /* UIImage+ImageProcessing.m in Sources */,
 				57650A231C2917F000B4EB89 /* YYFMDatabaseQueue.m in Sources */,
@@ -1104,6 +1192,7 @@
 				574E7C261AF0C22F0042E538 /* ABCSearchTagView.m in Sources */,
 				57650AAC1C29388600B4EB89 /* TestModel.m in Sources */,
 				57526FF11C1AA8F300FAD42C /* ABCMosiacDataView.m in Sources */,
+				57BDFF861C32677300D11E59 /* ABCFileDownloadManager.m in Sources */,
 				57650A541C291B0100B4EB89 /* UIImage+GIF.m in Sources */,
 				57650A771C291BCF00B4EB89 /* MASConstraint.m in Sources */,
 				57650AFA1C2947C400B4EB89 /* ABCCheckAppUpdate.m in Sources */,

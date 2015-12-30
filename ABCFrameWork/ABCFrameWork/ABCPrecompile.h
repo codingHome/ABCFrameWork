@@ -3,7 +3,7 @@
 //  ABCFrameWork
 //
 //  Created by Robert on 15/12/9.
-//  Copyright © 2015年 NationSky. All rights reserved.
+//  Copyright © 2015年 Robert. All rights reserved.
 //
 
 #ifndef ABCPrecompile_h
@@ -11,14 +11,8 @@
 
 #import "ABCDB.h"
 
-/**
- *  打印日志
- */
-#ifdef DEBUG
-#define ABC_LOG(...) NSLog(__VA_ARGS__)
-#else
-#define ABC_LOG(...)
-#endif
+//主代理
+#define ABCAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
 /**
  *  色值宏定义
@@ -111,6 +105,7 @@
  *  缓存数据库
  */
 static ABCDB *cacheDb = nil;
+
 CG_INLINE ABCDB* getCacheDB() {
     if (!cacheDb) {
         cacheDb = [[ABCDB alloc] init];

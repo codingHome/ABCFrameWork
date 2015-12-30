@@ -3,7 +3,7 @@
 //  ABCFrameWork
 //
 //  Created by Robert on 15/4/28.
-//  Copyright (c) 2015年 NationSky. All rights reserved.
+//  Copyright (c) 2015年 Robert. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -20,7 +20,11 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSLog(@"%@",NSHomeDirectory());
+    
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
+    DDLogDebug(@"%@",NSHomeDirectory());
     
     self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, ABC_SCREEN_WIDTH, ABC_SCREEN_HEIGHT)];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -42,7 +46,7 @@
 - (void)testDB {
     NSString * dbPath = [NSString stringWithFormat:@"%@/Documents/data.db", NSHomeDirectory()];
     
-    NSLog(@"%@",dbPath);
+    DDLogInfo(@"%@",dbPath);
     
     [[ABCDB sharedDB] initDBPath:dbPath];
     [[ABCDB sharedDB] createTable:[TestModel class]];
@@ -66,12 +70,12 @@
 - (void)testZip {
 //    NSString *filePath = @"/Users/yangqihui/Desktop/main.m";
 //    [[ABCZipManager sharedZipManager] zipFile:filePath password:@"123" complete:^(BOOL result, NSString *errorMessage) {
-//        NSLog(@"%d,%@",result, errorMessage);
+
 //    }];
 
     NSString *zipFilePath = @"/Users/yangqihui/Desktop/main.zip";
     [[ABCZipManager sharedZipManager] unZIpFile:zipFilePath password:@"123" complete:^(BOOL result, NSString *errorMessage) {
-        NSLog(@"%d,%@",result, errorMessage);
+        DDLogDebug(@"%d,%@",result, errorMessage);
     }];
 }
 

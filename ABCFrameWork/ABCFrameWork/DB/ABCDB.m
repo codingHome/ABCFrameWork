@@ -3,7 +3,7 @@
 //  ABCFrameWork
 //
 //  Created by Robert on 15/12/22.
-//  Copyright © 2015年 NationSky. All rights reserved.
+//  Copyright © 2015年 Robert. All rights reserved.
 //
 
 #import "ABCDB.h"
@@ -73,7 +73,7 @@
 {
     if (![[NSFileManager defaultManager]fileExistsAtPath:dbPath])
     {
-        ABC_LOG(@"destroyDataBase：数据库不存在");
+        DDLogInfo(@"destroyDataBase：数据库不存在");
         return YES;
     }
     else
@@ -82,7 +82,7 @@
         NSError *error=nil;
         [[NSFileManager defaultManager]removeItemAtPath:dbPath error:&error];
         if (error) {
-            ABC_LOG(@"destroyDataBase:%@",error);
+            DDLogInfo(@"destroyDataBase:%@",error);
             return NO;
         }
         return YES;
@@ -765,7 +765,6 @@
                                 else if ([type isEqualToString:@"long"]){
                                     
                                     long long sid = [value longLongValue];
-                                    //                                    NSLog(@"long 类型 value: %@  ----- sid: %lld", value, sid);
                                     
                                     NSMethodSignature *signature = [obj methodSignatureForSelector:selector];
                                     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];

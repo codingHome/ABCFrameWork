@@ -3,7 +3,7 @@
 //  ABCFrameWork
 //
 //  Created by Robert on 15/4/29.
-//  Copyright (c) 2015年 NationSky. All rights reserved.
+//  Copyright (c) 2015年 Robert. All rights reserved.
 //
 
 #import "ABCSearchDelegate.h"
@@ -52,12 +52,12 @@
 #pragma mark - searchBarDelegate and searchDisplayController
 - (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller {
     [self.searchItems removeAllObjects];
-    self.searchTagsView = [[ABCSearchTagView alloc]initWithFrame:CGRectMake(0, 64, KSCREENWIDTH, KSCREENHEIGHT - 64) tagsArrar:@[@"1",@"22",@"333",@"4444",@"55555",@"666666",@"7777777",@"88888888",@"999999999",@"0000000000",@"1",@"22",@"333",@"4444",@"55555",@"666666",@"7777777",@"88888888",@"999999999",@"0000000000"]];
+    self.searchTagsView = [[ABCSearchTagView alloc]initWithFrame:CGRectMake(0, 64, ABC_SCREEN_WIDTH, ABC_SCREEN_HEIGHT - 64) tagsArrar:@[@"1",@"22",@"333",@"4444",@"55555",@"666666",@"7777777",@"88888888",@"999999999",@"0000000000",@"1",@"22",@"333",@"4444",@"55555",@"666666",@"7777777",@"88888888",@"999999999",@"0000000000"]];
     self.searchTagsView.delegate = self;
     [ABCAppDelegate.window addSubview:self.searchTagsView];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
     //添加遮挡视图
-    self.shadeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, KSCREENWIDTH, 20)];
+    self.shadeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, ABC_SCREEN_WIDTH, 20)];
     self.shadeLabel.backgroundColor = [UIColor colorWithRed:242/255.0 green:241/255.0 blue:249/255.0 alpha:1];
     [ABCAppDelegate.window addSubview:self.shadeLabel];
 }

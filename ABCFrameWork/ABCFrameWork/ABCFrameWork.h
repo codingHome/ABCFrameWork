@@ -3,7 +3,7 @@
 //  ABCFrameWork
 //
 //  Created by Robert on 15/4/28.
-//  Copyright (c) 2015年 NationSky. All rights reserved.
+//  Copyright (c) 2015年 Robert. All rights reserved.
 //
 
 #ifndef ABCFrameWork_ABCFrameWork_h
@@ -19,5 +19,14 @@
 #import "UIView+DDAddition.h"
 #import "NSString+Additions.h"
 #import "NSDate+util.h"
+
+#import "CocoaLumberjack/CocoaLumberjack.h"
+
+
+#ifdef DEBUG
+static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
+#else
+static const DDLogLevel ddLogLevel = DDLogLevelOff;
+#endif
 
 #endif

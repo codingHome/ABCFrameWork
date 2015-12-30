@@ -3,7 +3,7 @@
 //  ABCFrameWork
 //
 //  Created by Robert on 15/12/23.
-//  Copyright © 2015年 NationSky. All rights reserved.
+//  Copyright © 2015年 Robert. All rights reserved.
 //
 
 #import "UIImage+ImageProcessing.h"
@@ -51,7 +51,7 @@
     newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     if(newImage == nil)
-        NSLog(@"imageByScalingToMixSize could not scale image");
+        DDLogDebug(@"imageByScalingToMixSize could not scale image");
     return newImage ;
 }
 
@@ -96,7 +96,7 @@
     newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     if(newImage == nil)
-        NSLog(@"could not scale image");
+        DDLogDebug(@"could not scale image");
     return newImage ;
 }
 
@@ -149,7 +149,7 @@
     newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     if(newImage == nil)
-        NSLog(@"could not scale image");
+        DDLogDebug(@"could not scale image");
     return newImage ;
 }
 
@@ -168,7 +168,7 @@
     newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     if(newImage == nil)
-        NSLog(@"could not scale image");
+        DDLogDebug(@"could not scale image");
     return newImage ;
 }
 

@@ -3,7 +3,7 @@
 //  ABCFrameWork
 //
 //  Created by Robert on 15/4/28.
-//  Copyright (c) 2015年 NationSky. All rights reserved.
+//  Copyright (c) 2015年 Robert. All rights reserved.
 //
 
 #ifndef ABCFrameWork_PrefixHeader_pch
@@ -15,11 +15,6 @@
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
 #import "ABCFrameWork.h"
-
-#define KSCREENWIDTH [UIScreen mainScreen].bounds.size.width
-#define KSCREENHEIGHT [UIScreen mainScreen].bounds.size.height
-//主代理
-#define ABCAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
 #endif
 
