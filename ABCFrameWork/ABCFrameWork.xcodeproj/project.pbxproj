@@ -97,9 +97,6 @@
 		577A21F31C3103E50092C7CB /* UIView+TYLaunchAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A21EF1C3103E50092C7CB /* UIView+TYLaunchAnimation.m */; };
 		57BDFF7F1C32347C00D11E59 /* LCActionSheet.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 57BDFF7C1C32347C00D11E59 /* LCActionSheet.bundle */; };
 		57BDFF801C32347C00D11E59 /* LCActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BDFF7E1C32347C00D11E59 /* LCActionSheet.m */; };
-		57BDFF861C32677300D11E59 /* ABCFileDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BDFF851C32677300D11E59 /* ABCFileDownloadManager.m */; };
-		57BDFF8A1C327DE300D11E59 /* ABCFileDownloadInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BDFF891C327DE300D11E59 /* ABCFileDownloadInfoModel.m */; };
-		57BDFF8D1C32823200D11E59 /* ABCFileDownloadDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BDFF8C1C32823200D11E59 /* ABCFileDownloadDBModel.m */; };
 		57D17C421C2B8969004A9188 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D17C411C2B8969004A9188 /* libz.1.dylib */; };
 		57D17C581C2B8989004A9188 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 57D17C471C2B8989004A9188 /* ioapi.c */; };
 		57D17C5F1C2B8989004A9188 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 57D17C4F1C2B8989004A9188 /* mztools.c */; };
@@ -113,6 +110,7 @@
 		57F59A861C336BDF006F1DBC /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F59A7B1C336BDF006F1DBC /* DDFileLogger.m */; };
 		57F59A871C336BDF006F1DBC /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F59A7F1C336BDF006F1DBC /* DDLog.m */; };
 		57F59A881C336BDF006F1DBC /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F59A821C336BDF006F1DBC /* DDTTYLogger.m */; };
+		57F59A8C1C338425006F1DBC /* ABCDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F59A8B1C338425006F1DBC /* ABCDownloadManager.m */; };
 		57F72CDD1C17DB2400C0F36E /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CDC1C17DB2400C0F36E /* NSString+Additions.m */; };
 		57F72CE01C17DB2D00C0F36E /* UIView+DDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CDF1C17DB2D00C0F36E /* UIView+DDAddition.m */; };
 		57F72CE91C17FF9700C0F36E /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F72CE81C17FF9700C0F36E /* TestViewController.m */; };
@@ -316,12 +314,6 @@
 		57BDFF7C1C32347C00D11E59 /* LCActionSheet.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LCActionSheet.bundle; sourceTree = "<group>"; };
 		57BDFF7D1C32347C00D11E59 /* LCActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActionSheet.h; sourceTree = "<group>"; };
 		57BDFF7E1C32347C00D11E59 /* LCActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCActionSheet.m; sourceTree = "<group>"; };
-		57BDFF841C32677300D11E59 /* ABCFileDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCFileDownloadManager.h; path = ABCFileCenter/ABCFileDownloadManager.h; sourceTree = "<group>"; };
-		57BDFF851C32677300D11E59 /* ABCFileDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCFileDownloadManager.m; path = ABCFileCenter/ABCFileDownloadManager.m; sourceTree = "<group>"; };
-		57BDFF881C327DE300D11E59 /* ABCFileDownloadInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCFileDownloadInfoModel.h; path = ABCFileCenter/Model/ABCFileDownloadInfoModel.h; sourceTree = "<group>"; };
-		57BDFF891C327DE300D11E59 /* ABCFileDownloadInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCFileDownloadInfoModel.m; path = ABCFileCenter/Model/ABCFileDownloadInfoModel.m; sourceTree = "<group>"; };
-		57BDFF8B1C32823200D11E59 /* ABCFileDownloadDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCFileDownloadDBModel.h; path = ABCFileCenter/Model/ABCFileDownloadDBModel.h; sourceTree = "<group>"; };
-		57BDFF8C1C32823200D11E59 /* ABCFileDownloadDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCFileDownloadDBModel.m; path = ABCFileCenter/Model/ABCFileDownloadDBModel.m; sourceTree = "<group>"; };
 		57D17C411C2B8969004A9188 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		57D17C461C2B8989004A9188 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
 		57D17C471C2B8989004A9188 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
@@ -353,6 +345,8 @@
 		57F59A801C336BDF006F1DBC /* DDLogMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLogMacros.h; sourceTree = "<group>"; };
 		57F59A811C336BDF006F1DBC /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
 		57F59A821C336BDF006F1DBC /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		57F59A8A1C338425006F1DBC /* ABCDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCDownloadManager.h; path = DownloadManager/ABCDownloadManager.h; sourceTree = "<group>"; };
+		57F59A8B1C338425006F1DBC /* ABCDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCDownloadManager.m; path = DownloadManager/ABCDownloadManager.m; sourceTree = "<group>"; };
 		57F72CDB1C17DB2400C0F36E /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		57F72CDC1C17DB2400C0F36E /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		57F72CDE1C17DB2D00C0F36E /* UIView+DDAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DDAddition.h"; sourceTree = "<group>"; };
@@ -471,7 +465,6 @@
 		574E7BDA1AEF2D870042E538 /* NetOperation */ = {
 			isa = PBXGroup;
 			children = (
-				57BDFF831C32670D00D11E59 /* ABCFileCenter */,
 				577A21C51C2CF2FC0092C7CB /* ABCReachability.h */,
 				577A21C61C2CF2FC0092C7CB /* ABCReachability.m */,
 				574E7BE51AEF39090042E538 /* ABCNetOperation.h */,
@@ -504,6 +497,7 @@
 		574E7BFB1AEF73DB0042E538 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				57F59A891C3383E9006F1DBC /* DownloadManager */,
 				57D17C631C2B8DDD004A9188 /* ZipManager */,
 				57650AFB1C2A337200B4EB89 /* ScaleImageView */,
 				57650AF71C29463B00B4EB89 /* CheckAppUpdate */,
@@ -875,27 +869,6 @@
 			path = LCActionSheet;
 			sourceTree = "<group>";
 		};
-		57BDFF831C32670D00D11E59 /* ABCFileCenter */ = {
-			isa = PBXGroup;
-			children = (
-				57BDFF871C327D9500D11E59 /* Model */,
-				57BDFF841C32677300D11E59 /* ABCFileDownloadManager.h */,
-				57BDFF851C32677300D11E59 /* ABCFileDownloadManager.m */,
-			);
-			name = ABCFileCenter;
-			sourceTree = "<group>";
-		};
-		57BDFF871C327D9500D11E59 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				57BDFF881C327DE300D11E59 /* ABCFileDownloadInfoModel.h */,
-				57BDFF891C327DE300D11E59 /* ABCFileDownloadInfoModel.m */,
-				57BDFF8B1C32823200D11E59 /* ABCFileDownloadDBModel.h */,
-				57BDFF8C1C32823200D11E59 /* ABCFileDownloadDBModel.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		57D17C431C2B8989004A9188 /* ZipArchive */ = {
 			isa = PBXGroup;
 			children = (
@@ -953,6 +926,15 @@
 				57F59A821C336BDF006F1DBC /* DDTTYLogger.m */,
 			);
 			path = CocoaLumberjack;
+			sourceTree = "<group>";
+		};
+		57F59A891C3383E9006F1DBC /* DownloadManager */ = {
+			isa = PBXGroup;
+			children = (
+				57F59A8A1C338425006F1DBC /* ABCDownloadManager.h */,
+				57F59A8B1C338425006F1DBC /* ABCDownloadManager.m */,
+			);
+			name = DownloadManager;
 			sourceTree = "<group>";
 		};
 		57F72CD81C17DA9A00C0F36E /* UIButton */ = {
@@ -1152,12 +1134,12 @@
 				574E7BB61AEF29B30042E538 /* main.m in Sources */,
 				57F59A841C336BDF006F1DBC /* DDASLLogCapture.m in Sources */,
 				57650A501C291B0100B4EB89 /* SDWebImageDownloaderOperation.m in Sources */,
+				57F59A8C1C338425006F1DBC /* ABCDownloadManager.m in Sources */,
 				574E7BE71AEF39090042E538 /* ABCNetOperation.m in Sources */,
 				57650A7B1C291BCF00B4EB89 /* MASViewConstraint.m in Sources */,
 				57650A7F1C291BCF00B4EB89 /* ViewController+MASAdditions.m in Sources */,
 				577A21F31C3103E50092C7CB /* UIView+TYLaunchAnimation.m in Sources */,
 				57526FDB1C1A965D00FAD42C /* ABCRoundButton.m in Sources */,
-				57BDFF8D1C32823200D11E59 /* ABCFileDownloadDBModel.m in Sources */,
 				57650A7C1C291BCF00B4EB89 /* NSArray+MASAdditions.m in Sources */,
 				57F59A881C336BDF006F1DBC /* DDTTYLogger.m in Sources */,
 				57650A7A1C291BCF00B4EB89 /* MASViewAttribute.m in Sources */,
@@ -1171,7 +1153,6 @@
 				57650A551C291B0100B4EB89 /* UIImage+MultiFormat.m in Sources */,
 				57650A4E1C291B0100B4EB89 /* SDWebImageDecoder.m in Sources */,
 				577A21D71C30C4D20092C7CB /* NSObject+YYModel.m in Sources */,
-				57BDFF8A1C327DE300D11E59 /* ABCFileDownloadInfoModel.m in Sources */,
 				57BDFF801C32347C00D11E59 /* LCActionSheet.m in Sources */,
 				5722566F1C2A8750005F6D12 /* UIImage+ImageProcessing.m in Sources */,
 				57650A231C2917F000B4EB89 /* YYFMDatabaseQueue.m in Sources */,
@@ -1192,7 +1173,6 @@
 				574E7C261AF0C22F0042E538 /* ABCSearchTagView.m in Sources */,
 				57650AAC1C29388600B4EB89 /* TestModel.m in Sources */,
 				57526FF11C1AA8F300FAD42C /* ABCMosiacDataView.m in Sources */,
-				57BDFF861C32677300D11E59 /* ABCFileDownloadManager.m in Sources */,
 				57650A541C291B0100B4EB89 /* UIImage+GIF.m in Sources */,
 				57650A771C291BCF00B4EB89 /* MASConstraint.m in Sources */,
 				57650AFA1C2947C400B4EB89 /* ABCCheckAppUpdate.m in Sources */,

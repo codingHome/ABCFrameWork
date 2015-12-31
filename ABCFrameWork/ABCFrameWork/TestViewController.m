@@ -17,26 +17,37 @@
 #import "TestTableViewController.h"
 #import "LCActionSheet.h"
 #import "AFNetworking.h"
+#import "ABCDownloadManager.h"
 
 @interface TestViewController ()
 
 @property (nonatomic, strong) ABCVidepPlayerController *videoController;
+
+@property (nonatomic, strong) ABCDownloadManager *task;
 
 @end
 
 @implementation TestViewController
 
 - (void)viewDidLoad {
+    UIButton *pauseBtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 50, 50)];
+    [pauseBtn addTarget:self action:@selector(pause) forControlEvents:UIControlEventTouchUpInside];
+    pauseBtn.backgroundColor = [UIColor redColor];
+    [self.view addSubview:pauseBtn];
     
+    UIButton *resumeBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, 100, 50, 50)];
+    [resumeBtn addTarget:self action:@selector(resume) forControlEvents:UIControlEventTouchUpInside];
+    resumeBtn.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:resumeBtn];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self testRequest];
+//    [self testRequest];
 //    [self testVidio];
 //    [self testScaleImage];
 //    [self testTableView];
 //    [self testActionSheet];
-    
+    [self testDownLoad];
 }
 
 - (void)testRequest {
@@ -89,19 +100,26 @@
 }
 
 - (void)testDownLoad {
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    
-    NSURL *URL = [NSURL URLWithString:@"http://example.com/download.zip"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    
-    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
-        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
-    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
-        DDLogDebug(@"File downloaded to: %@", filePath);
+    NSString *url = @"https://codeload.github.com/Urinx/WriteTyper/zip/master";
+    NSString *url1 = @"http://cc.cocimg.com/api/uploads/20151230/1451445108334838.jpg";
+    self.task = [[[ABCDownloadManager alloc] init] downloadFileWithURLString:url cachePath:@"temp" progress:^(CGFloat progress, CGFloat totalMBRead) {
+        DDLogDebug(@"%f,%f",progress, totalMBRead);
+    } success:^(AFURLSessionManager *operation, id responseObject) {
+        DDLogDebug(@"%@,%@",operation, responseObject);
+    } failure:^(AFURLSessionManager *operation, NSError *error) {
+        DDLogDebug(@"%@,%@",operation, error);
+        if (error.code == -999) {
+            DDLogDebug(@"cancel");
+        }
     }];
-    [downloadTask resume];
+}
+
+- (void)pause {
+    [self.task pause];
+}
+
+- (void)resume {
+    [self.task resume];
 }
 
 @end

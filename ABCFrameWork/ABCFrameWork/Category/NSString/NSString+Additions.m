@@ -105,6 +105,7 @@
     return [regExPredicate evaluateWithObject:[self lowercaseString]];
 }
 - (BOOL) isEmpty {
+    DDLogDebug(@"%@",self);
     return nil == self
     || 0 == [[self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length];
 }
