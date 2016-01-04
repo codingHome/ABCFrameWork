@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		571227861C3A0F3000E8D57C /* ABCDownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 571227851C3A0F3000E8D57C /* ABCDownloadModel.m */; };
 		5722566B1C2A8282005F6D12 /* ABCScaleImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722566A1C2A8282005F6D12 /* ABCScaleImagesViewController.m */; };
 		5722566F1C2A8750005F6D12 /* UIImage+ImageProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722566E1C2A8750005F6D12 /* UIImage+ImageProcessing.m */; };
 		574E7BB61AEF29B30042E538 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E7BB51AEF29B30042E538 /* main.m */; };
@@ -128,6 +129,8 @@
 
 /* Begin PBXFileReference section */
 		570272231C17C7EE000AD144 /* ABCPrecompile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCPrecompile.h; sourceTree = "<group>"; };
+		571227841C3A0F3000E8D57C /* ABCDownloadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCDownloadModel.h; path = DownloadManager/ABCDownloadModel.h; sourceTree = "<group>"; };
+		571227851C3A0F3000E8D57C /* ABCDownloadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCDownloadModel.m; path = DownloadManager/ABCDownloadModel.m; sourceTree = "<group>"; };
 		572256691C2A8282005F6D12 /* ABCScaleImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCScaleImagesViewController.h; path = ScaleImageView/ABCScaleImagesViewController.h; sourceTree = "<group>"; };
 		5722566A1C2A8282005F6D12 /* ABCScaleImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCScaleImagesViewController.m; path = ScaleImageView/ABCScaleImagesViewController.m; sourceTree = "<group>"; };
 		5722566D1C2A8750005F6D12 /* UIImage+ImageProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageProcessing.h"; path = "UIImage/UIImage+ImageProcessing.h"; sourceTree = "<group>"; };
@@ -933,6 +936,8 @@
 			children = (
 				57F59A8A1C338425006F1DBC /* ABCDownloadManager.h */,
 				57F59A8B1C338425006F1DBC /* ABCDownloadManager.m */,
+				571227841C3A0F3000E8D57C /* ABCDownloadModel.h */,
+				571227851C3A0F3000E8D57C /* ABCDownloadModel.m */,
 			);
 			name = DownloadManager;
 			sourceTree = "<group>";
@@ -1150,6 +1155,7 @@
 				57650A201C2917F000B4EB89 /* YYFMDatabase.m in Sources */,
 				57526FDE1C1A968600FAD42C /* ABCRoundImageView.m in Sources */,
 				57650A941C291F2D00B4EB89 /* AFHTTPSessionManager.m in Sources */,
+				571227861C3A0F3000E8D57C /* ABCDownloadModel.m in Sources */,
 				57650A551C291B0100B4EB89 /* UIImage+MultiFormat.m in Sources */,
 				57650A4E1C291B0100B4EB89 /* SDWebImageDecoder.m in Sources */,
 				577A21D71C30C4D20092C7CB /* NSObject+YYModel.m in Sources */,

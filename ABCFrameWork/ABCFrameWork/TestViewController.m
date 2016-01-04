@@ -101,16 +101,14 @@
 
 - (void)testDownLoad {
     NSString *url = @"https://codeload.github.com/Urinx/WriteTyper/zip/master";
-    NSString *url1 = @"http://cc.cocimg.com/api/uploads/20151230/1451445108334838.jpg";
-    self.task = [[[ABCDownloadManager alloc] init] downloadFileWithURLString:url cachePath:@"temp" progress:^(CGFloat progress, CGFloat totalMBRead) {
-        DDLogDebug(@"%f,%f",progress, totalMBRead);
+    
+    self.task = [[ABCDownloadManager alloc] init];
+    [self.task downloadFileWithURLString:url cacheName:@"temp.zip" progress:^(CGFloat progress, CGFloat total) {
+        DDLogDebug(@"%f,%f",progress, total);
     } success:^(AFURLSessionManager *operation, id responseObject) {
         DDLogDebug(@"%@,%@",operation, responseObject);
     } failure:^(AFURLSessionManager *operation, NSError *error) {
         DDLogDebug(@"%@,%@",operation, error);
-        if (error.code == -999) {
-            DDLogDebug(@"cancel");
-        }
     }];
 }
 
@@ -119,7 +117,16 @@
 }
 
 - (void)resume {
-    [self.task resume];
+    NSString *url = @"https://codeload.github.com/Urinx/WriteTyper/zip/master";
+    self.task = [[ABCDownloadManager alloc] init];
+    
+    [self.task resumeWithURLString:url Progress:^(CGFloat progress, CGFloat total) {
+        DDLogDebug(@"%f,%f",progress, total);
+    } success:^(AFURLSessionManager *operation, id responseObject) {
+        DDLogDebug(@"%@,%@",operation, responseObject);
+    } failure:^(AFURLSessionManager *operation, NSError *error) {
+        DDLogDebug(@"%@,%@",operation, error);
+    }];
 }
 
 @end
