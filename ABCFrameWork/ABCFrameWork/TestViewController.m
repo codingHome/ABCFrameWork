@@ -18,6 +18,7 @@
 #import "LCActionSheet.h"
 #import "AFNetworking.h"
 #import "ABCDownloadManager.h"
+#import "LCProgressHUD.h"
 
 @interface TestViewController ()
 
@@ -47,7 +48,8 @@
 //    [self testScaleImage];
 //    [self testTableView];
 //    [self testActionSheet];
-    [self testDownLoad];
+//    [self testDownLoad];
+    [self testHud];
 }
 
 - (void)testRequest {
@@ -127,6 +129,10 @@
     } failure:^(AFURLSessionManager *operation, NSError *error) {
         DDLogDebug(@"%@,%@",operation, error);
     }];
+}
+
+- (void)testHud {
+    [LCProgressHUD showSuccess:@"123"];
 }
 
 @end

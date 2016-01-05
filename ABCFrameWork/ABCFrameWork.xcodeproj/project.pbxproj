@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		571227861C3A0F3000E8D57C /* ABCDownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 571227851C3A0F3000E8D57C /* ABCDownloadModel.m */; };
+		571227901C3B562200E8D57C /* PINCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5712278B1C3B562200E8D57C /* PINCache.m */; };
+		571227911C3B562200E8D57C /* PINDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5712278D1C3B562200E8D57C /* PINDiskCache.m */; };
+		571227921C3B562200E8D57C /* PINMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5712278F1C3B562200E8D57C /* PINMemoryCache.m */; };
+		5712279A1C3B5CF100E8D57C /* LCProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 571227941C3B5CF100E8D57C /* LCProgressHUD.bundle */; };
+		5712279B1C3B5CF100E8D57C /* LCProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 571227961C3B5CF100E8D57C /* LCProgressHUD.m */; };
+		5712279C1C3B5CF100E8D57C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 571227991C3B5CF100E8D57C /* MBProgressHUD.m */; };
+		571227A11C3B603300E8D57C /* UINavigationController+JZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 571227A01C3B603300E8D57C /* UINavigationController+JZExtension.m */; };
 		5722566B1C2A8282005F6D12 /* ABCScaleImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722566A1C2A8282005F6D12 /* ABCScaleImagesViewController.m */; };
 		5722566F1C2A8750005F6D12 /* UIImage+ImageProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722566E1C2A8750005F6D12 /* UIImage+ImageProcessing.m */; };
 		574E7BB61AEF29B30042E538 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E7BB51AEF29B30042E538 /* main.m */; };
@@ -131,6 +138,21 @@
 		570272231C17C7EE000AD144 /* ABCPrecompile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCPrecompile.h; sourceTree = "<group>"; };
 		571227841C3A0F3000E8D57C /* ABCDownloadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCDownloadModel.h; path = DownloadManager/ABCDownloadModel.h; sourceTree = "<group>"; };
 		571227851C3A0F3000E8D57C /* ABCDownloadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCDownloadModel.m; path = DownloadManager/ABCDownloadModel.m; sourceTree = "<group>"; };
+		571227891C3B562200E8D57C /* Nullability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nullability.h; sourceTree = "<group>"; };
+		5712278A1C3B562200E8D57C /* PINCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PINCache.h; sourceTree = "<group>"; };
+		5712278B1C3B562200E8D57C /* PINCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PINCache.m; sourceTree = "<group>"; };
+		5712278C1C3B562200E8D57C /* PINDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PINDiskCache.h; sourceTree = "<group>"; };
+		5712278D1C3B562200E8D57C /* PINDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PINDiskCache.m; sourceTree = "<group>"; };
+		5712278E1C3B562200E8D57C /* PINMemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PINMemoryCache.h; sourceTree = "<group>"; };
+		5712278F1C3B562200E8D57C /* PINMemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PINMemoryCache.m; sourceTree = "<group>"; };
+		571227941C3B5CF100E8D57C /* LCProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LCProgressHUD.bundle; sourceTree = "<group>"; };
+		571227951C3B5CF100E8D57C /* LCProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCProgressHUD.h; sourceTree = "<group>"; };
+		571227961C3B5CF100E8D57C /* LCProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCProgressHUD.m; sourceTree = "<group>"; };
+		571227981C3B5CF100E8D57C /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		571227991C3B5CF100E8D57C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		5712279E1C3B603300E8D57C /* JZNavigationExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZNavigationExtension.h; sourceTree = "<group>"; };
+		5712279F1C3B603300E8D57C /* UINavigationController+JZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JZExtension.h"; sourceTree = "<group>"; };
+		571227A01C3B603300E8D57C /* UINavigationController+JZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JZExtension.m"; sourceTree = "<group>"; };
 		572256691C2A8282005F6D12 /* ABCScaleImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCScaleImagesViewController.h; path = ScaleImageView/ABCScaleImagesViewController.h; sourceTree = "<group>"; };
 		5722566A1C2A8282005F6D12 /* ABCScaleImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCScaleImagesViewController.m; path = ScaleImageView/ABCScaleImagesViewController.m; sourceTree = "<group>"; };
 		5722566D1C2A8750005F6D12 /* UIImage+ImageProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageProcessing.h"; path = "UIImage/UIImage+ImageProcessing.h"; sourceTree = "<group>"; };
@@ -379,6 +401,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		571227881C3B562200E8D57C /* PINCache */ = {
+			isa = PBXGroup;
+			children = (
+				571227891C3B562200E8D57C /* Nullability.h */,
+				5712278A1C3B562200E8D57C /* PINCache.h */,
+				5712278B1C3B562200E8D57C /* PINCache.m */,
+				5712278C1C3B562200E8D57C /* PINDiskCache.h */,
+				5712278D1C3B562200E8D57C /* PINDiskCache.m */,
+				5712278E1C3B562200E8D57C /* PINMemoryCache.h */,
+				5712278F1C3B562200E8D57C /* PINMemoryCache.m */,
+			);
+			path = PINCache;
+			sourceTree = "<group>";
+		};
+		571227931C3B5CF100E8D57C /* LCProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				571227941C3B5CF100E8D57C /* LCProgressHUD.bundle */,
+				571227951C3B5CF100E8D57C /* LCProgressHUD.h */,
+				571227961C3B5CF100E8D57C /* LCProgressHUD.m */,
+			);
+			path = LCProgressHUD;
+			sourceTree = "<group>";
+		};
+		571227971C3B5CF100E8D57C /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				571227981C3B5CF100E8D57C /* MBProgressHUD.h */,
+				571227991C3B5CF100E8D57C /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		5712279D1C3B603300E8D57C /* JZNavigationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				5712279E1C3B603300E8D57C /* JZNavigationExtension.h */,
+				5712279F1C3B603300E8D57C /* UINavigationController+JZExtension.h */,
+				571227A01C3B603300E8D57C /* UINavigationController+JZExtension.m */,
+			);
+			path = JZNavigationExtension;
+			sourceTree = "<group>";
+		};
 		5722566C1C2A8722005F6D12 /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -774,6 +839,10 @@
 		577072621C19226B00EDDD72 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				5712279D1C3B603300E8D57C /* JZNavigationExtension */,
+				571227931C3B5CF100E8D57C /* LCProgressHUD */,
+				571227971C3B5CF100E8D57C /* MBProgressHUD */,
+				571227881C3B562200E8D57C /* PINCache */,
 				57F59A711C336BDF006F1DBC /* CocoaLumberjack */,
 				57BDFF7B1C32347C00D11E59 /* LCActionSheet */,
 				577A21E61C3103E50092C7CB /* TYLaunchAnimation */,
@@ -1072,6 +1141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BDFF7F1C32347C00D11E59 /* LCActionSheet.bundle in Resources */,
+				5712279A1C3B5CF100E8D57C /* LCProgressHUD.bundle in Resources */,
 				57650A751C291BCF00B4EB89 /* Info.plist in Resources */,
 				57526FE61C1AA15100FAD42C /* Default@2x.png in Resources */,
 				57526FE41C1AA15100FAD42C /* Default-568h@2x.png in Resources */,
@@ -1104,6 +1174,7 @@
 				57650A7E1C291BCF00B4EB89 /* View+MASAdditions.m in Sources */,
 				577A21F01C3103E50092C7CB /* TYLaunchBaseAnimation.m in Sources */,
 				574E7BE41AEF336E0042E538 /* ABCRequestModel.m in Sources */,
+				571227911C3B562200E8D57C /* PINDiskCache.m in Sources */,
 				57F72CE01C17DB2D00C0F36E /* UIView+DDAddition.m in Sources */,
 				577A21DB1C30DF8D0092C7CB /* TestTableViewController.m in Sources */,
 				57650A241C2917F000B4EB89 /* YYFMResultSet.m in Sources */,
@@ -1129,20 +1200,25 @@
 				57650A4A1C291B0100B4EB89 /* MKAnnotationView+WebCache.m in Sources */,
 				57650A4B1C291B0100B4EB89 /* NSData+ImageContentType.m in Sources */,
 				57F59A831C336BDF006F1DBC /* DDAbstractDatabaseLogger.m in Sources */,
+				571227901C3B562200E8D57C /* PINCache.m in Sources */,
 				57650A781C291BCF00B4EB89 /* MASConstraintMaker.m in Sources */,
 				57650A211C2917F000B4EB89 /* YYFMDatabaseAdditions.m in Sources */,
 				57D17C611C2B8989004A9188 /* zip.c in Sources */,
 				577A21F21C3103E50092C7CB /* UIImage+TYLaunchImage.m in Sources */,
+				571227921C3B562200E8D57C /* PINMemoryCache.m in Sources */,
+				571227A11C3B603300E8D57C /* UINavigationController+JZExtension.m in Sources */,
 				57650A761C291BCF00B4EB89 /* MASCompositeConstraint.m in Sources */,
 				57F72CE91C17FF9700C0F36E /* TestViewController.m in Sources */,
 				577A21CB1C2D18ED0092C7CB /* ABCCacheModel.m in Sources */,
 				574E7BB61AEF29B30042E538 /* main.m in Sources */,
 				57F59A841C336BDF006F1DBC /* DDASLLogCapture.m in Sources */,
+				5712279C1C3B5CF100E8D57C /* MBProgressHUD.m in Sources */,
 				57650A501C291B0100B4EB89 /* SDWebImageDownloaderOperation.m in Sources */,
 				57F59A8C1C338425006F1DBC /* ABCDownloadManager.m in Sources */,
 				574E7BE71AEF39090042E538 /* ABCNetOperation.m in Sources */,
 				57650A7B1C291BCF00B4EB89 /* MASViewConstraint.m in Sources */,
 				57650A7F1C291BCF00B4EB89 /* ViewController+MASAdditions.m in Sources */,
+				5712279B1C3B5CF100E8D57C /* LCProgressHUD.m in Sources */,
 				577A21F31C3103E50092C7CB /* UIView+TYLaunchAnimation.m in Sources */,
 				57526FDB1C1A965D00FAD42C /* ABCRoundButton.m in Sources */,
 				57650A7C1C291BCF00B4EB89 /* NSArray+MASAdditions.m in Sources */,
