@@ -27,7 +27,7 @@ RequestSuccess:(RequestSuccessBlock)successCallBack
     NSDictionary *params = [model instancePropertiesList];
     self.requestSerializer.timeoutInterval = model.timeoutInterval;
     
-    [self GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self GET:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         successCallBack(responseObject,nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failCallBack(nil,error);
@@ -42,7 +42,7 @@ RequestSuccess:(RequestSuccessBlock)successCallBack
     NSDictionary *params = [model instancePropertiesList];
     self.requestSerializer.timeoutInterval = model.timeoutInterval;
     
-    [self POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self POST:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         successCallBack(responseObject,nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failCallBack(nil,error);
@@ -58,7 +58,7 @@ RequestSuccess:(RequestSuccessBlock)successCallBack
     NSDictionary *params = [model instancePropertiesList];
     self.requestSerializer.timeoutInterval = model.timeoutInterval;
     
-    [self POST:url parameters:params constructingBodyWithBlock:bodyBlock progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self POST:url parameters:params constructingBodyWithBlock:bodyBlock success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         successCallBack(responseObject,nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failCallBack(nil,error);

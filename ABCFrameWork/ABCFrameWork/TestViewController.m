@@ -17,14 +17,14 @@
 #import "TestTableViewController.h"
 #import "LCActionSheet.h"
 #import "AFNetworking.h"
-#import "ABCDownloadManager.h"
 #import "LCProgressHUD.h"
+#import "HSDownloadManager.h"
 
 @interface TestViewController ()
 
 @property (nonatomic, strong) ABCVidepPlayerController *videoController;
 
-@property (nonatomic, strong) ABCDownloadManager *task;
+@property (nonatomic, strong) AFHTTPRequestOperation *operation;
 
 @end
 
@@ -35,11 +35,6 @@
     [pauseBtn addTarget:self action:@selector(pause) forControlEvents:UIControlEventTouchUpInside];
     pauseBtn.backgroundColor = [UIColor redColor];
     [self.view addSubview:pauseBtn];
-    
-    UIButton *resumeBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, 100, 50, 50)];
-    [resumeBtn addTarget:self action:@selector(resume) forControlEvents:UIControlEventTouchUpInside];
-    resumeBtn.backgroundColor = [UIColor blueColor];
-    [self.view addSubview:resumeBtn];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -48,8 +43,8 @@
 //    [self testScaleImage];
 //    [self testTableView];
 //    [self testActionSheet];
-//    [self testDownLoad];
-    [self testHud];
+    [self testDownLoad];
+//    [self testHud];
 }
 
 - (void)testRequest {
@@ -103,32 +98,15 @@
 
 - (void)testDownLoad {
     NSString *url = @"https://codeload.github.com/Urinx/WriteTyper/zip/master";
-    
-    self.task = [[ABCDownloadManager alloc] init];
-    [self.task downloadFileWithURLString:url cacheName:@"temp.zip" progress:^(CGFloat progress, CGFloat total) {
-        DDLogDebug(@"%f,%f",progress, total);
-    } success:^(AFURLSessionManager *operation, id responseObject) {
-        DDLogDebug(@"%@,%@",operation, responseObject);
-    } failure:^(AFURLSessionManager *operation, NSError *error) {
-        DDLogDebug(@"%@,%@",operation, error);
+    [[HSDownloadManager sharedInstance] download:url progress:^(NSInteger receivedSize, NSInteger expectedSize, CGFloat progress) {
+        DDLogInfo(@"%f", progress);
+    } state:^(DownloadState state) {
+        
     }];
 }
 
 - (void)pause {
-    [self.task pause];
-}
-
-- (void)resume {
-    NSString *url = @"https://codeload.github.com/Urinx/WriteTyper/zip/master";
-    self.task = [[ABCDownloadManager alloc] init];
     
-    [self.task resumeWithURLString:url Progress:^(CGFloat progress, CGFloat total) {
-        DDLogDebug(@"%f,%f",progress, total);
-    } success:^(AFURLSessionManager *operation, id responseObject) {
-        DDLogDebug(@"%@,%@",operation, responseObject);
-    } failure:^(AFURLSessionManager *operation, NSError *error) {
-        DDLogDebug(@"%@,%@",operation, error);
-    }];
 }
 
 - (void)testHud {
