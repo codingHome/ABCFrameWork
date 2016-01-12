@@ -34,6 +34,8 @@
 
 @property (nonatomic, weak) id<ABCVideoPlayerControlViewDelegate>delegate;
 
+@property (nonatomic, copy) NSString *title;
+
 - (void)animateHide;
 - (void)animateShow;
 - (void)autoFadeOutControlBar;

@@ -19,6 +19,7 @@
 #import "AFNetworking.h"
 #import "LCProgressHUD.h"
 #import "HSDownloadManager.h"
+#import "UIView+Loading.h"
 
 @interface TestViewController ()
 
@@ -43,8 +44,9 @@
 //    [self testScaleImage];
 //    [self testTableView];
 //    [self testActionSheet];
-    [self testDownLoad];
+//    [self testDownLoad];
 //    [self testHud];
+    [self testLoading];
 }
 
 - (void)testRequest {
@@ -72,7 +74,7 @@
 - (void)playVideoWithURL:(NSURL *)url
 {
     if (!self.videoController) {
-        self.videoController = [[ABCVidepPlayerController alloc] initWithFrame:CGRectMake(0, 0, ABC_SCREEN_WIDTH, ABC_SCREEN_WIDTH*(9.0/16.0))];
+        self.videoController = [[ABCVidepPlayerController alloc] initWithFrame:CGRectMake(0, 0, ABC_SCREEN_WIDTH, ABC_SCREEN_WIDTH*(9.0/16.0))title:@"12121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212"];
         __weak typeof(self)weakSelf = self;
         [self.videoController setDimissCompleteBlock:^{
             weakSelf.videoController = nil;
@@ -111,6 +113,14 @@
 
 - (void)testHud {
     [LCProgressHUD showSuccess:@"123"];
+}
+
+- (void)testLoading {
+    if (self.view.isLoading) {
+        [self.view endLoading];
+    }else {
+        [self.view beginLoading];
+    }
 }
 
 @end

@@ -14,10 +14,12 @@ static const CGFloat kVideoPlayerControllerAnimationTimeinterval = 0.3f;
 @interface ABCVidepPlayerController () <ABCVideoPlayerControlViewDelegate>
 
 @property (nonatomic, strong) ABCVideoPlayerControlView *videoControl;
-@property (nonatomic, assign) BOOL isFullscreenMode;
-@property (nonatomic, assign) CGRect originFrame;
-@property (nonatomic, strong) NSTimer *durationTimer;
-@property (nonatomic, assign) BOOL playbackDurationSet;
+@property (nonatomic, assign) BOOL                      isFullscreenMode;
+@property (nonatomic, assign) CGRect                    originFrame;
+@property (nonatomic, strong) NSTimer                   *durationTimer;
+@property (nonatomic, assign) BOOL                      playbackDurationSet;
+@property (nonatomic, copy  ) NSString                  *title;
+
 @end
 
 
@@ -28,13 +30,14 @@ static const CGFloat kVideoPlayerControllerAnimationTimeinterval = 0.3f;
     [self cancelObserver];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title
 {
     self = [super init];
     if (self) {
         self.view.frame = frame;
         self.view.backgroundColor = [UIColor blackColor];
         self.controlStyle = MPMovieControlStyleNone;
+        self.title = title;
         [self.view addSubview:self.videoControl];
         [self configObserver];
         [self configControlAction];
@@ -262,12 +265,13 @@ static const CGFloat kVideoPlayerControllerAnimationTimeinterval = 0.3f;
     [self.videoControl setProgressSliderDuringPlayValue:floorf(duration)];
 }
 
-#pragma mark - Property
+#pragma mark - Setter
 
 - (ABCVideoPlayerControlView *)videoControl
 {
     if (!_videoControl) {
         _videoControl = [[ABCVideoPlayerControlView alloc] initWithFrame:self.view.frame];
+        _videoControl.title = self.title;
         _videoControl.delegate = self;
     }
     return _videoControl;

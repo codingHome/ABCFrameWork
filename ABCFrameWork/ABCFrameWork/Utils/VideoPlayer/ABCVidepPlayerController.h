@@ -14,7 +14,7 @@
 
 @property (nonatomic, assign)double startTime;
 
-- (instancetype)initWithFrame:(CGRect)frame;
+- (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title;
 - (void)showInWindow;
 - (void)dismiss;
 

@@ -9,6 +9,7 @@
 #import "ABCVideoPlayerControlView.h"
 #import <MediaPlayer/MPVolumeView.h>
 #import <AVFoundation/AVFoundation.h>
+#import "ABCVideoPlayerAlertView.h"
 
 static const CGFloat kVideoControlBarHeight = 40.0;
 static const CGFloat kVideoControlAnimationTimeinterval = 0.3;
@@ -17,18 +18,27 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
 
 @interface ABCVideoPlayerControlView()
 
-@property (nonatomic, strong) UIView *topBar;
-@property (nonatomic, strong) UIView *bottomBar;
-@property (nonatomic, strong) UIButton *playButton;
-@property (nonatomic, strong) UIButton *pauseButton;
-@property (nonatomic, strong) UIButton *fullScreenButton;
-@property (nonatomic, strong) UIButton *shrinkScreenButton;
-@property (nonatomic, strong) UISlider *progressSlider;
-@property (nonatomic, strong) UIButton *closeButton;
-@property (nonatomic, strong) UILabel *timeLabel;
-@property (nonatomic, assign) BOOL isBarShowing;
+@property (nonatomic, strong) UIView                  *topBar;
+@property (nonatomic, strong) UIView                  *bottomBar;
+@property (nonatomic, strong) UIView                  *displayView;
+@property (nonatomic, strong) UIButton                *playButton;
+@property (nonatomic, strong) UIButton                *pauseButton;
+@property (nonatomic, strong) UIButton                *fullScreenButton;
+@property (nonatomic, strong) UIButton                *shrinkScreenButton;
+@property (nonatomic, strong) UISlider                *progressSlider;
+@property (nonatomic, strong) UIButton                *closeButton;
+@property (nonatomic, strong) UILabel                 *timeLabel;
+@property (nonatomic, assign) BOOL                    isBarShowing;
 @property (nonatomic, strong) UIActivityIndicatorView *indicatorView;
-@property (nonatomic, strong) MPVolumeView *volumeView;
+@property (nonatomic, strong) MPVolumeView            *volumeView;
+@property (nonatomic, strong) UISlider                *MPVolumeSlider;
+@property (nonatomic, assign) CGFloat                 systemVolume;
+@property (nonatomic, assign) CGFloat                 systemBrightness;
+@property (nonatomic, strong) UILabel                 *titleLabel;
+@property (nonatomic, assign) CGPoint                 beginPoint;
+@property (nonatomic, strong) ABCVideoPlayerAlertView *volumeAlertView;
+@property (nonatomic, strong) ABCVideoPlayerAlertView *brightnessAlertView;
+@property (nonatomic, strong) ABCVideoPlayerAlertView *progressAlertView;
 
 @end
 
@@ -45,15 +55,11 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
         //底边栏
         [self addSubview:self.bottomBar];
         
-        //读取视图
-        [self addSubview:self.indicatorView];
+        //显示视图
+        [self addSubview:self.displayView];
         
         //音量视图
         [self addSubview:self.volumeView];
-        
-        self.pauseButton.hidden = YES;
-        
-        self.shrinkScreenButton.hidden = YES;
         
         [self addAction];
     }
@@ -75,15 +81,11 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
     
     UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
     doubleTapGesture.numberOfTapsRequired = 2;
-
+    
     [self addGestureRecognizer:tapGesture];
     [self addGestureRecognizer:doubleTapGesture];
     
-    NSError *error;
-
-    [[AVAudioSession sharedInstance] setActive:YES error:&error];
-    
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChanged:) name:@"AVSystemController_SystemVolumeDidChangeNotification" object:nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
 }
 
 - (void)didMoveToSuperview
@@ -100,7 +102,6 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
     [UIView animateWithDuration:kVideoControlAnimationTimeinterval animations:^{
         self.topBar.alpha = 0.0;
         self.bottomBar.alpha = 0.0;
-        self.volumeView.alpha = 0.0;
     } completion:^(BOOL finished) {
         self.isBarShowing = NO;
     }];
@@ -114,7 +115,6 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
     [UIView animateWithDuration:kVideoControlAnimationTimeinterval animations:^{
         self.topBar.alpha = 1.0;
         self.bottomBar.alpha = 1.0;
-        self.volumeView.alpha = 1.0;
     } completion:^(BOOL finished) {
         self.isBarShowing = YES;
         [self autoFadeOutControlBar];
@@ -166,22 +166,38 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
     }
 }
 
-#pragma mark - Property
+#pragma mark - Setter&&Getter
 
-- (UIView *)topBar
-{
+- (UIView *)topBar {
     if (!_topBar) {
-        _topBar = [UIView new];
-        _topBar.backgroundColor = [UIColor clearColor];
+        _topBar = [[UIView alloc] init];
+        _topBar.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3];
         
-        
-        [self.topBar addSubview:self.closeButton];
+        [_topBar addSubview:self.closeButton];
+        [_topBar addSubview:self.titleLabel];
     }
     return _topBar;
 }
 
-- (UIView *)bottomBar
-{
+- (UIButton *)closeButton {
+    if (!_closeButton) {
+        _closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_closeButton setImage:[UIImage imageNamed:@"video-player-close"] forState:UIControlStateNormal];
+    }
+    return _closeButton;
+}
+
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc] init];
+        _titleLabel.textColor = [UIColor whiteColor];
+        _titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+        _titleLabel.font = [UIFont systemFontOfSize:16];
+    }
+    return _titleLabel;
+}
+
+- (UIView *)bottomBar {
     if (!_bottomBar) {
         _bottomBar = [UIView new];
         _bottomBar.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3];
@@ -196,8 +212,7 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
     return _bottomBar;
 }
 
-- (UIButton *)playButton
-{
+- (UIButton *)playButton {
     if (!_playButton) {
         _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_playButton setImage:[UIImage imageNamed:@"video-player-play"] forState:UIControlStateNormal];
@@ -205,17 +220,16 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
     return _playButton;
 }
 
-- (UIButton *)pauseButton
-{
+- (UIButton *)pauseButton {
     if (!_pauseButton) {
         _pauseButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_pauseButton setImage:[UIImage imageNamed:@"video-player-pause"] forState:UIControlStateNormal];
+        _pauseButton.hidden = YES;
     }
     return _pauseButton;
 }
 
-- (UIButton *)fullScreenButton
-{
+- (UIButton *)fullScreenButton {
     if (!_fullScreenButton) {
         _fullScreenButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_fullScreenButton setImage:[UIImage imageNamed:@"video-player-fullscreen"] forState:UIControlStateNormal];
@@ -223,17 +237,16 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
     return _fullScreenButton;
 }
 
-- (UIButton *)shrinkScreenButton
-{
+- (UIButton *)shrinkScreenButton {
     if (!_shrinkScreenButton) {
         _shrinkScreenButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_shrinkScreenButton setImage:[UIImage imageNamed:@"video-player-shrinkscreen"] forState:UIControlStateNormal];
+        _shrinkScreenButton.hidden = YES;
     }
     return _shrinkScreenButton;
 }
 
-- (UISlider *)progressSlider
-{
+- (UISlider *)progressSlider {
     if (!_progressSlider) {
         _progressSlider = [[UISlider alloc] init];
         [_progressSlider setThumbImage:[UIImage imageNamed:@"video-player-point"] forState:UIControlStateNormal];
@@ -245,17 +258,7 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
     return _progressSlider;
 }
 
-- (UIButton *)closeButton
-{
-    if (!_closeButton) {
-        _closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_closeButton setImage:[UIImage imageNamed:@"video-player-close"] forState:UIControlStateNormal];
-    }
-    return _closeButton;
-}
-
-- (UILabel *)timeLabel
-{
+- (UILabel *)timeLabel {
     if (!_timeLabel) {
         _timeLabel = [UILabel new];
         _timeLabel.backgroundColor = [UIColor clearColor];
@@ -266,10 +269,21 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
     return _timeLabel;
 }
 
-- (UIActivityIndicatorView *)indicatorView
-{
+- (UIView *)displayView {
+    if (!_displayView) {
+        _displayView = [[UIView alloc] init];
+        _displayView.backgroundColor = [UIColor clearColor];
+        [_displayView addSubview:self.indicatorView];
+        [_displayView addSubview:self.volumeAlertView];
+        [_displayView addSubview:self.brightnessAlertView];
+        [_displayView addSubview:self.progressAlertView];
+    }
+    return _displayView;
+}
+
+- (UIActivityIndicatorView *)indicatorView {
     if (!_indicatorView) {
-        _indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        _indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
         [_indicatorView startAnimating];
     }
     return _indicatorView;
@@ -277,54 +291,73 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
 
 - (MPVolumeView *)volumeView {
     if (!_volumeView) {
-        UISlider* volumeViewSlider = nil;
         _volumeView = [[MPVolumeView alloc] init];
-        _volumeView.transform = CGAffineTransformMakeRotation(M_PI_2 + M_PI);
         for (UIView *view in [_volumeView subviews]){
             if ([view.class.description isEqualToString:@"MPVolumeSlider"]){
-                volumeViewSlider = (UISlider*)view;
+                self.MPVolumeSlider = (UISlider*)view;
                 break;
             }
         }
-        float systemVolume = volumeViewSlider.value;
-        [volumeViewSlider setThumbImage:[UIImage imageNamed:@"video-player-point"] forState:UIControlStateNormal];
-        [volumeViewSlider setMinimumTrackTintColor:[UIColor whiteColor]];
-        [volumeViewSlider setMaximumTrackTintColor:[UIColor lightGrayColor]];
-        [volumeViewSlider setValue:systemVolume / 10.0 animated:NO];
+        float systemVolume = self.MPVolumeSlider.value;
+        [self.MPVolumeSlider setValue:systemVolume / 10.0 animated:NO];
         
-        // send UI control event to make the change effect right now.
-        [volumeViewSlider sendActionsForControlEvents:UIControlEventTouchUpInside];
+        [self.MPVolumeSlider sendActionsForControlEvents:UIControlEventTouchUpInside];
     }
     return _volumeView;
 }
 
+- (ABCVideoPlayerAlertView *)volumeAlertView {
+    if (!_volumeAlertView) {
+        _volumeAlertView = [[ABCVideoPlayerAlertView alloc] initWithType:ABCVideoAlertTypeVolume];
+        _volumeAlertView.hidden = YES;
+    }
+    return _volumeAlertView;
+}
+
+- (ABCVideoPlayerAlertView *)brightnessAlertView {
+    if (!_brightnessAlertView) {
+        _brightnessAlertView = [[ABCVideoPlayerAlertView alloc] initWithType:ABCVideoAlertTypeBrightness];
+        _brightnessAlertView.hidden = YES;
+    }
+    return _brightnessAlertView;
+}
+
+- (ABCVideoPlayerAlertView *)progressAlertView {
+    if (!_progressAlertView) {
+        _progressAlertView = [[ABCVideoPlayerAlertView alloc] initWithType:ABCVideoAlertTypeProgress];
+        _progressAlertView.hidden = YES;
+    }
+    return _progressAlertView;
+}
+
+- (void)setTitle:(NSString *)title {
+    _title = [title copy];
+    self.titleLabel.text = _title;
+}
+
 #pragma mark - Action 
 
-- (void)playButtonClick
-{
+- (void)playButtonClick {
     [self playingVideo];
     if (_delegate && [_delegate respondsToSelector:@selector(didTapPlayerControlViewPlayButton)]) {
         [_delegate didTapPlayerControlViewPlayButton];
     }
 }
 
-- (void)pauseButtonClick
-{
+- (void)pauseButtonClick {
     [self stopVideo];
     if (_delegate && [_delegate respondsToSelector:@selector(didTapPlayerControlViewPauseButton)]) {
         [_delegate didTapPlayerControlViewPauseButton];
     }
 }
 
-- (void)closeButtonClick
-{
+- (void)closeButtonClick {
     if (_delegate && [_delegate respondsToSelector:@selector(didTapPlayerControlViewCloseButton)]) {
         [_delegate didTapPlayerControlViewCloseButton];
     }
 }
 
-- (void)fullScreenButtonClick
-{
+- (void)fullScreenButtonClick {
     self.fullScreenButton.hidden = YES;
     self.shrinkScreenButton.hidden = NO;
     if (_delegate && [_delegate respondsToSelector:@selector(didTapPlayerControlViewFullScreenButton)]) {
@@ -332,8 +365,7 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
     }
 }
 
-- (void)shrinkScreenButtonClick
-{
+- (void)shrinkScreenButtonClick {
     self.fullScreenButton.hidden = NO;
     self.shrinkScreenButton.hidden = YES;
     if (_delegate && [_delegate respondsToSelector:@selector(didTapPlayerControlViewShrinkScreenButton)]) {
@@ -442,17 +474,67 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
         make.width.and.height.mas_equalTo(kVideoControlBarHeight);
     }];
     
-    [_indicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(weakSelf.center);
+    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(weakSelf.topBar.mas_left).offset(20);
+        make.top.mas_equalTo(weakSelf.topBar.mas_top).offset(8);
+        make.width.mas_equalTo(weakSelf.mas_width).multipliedBy(0.5);
+    }];
+    
+    [_displayView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(weakSelf.topBar.mas_bottom);
+        make.bottom.mas_equalTo(weakSelf.bottomBar.mas_top);
+        make.left.and.right.mas_equalTo(weakSelf);
     }];
     
     [_volumeView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(weakSelf.mas_right);
-        make.centerY.mas_equalTo(weakSelf.mas_centerY);
-        make.width.mas_equalTo(weakSelf.height / 3);
+        make.right.mas_equalTo(weakSelf.mas_left).offset(1000);
+        make.width.and.height.mas_equalTo(weakSelf.height / 3);
+    }];
+    
+    [_indicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(weakSelf.displayView);
+    }];
+    
+    [_volumeAlertView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(weakSelf.displayView);
+    }];
+    
+    [_brightnessAlertView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(weakSelf.displayView);
+    }];
+    
+    [_progressAlertView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(weakSelf.displayView);
     }];
     
     [super updateConstraints];
+}
+
+#pragma mark - Touch
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    
+    UITouch *oneTouch = [touches anyObject];
+    
+    self.beginPoint = [oneTouch locationInView:oneTouch.view];
+    self.systemVolume = [[AVAudioSession sharedInstance] outputVolume];
+    self.systemBrightness = [[UIScreen mainScreen] brightness];
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesMoved:touches withEvent:event];
+    
+    UITouch *oneTouch = [touches anyObject];
+    
+    float delta = -([oneTouch locationInView:oneTouch.view].y - self.beginPoint.y) / (ABC_SCREEN_WIDTH ) ;
+    
+    DDLogInfo(@"%f",delta);
+    
+    if (self.beginPoint.x < ABC_SCREEN_WIDTH / 2) {
+        [[UIScreen mainScreen] setBrightness:delta + self.systemBrightness];
+    }else if (self.beginPoint.x >= ABC_SCREEN_WIDTH / 2) {
+        [self.MPVolumeSlider setValue:delta + self.systemVolume animated:NO];
+    }
 }
 
 @end
