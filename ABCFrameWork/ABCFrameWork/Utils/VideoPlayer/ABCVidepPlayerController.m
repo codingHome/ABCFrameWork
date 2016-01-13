@@ -215,6 +215,13 @@ static const CGFloat kVideoPlayerControllerAnimationTimeinterval = 0.3f;
     }
 }
 
+- (void)didChangePlaybackTime:(CGFloat)time totalTime:(CGFloat)totalTime {
+    [self setCurrentPlaybackTime:floor(time)];
+    [self play];
+    [self.videoControl autoFadeOutControlBar];
+    [self setTimeLabelValues:time totalTime:totalTime];
+}
+
 - (void)didDoubleTapPlayerControlView:(BOOL)isStop {
     if (isStop) {
         [self pause];

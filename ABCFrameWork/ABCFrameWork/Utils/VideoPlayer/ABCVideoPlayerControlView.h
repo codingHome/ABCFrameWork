@@ -28,6 +28,8 @@
 
 - (void)didDoubleTapPlayerControlView:(BOOL)isStop;
 
+- (void)didChangePlaybackTime:(CGFloat)time totalTime:(CGFloat)totalTime;
+
 @end
 
 @interface ABCVideoPlayerControlView : UIView

@@ -40,13 +40,13 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self testRequest];
-//    [self testVidio];
+    [self testVidio];
 //    [self testScaleImage];
 //    [self testTableView];
 //    [self testActionSheet];
 //    [self testDownLoad];
 //    [self testHud];
-    [self testLoading];
+//    [self testLoading];
 }
 
 - (void)testRequest {

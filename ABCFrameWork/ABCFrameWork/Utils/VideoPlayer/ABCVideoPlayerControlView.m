@@ -15,6 +15,7 @@ static const CGFloat kVideoControlBarHeight = 40.0;
 static const CGFloat kVideoControlAnimationTimeinterval = 0.3;
 static const CGFloat kVideoControlTimeLabelFontSize = 10.0;
 static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
+static const CGFloat KVideoOffSet = 0.2;
 
 @interface ABCVideoPlayerControlView()
 
@@ -36,6 +37,7 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
 @property (nonatomic, assign) CGFloat                 systemBrightness;
 @property (nonatomic, strong) UILabel                 *titleLabel;
 @property (nonatomic, assign) CGPoint                 beginPoint;
+@property (nonatomic, assign) CGFloat                 currentProgress;
 @property (nonatomic, strong) ABCVideoPlayerAlertView *volumeAlertView;
 @property (nonatomic, strong) ABCVideoPlayerAlertView *brightnessAlertView;
 @property (nonatomic, strong) ABCVideoPlayerAlertView *progressAlertView;
@@ -519,6 +521,7 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
     self.beginPoint = [oneTouch locationInView:oneTouch.view];
     self.systemVolume = [[AVAudioSession sharedInstance] outputVolume];
     self.systemBrightness = [[UIScreen mainScreen] brightness];
+    self.currentProgress = self.progressSlider.value;
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -526,14 +529,29 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
     
     UITouch *oneTouch = [touches anyObject];
     
-    float delta = -([oneTouch locationInView:oneTouch.view].y - self.beginPoint.y) / (ABC_SCREEN_WIDTH ) ;
+    CGPoint currentPoint = [oneTouch locationInView:oneTouch.view];
+//    CGPoint prePoint=[oneTouch previousLocationInView:self];
     
-    DDLogInfo(@"%f",delta);
+    CGFloat deltaX = currentPoint.x - self.beginPoint.x;
+    CGFloat deltaY = currentPoint.y - self.beginPoint.y;
+    float delta = 0.0f;
     
-    if (self.beginPoint.x < ABC_SCREEN_WIDTH / 2) {
-        [[UIScreen mainScreen] setBrightness:delta + self.systemBrightness];
-    }else if (self.beginPoint.x >= ABC_SCREEN_WIDTH / 2) {
-        [self.MPVolumeSlider setValue:delta + self.systemVolume animated:NO];
+    if (abs((int)deltaX) > abs((int)deltaY)) {
+        //左右滑动
+        delta = deltaX * KVideoOffSet;
+        
+        if (_delegate && [_delegate respondsToSelector:@selector(didChangePlaybackTime:totalTime:)]) {
+            [_delegate didChangePlaybackTime:delta + self.progressSlider.value totalTime:self.progressSlider.maximumValue];
+        }
+    }else {
+        //上下滑动
+        delta = - deltaY / (ABC_SCREEN_WIDTH ) ;
+        
+        if (self.beginPoint.x < ABC_SCREEN_WIDTH / 2) {
+            [[UIScreen mainScreen] setBrightness:delta + self.systemBrightness];
+        }else if (self.beginPoint.x >= ABC_SCREEN_WIDTH / 2) {
+            [self.MPVolumeSlider setValue:delta + self.systemVolume animated:NO];
+        }
     }
 }
 
