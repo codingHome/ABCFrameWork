@@ -26,6 +26,15 @@
 - (NSString * )URLEncode;
 - (NSString *)trim;
 
+- (bool) contains: (NSString*) substring;
+- (bool) endsWith: (NSString*) substring;
+- (bool) startsWith: (NSString*) substring;
+
+- (CGSize)sizeWithConstrainedToWidth:(float)width fromFont:(UIFont *)font1 lineSpace:(float)lineSpace;
+- (CGSize)sizeWithConstrainedToSize:(CGSize)size fromFont:(UIFont *)font1 lineSpace:(float)lineSpace;
+- (void)drawInContext:(CGContextRef)context withPosition:(CGPoint)p andFont:(UIFont *)font andTextColor:(UIColor *)color andHeight:(float)height andWidth:(float)width;
+- (void)drawInContext:(CGContextRef)context withPosition:(CGPoint)p andFont:(UIFont *)font andTextColor:(UIColor *)color andHeight:(float)height;
+
 - (BOOL) isOlderVersionThan:(NSString*)otherVersion;
 - (BOOL) isNewerVersionThan:(NSString*)otherVersion;
 @end
