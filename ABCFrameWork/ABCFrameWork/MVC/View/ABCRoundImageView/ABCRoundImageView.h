@@ -10,14 +10,8 @@
 
 @interface ABCRoundImageView : UIImageView
 
-/**
- *  边框颜色
- */
-@property (nonatomic, strong) UIColor *borderColor;
++ (ABCRoundImageView *)roundImageViewWithRoundedCornersSize:(float)cornerRadius usingImage:(UIImage *)original;
 
-/**
- *  边角角度
- */
-@property (nonatomic, assign) NSUInteger cornerRadius;
++ (ABCRoundImageView *)roundImageViewWithImage:(UIImage *)original;
 
 @end

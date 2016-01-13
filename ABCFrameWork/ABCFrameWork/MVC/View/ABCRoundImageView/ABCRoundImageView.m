@@ -10,42 +10,40 @@
 
 @implementation ABCRoundImageView
 
-- (void)setBorderColor:(UIColor *)borderColor {
-    CALayer * layer = [self layer];
-    [layer setBorderColor:[borderColor CGColor]];
++ (ABCRoundImageView *)roundImageViewWithRoundedCornersSize:(float)cornerRadius usingImage:(UIImage *)original {
+    ABCRoundImageView *imageView = [[ABCRoundImageView alloc] initWithImage:original];
+    
+    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
+    
+    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds
+                                cornerRadius:cornerRadius] addClip];
+
+    [original drawInRect:imageView.bounds];
+    
+    imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return imageView;
 }
 
--(void)setCornerRadius:(NSUInteger)cornerRadius {
-    CALayer * layer = [self layer];
-    [layer setCornerRadius:cornerRadius];
-}
-
-- (void)drawRect:(CGRect)rect
-{
-    [super drawRect:rect];
-    CALayer * layer = [self layer];
-    [layer setMasksToBounds:YES];
-    [layer setCornerRadius:5];
++ (ABCRoundImageView *)roundImageViewWithImage:(UIImage *)original {
+    ABCRoundImageView *imageView = [[ABCRoundImageView alloc] initWithImage:original];
     
-    [layer setBorderWidth:0.1];
-    [layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
     
-    layer.shouldRasterize = YES;
-    layer.rasterizationScale = [UIScreen mainScreen].scale;
-}
-
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    CALayer * layer = [self layer];
-    [layer setMasksToBounds:YES];
-    [layer setCornerRadius:5];
+    CGFloat cornerRadius = imageView.bounds.size.width>imageView.bounds.size.height?imageView.bounds.size.height:imageView.bounds.size.width;
     
-    [layer setBorderWidth:0.1];
-    [layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds
+                                cornerRadius:cornerRadius/2] addClip];
     
-    layer.shouldRasterize = YES;
-    layer.rasterizationScale = [UIScreen mainScreen].scale;
+    [original drawInRect:imageView.bounds];
+    
+    imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return imageView;
 }
 
 @end

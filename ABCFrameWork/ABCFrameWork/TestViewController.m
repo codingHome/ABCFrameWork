@@ -20,6 +20,7 @@
 #import "LCProgressHUD.h"
 #import "HSDownloadManager.h"
 #import "UIView+Loading.h"
+#import "ABCRoundImageView.h"
 
 @interface TestViewController ()
 
@@ -36,6 +37,12 @@
     [pauseBtn addTarget:self action:@selector(pause) forControlEvents:UIControlEventTouchUpInside];
     pauseBtn.backgroundColor = [UIColor redColor];
     [self.view addSubview:pauseBtn];
+    
+    ABCRoundImageView *imageView = [ABCRoundImageView roundImageViewWithImage:[UIImage imageNamed:@"001"]];
+    imageView.frame = CGRectMake(150, 150, 100, 50);
+//    [imageView sizeToFit];
+    [self.view addSubview:imageView];
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

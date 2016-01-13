@@ -8,19 +8,19 @@
 
 #import "ABCVideoPlayerAlertView.h"
 
+@interface ABCVideoPlayerAlertView ()
+
+@property (nonatomic, assign) ABCVideoAlertType type;
+
+@end
+
 @implementation ABCVideoPlayerAlertView
 
 - (instancetype)initWithType:(ABCVideoAlertType)type {
-    if (self = [self init]) {
-        
-    }
-    return self;
-}
-
-- (instancetype)init {
     if (self = [super init]) {
         self.backgroundColor = [UIColor blackColor];
         self.alpha = 0.8;
+        self.type = type;
         [self addSubview:self.imageView];
         [self addSubview:self.titleLabel];
     }
