@@ -15,6 +15,7 @@
 		5712279B1C3B5CF100E8D57C /* LCProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 571227961C3B5CF100E8D57C /* LCProgressHUD.m */; };
 		5712279C1C3B5CF100E8D57C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 571227991C3B5CF100E8D57C /* MBProgressHUD.m */; };
 		571227A11C3B603300E8D57C /* UINavigationController+JZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 571227A01C3B603300E8D57C /* UINavigationController+JZExtension.m */; };
+		571A91631C48C2ED00F12142 /* UCZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 571A91621C48C2ED00F12142 /* UCZProgressView.m */; };
 		5722566B1C2A8282005F6D12 /* ABCScaleImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722566A1C2A8282005F6D12 /* ABCScaleImagesViewController.m */; };
 		5722566F1C2A8750005F6D12 /* UIImage+ImageProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722566E1C2A8750005F6D12 /* UIImage+ImageProcessing.m */; };
 		572F93EA1C3F8E86004BB7D7 /* NYXImagesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 572F93E91C3F8E86004BB7D7 /* NYXImagesHelper.m */; };
@@ -175,6 +176,8 @@
 		5712279E1C3B603300E8D57C /* JZNavigationExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZNavigationExtension.h; sourceTree = "<group>"; };
 		5712279F1C3B603300E8D57C /* UINavigationController+JZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JZExtension.h"; sourceTree = "<group>"; };
 		571227A01C3B603300E8D57C /* UINavigationController+JZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JZExtension.m"; sourceTree = "<group>"; };
+		571A91611C48C2ED00F12142 /* UCZProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCZProgressView.h; sourceTree = "<group>"; };
+		571A91621C48C2ED00F12142 /* UCZProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCZProgressView.m; sourceTree = "<group>"; };
 		572256691C2A8282005F6D12 /* ABCScaleImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABCScaleImagesViewController.h; path = ScaleImageView/ABCScaleImagesViewController.h; sourceTree = "<group>"; };
 		5722566A1C2A8282005F6D12 /* ABCScaleImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABCScaleImagesViewController.m; path = ScaleImageView/ABCScaleImagesViewController.m; sourceTree = "<group>"; };
 		5722566D1C2A8750005F6D12 /* UIImage+ImageProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageProcessing.h"; path = "UIImage/UIImage+ImageProcessing.h"; sourceTree = "<group>"; };
@@ -520,6 +523,15 @@
 				571227A01C3B603300E8D57C /* UINavigationController+JZExtension.m */,
 			);
 			path = JZNavigationExtension;
+			sourceTree = "<group>";
+		};
+		571A91601C48C2ED00F12142 /* UCZProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				571A91611C48C2ED00F12142 /* UCZProgressView.h */,
+				571A91621C48C2ED00F12142 /* UCZProgressView.m */,
+			);
+			path = UCZProgressView;
 			sourceTree = "<group>";
 		};
 		5722566C1C2A8722005F6D12 /* UIImage */ = {
@@ -982,6 +994,7 @@
 		577072621C19226B00EDDD72 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				571A91601C48C2ED00F12142 /* UCZProgressView */,
 				573C824C1C3D15BF00509607 /* NYXImagesKit */,
 				573C82411C3CFBF700509607 /* HSDownloadManager */,
 				573C821C1C3BC20D00509607 /* AFNetworking */,
@@ -1484,6 +1497,7 @@
 				573C824B1C3CFBF700509607 /* NSString+Hash.m in Sources */,
 				573C82491C3CFBF700509607 /* HSDownloadManager.m in Sources */,
 				57650A201C2917F000B4EB89 /* YYFMDatabase.m in Sources */,
+				571A91631C48C2ED00F12142 /* UCZProgressView.m in Sources */,
 				57526FDE1C1A968600FAD42C /* ABCRoundImageView.m in Sources */,
 				573C82361C3BC20D00509607 /* AFURLRequestSerialization.m in Sources */,
 				57650A551C291B0100B4EB89 /* UIImage+MultiFormat.m in Sources */,
