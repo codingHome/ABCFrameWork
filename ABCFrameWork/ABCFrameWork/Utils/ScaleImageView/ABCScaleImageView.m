@@ -97,7 +97,7 @@ static const CGFloat KABCMaximumZoomScale = 3.0;
     [self setScrollViewContentInset];
 }
 
-- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale{
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale {
     [scrollView setZoomScale:scale animated:NO];
 }
 

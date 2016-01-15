@@ -83,7 +83,7 @@
 
 - (UIImage *)getImage:(NSInteger)index {
 //    UIImage *image = [UIImage imageWithContentsOfFile:[self.imagePaths objectAtIndex:index]];
-    NSString *imageName = [NSString stringWithFormat:@"00%d.jpg",index + 1];
+    NSString *imageName = [NSString stringWithFormat:@"00%d.jpg",(int)index + 1];
     UIImage *image = [UIImage imageNamed:imageName];
     image = [image imageByScalingToSize:CGSizeMake(self.view.width * 3, self.view.height * 3)];
     return image;

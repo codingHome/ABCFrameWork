@@ -8,9 +8,17 @@
 
 #import "ABCVideoPlayerAlertView.h"
 
+static NSString * const ABCVideoAlertTypeVolumeImageName = @"video-player-close";
+
+static NSString * const ABCVideoAlertTypeBrightnessImageName = @"video-player-fullscreen";
+
+static NSString * const ABCVideoAlertTypeProgressImageName = @"video-player-pause";
+
+static const NSUInteger ABCVideoAlertFontSize = 23;
+
 @interface ABCVideoPlayerAlertView ()
 
-@property (nonatomic, assign) ABCVideoAlertType type;
+@property (nonatomic, strong) UIImageView *imageView;
 
 @end
 
@@ -37,11 +45,32 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.font = [UIFont boldSystemFontOfSize:16];
+        _titleLabel.font = [UIFont boldSystemFontOfSize:ABCVideoAlertFontSize];
         _titleLabel.textColor = [UIColor whiteColor];
         _titleLabel.backgroundColor = [UIColor clearColor];
     }
     return _titleLabel;
+}
+
+-(void)setType:(ABCVideoAlertType)type {
+    if (_type && _type == type) {
+        return;
+    }else {
+        _type = type;
+        switch (self.type) {
+            case ABCVideoAlertTypeVolume:
+                self.imageView.image = [UIImage imageNamed:ABCVideoAlertTypeVolumeImageName];
+                break;
+            case ABCVideoAlertTypeBrightness:
+                self.imageView.image = [UIImage imageNamed:ABCVideoAlertTypeBrightnessImageName];
+                break;
+            case ABCVideoAlertTypeProgress:
+                self.imageView.image = [UIImage imageNamed:ABCVideoAlertTypeProgressImageName];
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 #pragma mark - Masonry

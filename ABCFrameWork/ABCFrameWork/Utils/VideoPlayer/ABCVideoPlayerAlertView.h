@@ -16,9 +16,9 @@ typedef NS_ENUM(NSUInteger, ABCVideoAlertType) {
 
 @interface ABCVideoPlayerAlertView : UIView
 
-@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, assign) ABCVideoAlertType type;
 
-@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel           *titleLabel;
 
 - (instancetype)initWithType:(ABCVideoAlertType)type;
 

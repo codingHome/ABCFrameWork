@@ -38,9 +38,8 @@ static const CGFloat KVideoOffSet = 0.2;
 @property (nonatomic, strong) UILabel                 *titleLabel;
 @property (nonatomic, assign) CGPoint                 beginPoint;
 @property (nonatomic, assign) CGFloat                 currentProgress;
-@property (nonatomic, strong) ABCVideoPlayerAlertView *volumeAlertView;
-@property (nonatomic, strong) ABCVideoPlayerAlertView *brightnessAlertView;
-@property (nonatomic, strong) ABCVideoPlayerAlertView *progressAlertView;
+@property (nonatomic, strong) ABCVideoPlayerAlertView *alertView;
+@property (nonatomic, assign) BOOL                    isFullScreen;
 
 @end
 
@@ -276,9 +275,7 @@ static const CGFloat KVideoOffSet = 0.2;
         _displayView = [[UIView alloc] init];
         _displayView.backgroundColor = [UIColor clearColor];
         [_displayView addSubview:self.indicatorView];
-        [_displayView addSubview:self.volumeAlertView];
-        [_displayView addSubview:self.brightnessAlertView];
-        [_displayView addSubview:self.progressAlertView];
+        [_displayView addSubview:self.alertView];
     }
     return _displayView;
 }
@@ -308,28 +305,12 @@ static const CGFloat KVideoOffSet = 0.2;
     return _volumeView;
 }
 
-- (ABCVideoPlayerAlertView *)volumeAlertView {
-    if (!_volumeAlertView) {
-        _volumeAlertView = [[ABCVideoPlayerAlertView alloc] initWithType:ABCVideoAlertTypeVolume];
-        _volumeAlertView.hidden = YES;
+- (ABCVideoPlayerAlertView *)alertView {
+    if (!_alertView) {
+        _alertView = [[ABCVideoPlayerAlertView alloc] initWithType:ABCVideoAlertTypeVolume];
+        _alertView.hidden = YES;
     }
-    return _volumeAlertView;
-}
-
-- (ABCVideoPlayerAlertView *)brightnessAlertView {
-    if (!_brightnessAlertView) {
-        _brightnessAlertView = [[ABCVideoPlayerAlertView alloc] initWithType:ABCVideoAlertTypeBrightness];
-        _brightnessAlertView.hidden = YES;
-    }
-    return _brightnessAlertView;
-}
-
-- (ABCVideoPlayerAlertView *)progressAlertView {
-    if (!_progressAlertView) {
-        _progressAlertView = [[ABCVideoPlayerAlertView alloc] initWithType:ABCVideoAlertTypeProgress];
-        _progressAlertView.hidden = YES;
-    }
-    return _progressAlertView;
+    return _alertView;
 }
 
 - (void)setTitle:(NSString *)title {
@@ -354,6 +335,7 @@ static const CGFloat KVideoOffSet = 0.2;
 }
 
 - (void)closeButtonClick {
+    self.isFullScreen = NO;
     if (_delegate && [_delegate respondsToSelector:@selector(didTapPlayerControlViewCloseButton)]) {
         [_delegate didTapPlayerControlViewCloseButton];
     }
@@ -362,6 +344,7 @@ static const CGFloat KVideoOffSet = 0.2;
 - (void)fullScreenButtonClick {
     self.fullScreenButton.hidden = YES;
     self.shrinkScreenButton.hidden = NO;
+    self.isFullScreen = YES;
     if (_delegate && [_delegate respondsToSelector:@selector(didTapPlayerControlViewFullScreenButton)]) {
         [_delegate didTapPlayerControlViewFullScreenButton];
     }
@@ -370,6 +353,7 @@ static const CGFloat KVideoOffSet = 0.2;
 - (void)shrinkScreenButtonClick {
     self.fullScreenButton.hidden = NO;
     self.shrinkScreenButton.hidden = YES;
+    self.isFullScreen = NO;
     if (_delegate && [_delegate respondsToSelector:@selector(didTapPlayerControlViewShrinkScreenButton)]) {
         [_delegate didTapPlayerControlViewShrinkScreenButton];
     }
@@ -497,15 +481,7 @@ static const CGFloat KVideoOffSet = 0.2;
         make.center.mas_equalTo(weakSelf.displayView);
     }];
     
-    [_volumeAlertView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(weakSelf.displayView);
-    }];
-    
-    [_brightnessAlertView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(weakSelf.displayView);
-    }];
-    
-    [_progressAlertView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_alertView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.mas_equalTo(weakSelf.displayView);
     }];
     
@@ -514,6 +490,10 @@ static const CGFloat KVideoOffSet = 0.2;
 
 #pragma mark - Touch
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (!self.isFullScreen) {
+        return;
+    }
+    
     [super touchesBegan:touches withEvent:event];
     
     UITouch *oneTouch = [touches anyObject];
@@ -525,34 +505,86 @@ static const CGFloat KVideoOffSet = 0.2;
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (!self.isFullScreen) {
+        return;
+    }
+    
     [super touchesMoved:touches withEvent:event];
     
     UITouch *oneTouch = [touches anyObject];
     
     CGPoint currentPoint = [oneTouch locationInView:oneTouch.view];
-//    CGPoint prePoint=[oneTouch previousLocationInView:self];
     
     CGFloat deltaX = currentPoint.x - self.beginPoint.x;
     CGFloat deltaY = currentPoint.y - self.beginPoint.y;
     float delta = 0.0f;
     
+    self.alertView.hidden = NO;
+    
     if (abs((int)deltaX) > abs((int)deltaY)) {
         //左右滑动
         delta = deltaX * KVideoOffSet;
+        NSString *deltaString = nil;
+        
+        if (delta > 0.0f) {
+            deltaString = [NSString stringWithFormat:@"+%d",(int)delta];
+        }else {
+            deltaString = [NSString stringWithFormat:@"%d",(int)delta];
+        }
+        
+        self.alertView.type = ABCVideoAlertTypeProgress;
+        self.alertView.titleLabel.text = deltaString;
         
         if (_delegate && [_delegate respondsToSelector:@selector(didChangePlaybackTime:totalTime:)]) {
             [_delegate didChangePlaybackTime:delta + self.progressSlider.value totalTime:self.progressSlider.maximumValue];
         }
     }else {
         //上下滑动
-        delta = - deltaY / (ABC_SCREEN_WIDTH ) ;
+        delta = - deltaY / (ABC_SCREEN_WIDTH) ;
         
         if (self.beginPoint.x < ABC_SCREEN_WIDTH / 2) {
-            [[UIScreen mainScreen] setBrightness:delta + self.systemBrightness];
+            CGFloat changedBrightness = delta + self.systemBrightness > 0 ? delta + self.systemBrightness : 0;
+            
+            self.alertView.type = ABCVideoAlertTypeBrightness;
+            self.alertView.titleLabel.text = [NSString stringWithFormat:@"%02.0f%%",changedBrightness * 100];
+            
+            [[UIScreen mainScreen] setBrightness:changedBrightness];
         }else if (self.beginPoint.x >= ABC_SCREEN_WIDTH / 2) {
-            [self.MPVolumeSlider setValue:delta + self.systemVolume animated:NO];
+            CGFloat changedVolume = delta + self.systemVolume > 0 ? delta + self.systemVolume :  0;
+            
+            self.alertView.type = ABCVideoAlertTypeVolume;
+            self.alertView.titleLabel.text = [NSString stringWithFormat:@"%02.0f%%",(changedVolume) * 100];
+            
+            [self.MPVolumeSlider setValue:changedVolume animated:NO];
         }
     }
+}
+
+-(void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (!self.isFullScreen) {
+        return;
+    }
+    
+    [super touchesCancelled:touches withEvent:event];
+    
+    [self hideAllAlertView];
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (!self.isFullScreen) {
+        return;
+    }
+    
+    [super touchesEnded:touches withEvent:event];
+    
+    [self hideAllAlertView];
+}
+
+- (void)hideAllAlertView {
+    if (!self.alertView.hidden) {
+        self.alertView.hidden = YES;
+    }
+
 }
 
 @end
