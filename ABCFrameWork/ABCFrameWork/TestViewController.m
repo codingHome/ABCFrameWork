@@ -47,8 +47,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self testRequest];
-    [self testVidio];
-//    [self testScaleImage];
+//    [self testVidio];
+    [self testScaleImage];
 //    [self testTableView];
 //    [self testActionSheet];
 //    [self testDownLoad];
