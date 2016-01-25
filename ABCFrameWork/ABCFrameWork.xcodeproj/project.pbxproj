@@ -15,6 +15,7 @@
 		572929571C55C71C003BA9D1 /* YYFMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5729294F1C55C71C003BA9D1 /* YYFMDatabasePool.m */; };
 		572929581C55C71C003BA9D1 /* YYFMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 572929511C55C71C003BA9D1 /* YYFMDatabaseQueue.m */; };
 		572929591C55C71C003BA9D1 /* YYFMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 572929541C55C71C003BA9D1 /* YYFMResultSet.m */; };
+		5729295C1C55F108003BA9D1 /* TestNetOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5729295B1C55F108003BA9D1 /* TestNetOperation.m */; };
 		572F93EC1C3F9F3D004BB7D7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 572F93EB1C3F9F3D004BB7D7 /* QuartzCore.framework */; };
 		573C82491C3CFBF700509607 /* HSDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 573C82431C3CFBF700509607 /* HSDownloadManager.m */; };
 		573C824A1C3CFBF700509607 /* HSSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 573C82451C3CFBF700509607 /* HSSessionModel.m */; };
@@ -53,7 +54,6 @@
 		5770726D1C19256600EDDD72 /* ABCVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5770726C1C19256600EDDD72 /* ABCVideoPlayerControlView.m */; };
 		577072701C19258D00EDDD72 /* ABCVidepPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5770726F1C19258D00EDDD72 /* ABCVidepPlayerController.m */; };
 		577A21C01C2CD9830092C7CB /* UIColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A21BF1C2CD9830092C7CB /* UIColor+Utils.m */; };
-		577A21C71C2CF2FC0092C7CB /* ABCReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A21C61C2CF2FC0092C7CB /* ABCReachability.m */; };
 		577A21D01C2D2F330092C7CB /* NSDate+util.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A21CF1C2D2F330092C7CB /* NSDate+util.m */; };
 		577A21DB1C30DF8D0092C7CB /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A21DA1C30DF8D0092C7CB /* TestTableViewController.m */; };
 		577A21E51C30FD030092C7CB /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A21E41C30FD030092C7CB /* UINavigationBar+Awesome.m */; };
@@ -101,6 +101,8 @@
 		572929521C55C71C003BA9D1 /* YYFMDBHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFMDBHeader.h; sourceTree = "<group>"; };
 		572929531C55C71C003BA9D1 /* YYFMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFMResultSet.h; sourceTree = "<group>"; };
 		572929541C55C71C003BA9D1 /* YYFMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFMResultSet.m; sourceTree = "<group>"; };
+		5729295A1C55F108003BA9D1 /* TestNetOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestNetOperation.h; sourceTree = "<group>"; };
+		5729295B1C55F108003BA9D1 /* TestNetOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestNetOperation.m; sourceTree = "<group>"; };
 		572F93EB1C3F9F3D004BB7D7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		573C82421C3CFBF700509607 /* HSDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDownloadManager.h; sourceTree = "<group>"; };
 		573C82431C3CFBF700509607 /* HSDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDownloadManager.m; sourceTree = "<group>"; };
@@ -175,8 +177,6 @@
 		5770726F1C19258D00EDDD72 /* ABCVidepPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCVidepPlayerController.m; sourceTree = "<group>"; };
 		577A21BE1C2CD9830092C7CB /* UIColor+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Utils.h"; path = "UIColor/UIColor+Utils.h"; sourceTree = "<group>"; };
 		577A21BF1C2CD9830092C7CB /* UIColor+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Utils.m"; path = "UIColor/UIColor+Utils.m"; sourceTree = "<group>"; };
-		577A21C51C2CF2FC0092C7CB /* ABCReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCReachability.h; sourceTree = "<group>"; };
-		577A21C61C2CF2FC0092C7CB /* ABCReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCReachability.m; sourceTree = "<group>"; };
 		577A21CE1C2D2F330092C7CB /* NSDate+util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+util.h"; path = "NSDate/NSDate+util.h"; sourceTree = "<group>"; };
 		577A21CF1C2D2F330092C7CB /* NSDate+util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+util.m"; path = "NSDate/NSDate+util.m"; sourceTree = "<group>"; };
 		577A21D91C30DF8D0092C7CB /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
@@ -331,6 +331,8 @@
 				57650AAB1C29388600B4EB89 /* TestModel.m */,
 				57F72CE71C17FF9700C0F36E /* TestViewController.h */,
 				57F72CE81C17FF9700C0F36E /* TestViewController.m */,
+				5729295A1C55F108003BA9D1 /* TestNetOperation.h */,
+				5729295B1C55F108003BA9D1 /* TestNetOperation.m */,
 				577A21D91C30DF8D0092C7CB /* TestTableViewController.h */,
 				577A21DA1C30DF8D0092C7CB /* TestTableViewController.m */,
 				574E7BB31AEF29B30042E538 /* Supporting Files */,
@@ -372,8 +374,6 @@
 		574E7BDA1AEF2D870042E538 /* NetOperation */ = {
 			isa = PBXGroup;
 			children = (
-				577A21C51C2CF2FC0092C7CB /* ABCReachability.h */,
-				577A21C61C2CF2FC0092C7CB /* ABCReachability.m */,
 				574E7BE51AEF39090042E538 /* ABCNetOperation.h */,
 				574E7BE61AEF39090042E538 /* ABCNetOperation.m */,
 				574E7BDC1AEF2E1E0042E538 /* ABCNetRequest.h */,
@@ -890,6 +890,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				577072701C19258D00EDDD72 /* ABCVidepPlayerController.m in Sources */,
+				5729295C1C55F108003BA9D1 /* TestNetOperation.m in Sources */,
 				57650A9D1C2929BE00B4EB89 /* ABCDB.m in Sources */,
 				577A21F01C3103E50092C7CB /* TYLaunchBaseAnimation.m in Sources */,
 				572929551C55C71C003BA9D1 /* YYFMDatabase.m in Sources */,
@@ -934,7 +935,6 @@
 				57526FF11C1AA8F300FAD42C /* ABCMosiacDataView.m in Sources */,
 				57650AFA1C2947C400B4EB89 /* ABCCheckAppUpdate.m in Sources */,
 				574E7C1C1AF0AC9E0042E538 /* ABCUserInfo.m in Sources */,
-				577A21C71C2CF2FC0092C7CB /* ABCReachability.m in Sources */,
 				57F72CDD1C17DB2400C0F36E /* NSString+Additions.m in Sources */,
 				5722566B1C2A8282005F6D12 /* ABCScaleImagesViewController.m in Sources */,
 				572929571C55C71C003BA9D1 /* YYFMDatabasePool.m in Sources */,

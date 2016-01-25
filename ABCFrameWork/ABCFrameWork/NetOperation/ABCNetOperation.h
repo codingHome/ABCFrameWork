@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ABCNetRequest.h"
 
-typedef void(^CallBack)(id result, NSError *error);
+typedef void(^CallBack)(NSDictionary* result, NSError *error);
 
 typedef NS_ENUM(NSUInteger, ABCOperationMethod){
     ABCNetOperationGetMethod = 1,
@@ -41,25 +41,20 @@ typedef NS_ENUM(NSUInteger, ABCOperationMethod){
  */
 @property (nonatomic, assign)id<ABCNetOperationProtocol>delegate;
 
-/**
- *  请求URL 需要子类重写get方法
- */
-@property (nonatomic, copy, readonly) NSString *URL;
+// 请求URL
+- (NSString *)URL;
 
-/**
- *  请求方式 需要子类重写get方法
- */
-@property (nonatomic, assign, readonly) ABCOperationMethod method;
+// 请求参数
+- (NSDictionary *)requestPara;
 
-/**
- *  请求参数 需要子类重写
- */
-@property (nonatomic, strong, readonly) NSDictionary *requestPara;
+// 请求参数
+- (ABCOperationMethod)method;
 
-/**
- *  超时时间
- */
-@property (nonatomic, assign, readonly) NSTimeInterval timeoutInterval;
+// 超时时间
+- (NSTimeInterval)timeoutInterval;
+
+// 缓存时效
+- (NSTimeInterval)cacheDeadLine;
 
 /**
  *  开始请求
@@ -72,5 +67,12 @@ typedef NS_ENUM(NSUInteger, ABCOperationMethod){
  *  @param callBack 请求回调
  */
 + (void)operationWithCallBack:(CallBack)callBack;
+
+/**
+ *  请求缓存
+ *
+ *  @return 请求response
+ */
+- (NSDictionary *)requestCahe;
 
 @end

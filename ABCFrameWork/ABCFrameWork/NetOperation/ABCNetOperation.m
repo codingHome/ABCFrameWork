@@ -7,7 +7,6 @@
 //
 
 #import "ABCNetOperation.h"
-#import "ABCReachability.h"
 #import "ABCDB.h"
 
 @interface ABCNetOperation ()
@@ -19,32 +18,37 @@
 @implementation ABCNetOperation
 
 + (void)operationWithCallBack:(CallBack)callBack {
-    ABCNetOperation *operation = [[ABCNetOperation alloc] init];
+    ABCNetOperation *operation = [[[self class] alloc] init];
     operation.callBack = callBack;
     [operation startOperation];
 }
 
 - (void)startOperation {
-    ABCReachability *reachability = [ABCReachability reachabilityWithHostName:@"www.baidu.com"];
-    ABCNetStatus status = [reachability currentReachabilityStatus];
-    
-    switch (status) {
-        case ABCNetStatusNone:
-            [self getLocalCache];
-            break;
+    AFNetworkReachabilityManager * reachAbilityManager = [AFNetworkReachabilityManager sharedManager];
+    [reachAbilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusNotReachable:
+            case AFNetworkReachabilityStatusUnknown:
+                break;
+                
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                [self operationMethod];
+                break;
+        }
+    }];
+    [reachAbilityManager startMonitoring];
+}
 
-        case ABCNetStatusWwan:
-        case ABCNetStatusWifi:
-            [self operationMethod];
-            break;
-    }
+- (NSDictionary *)requestCahe {
+    return [self getCache];
 }
 
 #pragma mark -Private Method
 - (void)operationMethod {
-    switch (self.method) {
+    switch ([self method]) {
         case ABCNetOperationGetMethod:
-            
+            [self getRequest];
             break;
         case ABCNetOperationPostMethod:
             [self postRequest];
@@ -55,7 +59,7 @@
     }
 }
 - (void)getRequest {
-    [[ABCNetRequest sharedNetRequest] GetUrl:self.URL RequestPara:self.requestPara RequestSuccess:^(id result, NSError *error) {
+    [[ABCNetRequest sharedNetRequest] GetUrl:[self URL] RequestPara:[self requestPara] RequestSuccess:^(id result, NSError *error) {
         [self callBackResult:result Error:error];
     } RequestFail:^(id result, NSError *error) {
         [self callBackResult:result Error:error];
@@ -63,7 +67,7 @@
 }
 
 - (void)postRequest {
-    [[ABCNetRequest sharedNetRequest] PostUrl:self.URL RequestPara:self.requestPara RequestSuccess:^(id result, NSError *error) {
+    [[ABCNetRequest sharedNetRequest] PostUrl:[self URL] RequestPara:[self requestPara] RequestSuccess:^(id result, NSError *error) {
         [self callBackResult:result Error:error];
     } RequestFail:^(id result, NSError *error) {
         [self callBackResult:result Error:error];
@@ -71,7 +75,7 @@
 }
 
 - (void)postDataRequest {
-    [[ABCNetRequest sharedNetRequest] PostUrl:self.URL RequestPara:self.requestPara Body:^(id<AFMultipartFormData> formData) {
+    [[ABCNetRequest sharedNetRequest] PostUrl:[self URL] RequestPara:[self requestPara] Body:^(id<AFMultipartFormData> formData) {
         if (_bodyBlock) {
             _bodyBlock(formData);
         }
@@ -84,9 +88,6 @@
 
 - (void)callBackResult:(id)result Error:(NSError *)error {
     
-    //缓存
-    [self localCache:result];
-    
     if (_delegate) {
         if (result&&!error) {
             [_delegate netOperationSuccess:self result:result];
@@ -96,16 +97,45 @@
     }else if (_callBack) {
         _callBack(result, error);
     }
+    
+    //缓存
+    [self cache:result];
 }
 
-#pragma mark - DB Method
+#pragma mark - Cache Method
 
-- (void)localCache:(NSDictionary *)result {
+- (void)cache:(NSDictionary *)result {
     
 }
 
-- (void)getLocalCache {
+- (NSDictionary *)getCache {
+    return nil;
+}
 
+#pragma mark - rewrite method
+// 请求URL
+- (NSString *)URL {
+    return nil;
+}
+
+// 请求参数
+- (NSDictionary *)requestPara {
+    return nil;
+}
+
+// 请求参数
+- (ABCOperationMethod)method {
+    return ABCNetOperationGetMethod;
+}
+
+// 超时时间
+- (NSTimeInterval)timeoutInterval {
+    return 10;
+}
+
+// 缓存时效
+- (NSTimeInterval)cacheDeadLine {
+    return 3600;
 }
 
 @end

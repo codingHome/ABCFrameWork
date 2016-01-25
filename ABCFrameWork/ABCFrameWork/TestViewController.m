@@ -20,6 +20,7 @@
 #import "HSDownloadManager.h"
 #import "UIView+Loading.h"
 #import "ABCRoundImageView.h"
+#import "TestNetOperation.h"
 
 @interface TestViewController ()
 
@@ -43,18 +44,21 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [self testRequest];
+    [self testRequest];
 //    [self testVidio];
-    [self testScaleImage];
+//    [self testScaleImage];
 //    [self testTableView];
 //    [self testActionSheet];
 //    [self testDownLoad];
 //    [self testHud];
 //    [self testLoading];
+//    [self testReachability];
 }
 
 - (void)testRequest {
-
+    [TestNetOperation operationWithCallBack:^(id result, NSError *error) {
+        NSLog(@"%@, %@",result, error);
+    }];
 }
 
 - (void)testScaleImage {
@@ -119,6 +123,13 @@
     }else {
         [self.view beginLoading];
     }
+}
+
+- (void)testReachability {
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        
+    }];
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
 }
 
 @end
