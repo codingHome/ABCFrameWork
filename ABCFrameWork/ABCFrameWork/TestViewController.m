@@ -12,7 +12,6 @@
 #import "ABCMosiacView.h"
 #import "ABCCarouselView.h"
 #import "ABCScaleImagesViewController.h"
-#import "TestRequestModel.h"
 #import "ABCNetRequest.h"
 #import "TestTableViewController.h"
 #import "LCActionSheet.h"
@@ -25,8 +24,6 @@
 @interface TestViewController ()
 
 @property (nonatomic, strong) ABCVidepPlayerController *videoController;
-
-@property (nonatomic, strong) AFHTTPRequestOperation *operation;
 
 @end
 
@@ -57,13 +54,7 @@
 }
 
 - (void)testRequest {
-    TestRequestModel *testModel = [[TestRequestModel alloc] init];
-    testModel.city = @"beijing";
-    testModel.key = @"ec1c681fdacfcc3d4dfc530981b86a82";
-    
-    [ABCNetOperation operationWithModel:testModel CallBack:^(id result, NSError *error) {
-        
-    }];
+
 }
 
 - (void)testScaleImage {

@@ -11,6 +11,12 @@
 
 typedef void(^CallBack)(id result, NSError *error);
 
+typedef NS_ENUM(NSUInteger, ABCOperationMethod){
+    ABCNetOperationGetMethod = 1,
+    ABCNetOperationPostMethod,
+    ABCNetOperationPostDataMethod
+};
+
 @class ABCNetOperation;
 
 @protocol  ABCNetOperationProtocol <NSObject>
@@ -36,14 +42,24 @@ typedef void(^CallBack)(id result, NSError *error);
 @property (nonatomic, assign)id<ABCNetOperationProtocol>delegate;
 
 /**
- *  初始化方法
- *
- *  @param url    请求地址
- *  @param model  请求对象
- *
- *  @return 实例对象
+ *  请求URL 需要子类重写get方法
  */
-- (instancetype)initWithModel:(ABCRequestModel *)model;
+@property (nonatomic, copy, readonly) NSString *URL;
+
+/**
+ *  请求方式 需要子类重写get方法
+ */
+@property (nonatomic, assign, readonly) ABCOperationMethod method;
+
+/**
+ *  请求参数 需要子类重写
+ */
+@property (nonatomic, strong, readonly) NSDictionary *requestPara;
+
+/**
+ *  超时时间
+ */
+@property (nonatomic, assign, readonly) NSTimeInterval timeoutInterval;
 
 /**
  *  开始请求
@@ -53,11 +69,8 @@ typedef void(^CallBack)(id result, NSError *error);
 /**
  *  block回调方法
  *
- *  @param url      请求地址
- *  @param model    请求对象
- *  @param method   请求方式
  *  @param callBack 请求回调
  */
-+ (void)operationWithModel:(ABCRequestModel *)model CallBack:(CallBack)callBack;
++ (void)operationWithCallBack:(CallBack)callBack;
 
 @end

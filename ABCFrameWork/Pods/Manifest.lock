@@ -1,15 +1,78 @@
 PODS:
+  - AFNetworking (3.0.4):
+    - AFNetworking/NSURLSession (= 3.0.4)
+    - AFNetworking/Reachability (= 3.0.4)
+    - AFNetworking/Security (= 3.0.4)
+    - AFNetworking/Serialization (= 3.0.4)
+    - AFNetworking/UIKit (= 3.0.4)
+  - AFNetworking/NSURLSession (3.0.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.0.4)
+  - AFNetworking/Security (3.0.4)
+  - AFNetworking/Serialization (3.0.4)
+  - AFNetworking/UIKit (3.0.4):
+    - AFNetworking/NSURLSession
+  - CocoaLumberjack (2.2.0):
+    - CocoaLumberjack/Default (= 2.2.0)
+    - CocoaLumberjack/Extensions (= 2.2.0)
+  - CocoaLumberjack/Core (2.2.0)
+  - CocoaLumberjack/Default (2.2.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.2.0):
+    - CocoaLumberjack/Default
   - JazzHands (2.0.8)
+  - JZNavigationExtension (1.3.2)
+  - LCActionSheet (1.1.3)
+  - LCProgressHUD (1.0.3):
+    - MBProgressHUD (~> 0.9.1)
+  - Masonry (0.6.4)
+  - MBProgressHUD (0.9.2)
+  - NYXImagesKit (2.3)
+  - PINCache (2.1.2)
   - pop (1.0.8)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
+  - UCZProgressView (1.0.2)
+  - YYModel (0.9.12)
+  - ZipArchive (1.4.0)
 
 DEPENDENCIES:
+  - AFNetworking
+  - CocoaLumberjack
   - JazzHands
+  - JZNavigationExtension
+  - LCActionSheet
+  - LCProgressHUD
+  - Masonry
+  - MBProgressHUD
+  - NYXImagesKit
+  - PINCache
   - pop
+  - SDWebImage
+  - UCZProgressView
+  - YYModel
+  - ZipArchive
 
 SPEC CHECKSUMS:
+  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   JazzHands: 355dc5c2b6fc38ee460d0ed7836c69539263f477
+  JZNavigationExtension: c03097ed8275dd2ddb349874779ce23ed039829f
+  LCActionSheet: 9b81ff2a7e3ac00aafa68d320f11ef1fa6baca88
+  LCProgressHUD: f0d67ab62c4c1eb116da51c54968e92ad71be69a
+  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  NYXImagesKit: 8163e3335a40eaa173ca5bbbf81fafb57d3947eb
+  PINCache: 9e70271f1bdd60c0465b7208adcc4b6acc1fc376
   pop: bb773ae2c791ca2629de13b347e7a8b450fa6a57
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  UCZProgressView: 55836987c15ee6efb7cd6dfe297556602ee46c94
+  YYModel: 33a27f41a995f4c36ff8178421bac9f221a9c7ea
+  ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: 9b5415157438338897682ec4a3218de65121a8ed
+PODFILE CHECKSUM: 799bba2c5a843cf0652d0c2737d171ff58870778
 
 COCOAPODS: 1.0.0.beta.2

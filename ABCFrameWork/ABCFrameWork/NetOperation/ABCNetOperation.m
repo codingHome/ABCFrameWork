@@ -9,11 +9,8 @@
 #import "ABCNetOperation.h"
 #import "ABCReachability.h"
 #import "ABCDB.h"
-#import "ABCCacheModel.h"
 
 @interface ABCNetOperation ()
-
-@property (nonatomic, strong) ABCRequestModel *requestModel;
 
 @property (nonatomic, copy) CallBack callBack;
 
@@ -21,16 +18,8 @@
 
 @implementation ABCNetOperation
 
-- (instancetype)initWithModel:(ABCRequestModel *)model {
-    self = [super init];
-    if (self) {
-        _requestModel = model;
-    }
-    return self;
-}
-
-+ (void)operationWithModel:(ABCRequestModel *)model CallBack:(CallBack)callBack {
-    ABCNetOperation *operation = [[ABCNetOperation alloc] initWithModel:model];
++ (void)operationWithCallBack:(CallBack)callBack {
+    ABCNetOperation *operation = [[ABCNetOperation alloc] init];
     operation.callBack = callBack;
     [operation startOperation];
 }
@@ -53,9 +42,9 @@
 
 #pragma mark -Private Method
 - (void)operationMethod {
-    switch (_requestModel.method) {
+    switch (self.method) {
         case ABCNetOperationGetMethod:
-            [self getRequest];
+            
             break;
         case ABCNetOperationPostMethod:
             [self postRequest];
@@ -66,41 +55,31 @@
     }
 }
 - (void)getRequest {
-    [[ABCNetRequest sharedNetRequest]GetUrl:_requestModel.URL
-                               RequestModel:_requestModel
-                             RequestSuccess:^(id result, NSError *error) {
-                                 [self callBackResult:result Error:error];
-                             }
-                                RequestFail:^(id result, NSError *error) {
-                                    [self callBackResult:result Error:error];
-                                }];
+    [[ABCNetRequest sharedNetRequest] GetUrl:self.URL RequestPara:self.requestPara RequestSuccess:^(id result, NSError *error) {
+        [self callBackResult:result Error:error];
+    } RequestFail:^(id result, NSError *error) {
+        [self callBackResult:result Error:error];
+    }];
 }
 
 - (void)postRequest {
-    [[ABCNetRequest sharedNetRequest]PostUrl:_requestModel.URL
-                                RequestModel:_requestModel
-                              RequestSuccess:^(id result, NSError *error) {
-                                  [self callBackResult:result Error:error];
-                              }
-                                 RequestFail:^(id result, NSError *error) {
-                                     [self callBackResult:result Error:error];
-                                 }];
+    [[ABCNetRequest sharedNetRequest] PostUrl:self.URL RequestPara:self.requestPara RequestSuccess:^(id result, NSError *error) {
+        [self callBackResult:result Error:error];
+    } RequestFail:^(id result, NSError *error) {
+        [self callBackResult:result Error:error];
+    }];
 }
 
 - (void)postDataRequest {
-    [[ABCNetRequest sharedNetRequest]PostUrl:_requestModel.URL
-                                RequestModel:_requestModel
-                                        Body:^(id<AFMultipartFormData> formData) {
-                                            if (_bodyBlock) {
-                                                _bodyBlock(formData);
-                                            }
-                                        }
-                              RequestSuccess:^(id result, NSError *error) {
-                                  [self callBackResult:result Error:error];
-                              }
-                                 RequestFail:^(id result, NSError *error) {
-                                     [self callBackResult:result Error:error];
-                                 }];
+    [[ABCNetRequest sharedNetRequest] PostUrl:self.URL RequestPara:self.requestPara Body:^(id<AFMultipartFormData> formData) {
+        if (_bodyBlock) {
+            _bodyBlock(formData);
+        }
+    } RequestSuccess:^(id result, NSError *error) {
+        [self callBackResult:result Error:error];
+    } RequestFail:^(id result, NSError *error) {
+        [self callBackResult:result Error:error];
+    }];
 }
 
 - (void)callBackResult:(id)result Error:(NSError *)error {
@@ -122,37 +101,11 @@
 #pragma mark - DB Method
 
 - (void)localCache:(NSDictionary *)result {
-    ABCCacheModel *cacheModel = [[ABCCacheModel alloc] init];
-    cacheModel.md5_name = [[self.requestModel operationURL] MD5];
-    cacheModel.responseTime = [NSString formatCurDate];
     
-    NSError *error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:result options:NSJSONWritingPrettyPrinted error:&error];
-    cacheModel.responseContent = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    [cacheModel insert];
 }
 
 - (void)getLocalCache {
-    NSString *md5 = [[self.requestModel operationURL] MD5];
-    
-    NSString *currentTime = [NSString formatCurDate];
-    NSDate *curdate = [NSDate formatDate:currentTime];
-    
-    ABCCacheModel* model = [ABCCacheModel queryWithMd5:md5];
-    
-    NSDate *responseDate = [NSDate formatDate:model.responseTime];
-    long differencetime = fabs([curdate timeIntervalSinceDate:responseDate]);
-    
-    if (differencetime > model.intervalTime) {
-        return;
-    }else {
-        NSError *error = nil;
-        NSData *jsonData = [model.responseContent dataUsingEncoding:NSUTF8StringEncoding];
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
-                                               options:NSJSONReadingMutableContainers
-                                                 error:&error];
-        [self callBackResult:dic Error:error];
-    }
+
 }
 
 @end

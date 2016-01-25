@@ -6,6 +6,19 @@
 target 'ABCFrameWork' do
     pod 'pop'
     pod 'JazzHands'
+    pod 'UCZProgressView'
+    pod 'NYXImagesKit'
+    pod 'AFNetworking'
+    pod 'LCProgressHUD'
+    pod 'LCActionSheet'
+    pod 'JZNavigationExtension'
+    pod 'MBProgressHUD'
+    pod 'PINCache'
+    pod 'CocoaLumberjack'
+    pod 'YYModel'
+    pod 'ZipArchive'
+    pod 'Masonry'
+    pod 'SDWebImage'
 end
 
 target 'ABCFrameWorkTests' do

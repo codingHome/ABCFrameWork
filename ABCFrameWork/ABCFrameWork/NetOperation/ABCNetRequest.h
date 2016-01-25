@@ -7,7 +7,6 @@
 //
 
 #import "AFHTTPSessionManager.h"
-#import "ABCRequestModel.h"
 
 typedef void (^RequestSuccessBlock)(id result, NSError *error);
 typedef void (^RequestFailBlock)(id result, NSError *error);
@@ -26,12 +25,12 @@ typedef void (^RequestBodyBlock) (id<AFMultipartFormData> formData);
  *  GET请求
  *
  *  @param url             请求URL
- *  @param model           请求参数Model
+ *  @param para            请求参数
  *  @param successCallBack 请求成功回掉
  *  @param failCallBack    请求失败回掉
  */
 - (void)GetUrl:(NSString *)url
-  RequestModel:(ABCRequestModel *)model
+   RequestPara:(NSDictionary *)para
 RequestSuccess:(RequestSuccessBlock)successCallBack
    RequestFail:(RequestFailBlock)failCallBack;
 
@@ -39,12 +38,12 @@ RequestSuccess:(RequestSuccessBlock)successCallBack
  *  POST请求
  *
  *  @param url             请求URL
- *  @param model           请求参数Model
+ *  @param para            请求参数
  *  @param successCallBack 请求成功回掉
  *  @param failCallBack    请求失败回掉
  */
 - (void)PostUrl:(NSString *)url
-   RequestModel:(ABCRequestModel *)model
+    RequestPara:(NSDictionary *)para
  RequestSuccess:(RequestSuccessBlock)successCallBack
     RequestFail:(RequestFailBlock)failCallBack;
 
@@ -52,13 +51,13 @@ RequestSuccess:(RequestSuccessBlock)successCallBack
  *  POST请求（上传数据）
  *
  *  @param url             请求URL
- *  @param model           请求参数Model
+ *  @param para            请求参数
  *  @param bodyBlock       请求体数据
  *  @param successCallBack 请求成功回掉
  *  @param failCallBack    请求失败回掉
  */
 - (void)PostUrl:(NSString *)url
-   RequestModel:(ABCRequestModel *)model
+    RequestPara:(NSDictionary *)para
            Body:(RequestBodyBlock)bodyBlock
  RequestSuccess:(RequestSuccessBlock)successCallBack
     RequestFail:(RequestFailBlock)failCallBack;

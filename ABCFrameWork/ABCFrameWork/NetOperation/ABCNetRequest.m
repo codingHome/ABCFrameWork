@@ -8,6 +8,8 @@
 
 #import "ABCNetRequest.h"
 
+static const CGFloat KTimeoutInterval = 20;
+
 @implementation ABCNetRequest
 
 + (ABCNetRequest *)sharedNetRequest {
@@ -15,19 +17,17 @@
     static ABCNetRequest *sharedNetRequest;
     dispatch_once(&onceToken, ^{
         sharedNetRequest = [[self alloc] init];
+        sharedNetRequest.requestSerializer.timeoutInterval = KTimeoutInterval;
     });
     return sharedNetRequest;
 }
 
 - (void)GetUrl:(NSString *)url
-  RequestModel:(ABCRequestModel *)model
+   RequestPara:(NSDictionary *)para
 RequestSuccess:(RequestSuccessBlock)successCallBack
    RequestFail:(RequestFailBlock)failCallBack {
     
-    NSDictionary *params = [model instancePropertiesList];
-    self.requestSerializer.timeoutInterval = model.timeoutInterval;
-    
-    [self GET:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self GET:url parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         successCallBack(responseObject,nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failCallBack(nil,error);
@@ -35,14 +35,11 @@ RequestSuccess:(RequestSuccessBlock)successCallBack
 }
 
 - (void)PostUrl:(NSString *)url
-   RequestModel:(ABCRequestModel *)model
+    RequestPara:(NSDictionary *)para
  RequestSuccess:(RequestSuccessBlock)successCallBack
     RequestFail:(RequestFailBlock)failCallBack {
     
-    NSDictionary *params = [model instancePropertiesList];
-    self.requestSerializer.timeoutInterval = model.timeoutInterval;
-    
-    [self POST:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self POST:url parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         successCallBack(responseObject,nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failCallBack(nil,error);
@@ -50,15 +47,12 @@ RequestSuccess:(RequestSuccessBlock)successCallBack
 }
 
 - (void)PostUrl:(NSString *)url
-   RequestModel:(ABCRequestModel *)model
+    RequestPara:(NSDictionary *)para
            Body:(RequestBodyBlock)bodyBlock
  RequestSuccess:(RequestSuccessBlock)successCallBack
     RequestFail:(RequestFailBlock)failCallBack {
     
-    NSDictionary *params = [model instancePropertiesList];
-    self.requestSerializer.timeoutInterval = model.timeoutInterval;
-    
-    [self POST:url parameters:params constructingBodyWithBlock:bodyBlock success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self POST:url parameters:para constructingBodyWithBlock:bodyBlock progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         successCallBack(responseObject,nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failCallBack(nil,error);
