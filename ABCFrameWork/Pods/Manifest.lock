@@ -24,6 +24,7 @@ PODS:
     - CocoaLumberjack/Default
   - JazzHands (2.0.8)
   - JZNavigationExtension (1.3.2)
+  - Kiwi (2.4.0)
   - LCActionSheet (1.1.3)
   - LCProgressHUD (1.0.3):
     - MBProgressHUD (~> 0.9.1)
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - CocoaLumberjack
   - JazzHands
   - JZNavigationExtension
+  - Kiwi
   - LCActionSheet
   - LCProgressHUD
   - Masonry
@@ -61,6 +63,7 @@ SPEC CHECKSUMS:
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   JazzHands: 355dc5c2b6fc38ee460d0ed7836c69539263f477
   JZNavigationExtension: c03097ed8275dd2ddb349874779ce23ed039829f
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
   LCActionSheet: 9b81ff2a7e3ac00aafa68d320f11ef1fa6baca88
   LCProgressHUD: f0d67ab62c4c1eb116da51c54968e92ad71be69a
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
@@ -73,6 +76,6 @@ SPEC CHECKSUMS:
   YYModel: 33a27f41a995f4c36ff8178421bac9f221a9c7ea
   ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: 799bba2c5a843cf0652d0c2737d171ff58870778
+PODFILE CHECKSUM: 97ffbde5d504751295d99effad6cfb8089660fb7
 
 COCOAPODS: 1.0.0.beta.2

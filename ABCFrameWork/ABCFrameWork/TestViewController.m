@@ -59,6 +59,10 @@
     [TestNetOperation operationWithCallBack:^(id result, NSError *error) {
         NSLog(@"%@, %@",result, error);
     }];
+    
+    [TestNetOperation operationCacheWithBlock:^(NSDictionary *result, NSError *error) {
+        NSLog(@"%@, %@", result, error);
+    }];
 }
 
 - (void)testScaleImage {

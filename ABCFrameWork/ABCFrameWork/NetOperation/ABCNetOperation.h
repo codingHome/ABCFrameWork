@@ -34,12 +34,12 @@ typedef NS_ENUM(NSUInteger, ABCOperationMethod){
 /**
  *  请求体
  */
-@property (nonatomic, strong)RequestBodyBlock bodyBlock;
+@property (nonatomic, strong) RequestBodyBlock        bodyBlock;
 
 /**
  *  代理
  */
-@property (nonatomic, assign)id<ABCNetOperationProtocol>delegate;
+@property (nonatomic, assign) id<ABCNetOperationProtocol> delegate;
 
 // 请求URL
 - (NSString *)URL;
@@ -53,26 +53,23 @@ typedef NS_ENUM(NSUInteger, ABCOperationMethod){
 // 超时时间
 - (NSTimeInterval)timeoutInterval;
 
-// 缓存时效
-- (NSTimeInterval)cacheDeadLine;
-
 /**
  *  开始请求
  */
 - (void)startOperation;
 
 /**
- *  block回调方法
+ *  请求block回调方法
  *
  *  @param callBack 请求回调
  */
 + (void)operationWithCallBack:(CallBack)callBack;
 
 /**
- *  请求缓存
+ *  缓存block回调方法
  *
- *  @return 请求response
+ *  @param callBack 缓存回调
  */
-- (NSDictionary *)requestCahe;
++ (void)operationCacheWithBlock:(CallBack)callBack;
 
 @end

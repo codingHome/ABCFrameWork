@@ -7,11 +7,11 @@
 //
 
 #import "ABCNetOperation.h"
-#import "ABCDB.h"
+#import "PINCache.h"
 
 @interface ABCNetOperation ()
 
-@property (nonatomic, copy) CallBack callBack;
+@property (nonatomic, copy  ) CallBack callBack;
 
 @end
 
@@ -21,6 +21,16 @@
     ABCNetOperation *operation = [[[self class] alloc] init];
     operation.callBack = callBack;
     [operation startOperation];
+}
+
++ (void)operationCacheWithBlock:(CallBack)callBack {
+    [[PINCache sharedCache] objectForKey:NSStringFromClass([self class]) block:^(PINCache * _Nonnull cache, NSString * _Nonnull key, id  _Nullable object) {
+        if (object) {
+            callBack(object, nil);
+        }else {
+            callBack(nil, nil);
+        }
+    }];
 }
 
 - (void)startOperation {
@@ -38,10 +48,6 @@
         }
     }];
     [reachAbilityManager startMonitoring];
-}
-
-- (NSDictionary *)requestCahe {
-    return [self getCache];
 }
 
 #pragma mark -Private Method
@@ -105,11 +111,9 @@
 #pragma mark - Cache Method
 
 - (void)cache:(NSDictionary *)result {
-    
-}
-
-- (NSDictionary *)getCache {
-    return nil;
+    [[PINCache sharedCache] setObject:result forKey:NSStringFromClass([self class]) block:^(PINCache * _Nonnull cache, NSString * _Nonnull key, id  _Nullable object) {
+        
+    }];
 }
 
 #pragma mark - rewrite method
@@ -131,11 +135,6 @@
 // 超时时间
 - (NSTimeInterval)timeoutInterval {
     return 10;
-}
-
-// 缓存时效
-- (NSTimeInterval)cacheDeadLine {
-    return 3600;
 }
 
 @end
