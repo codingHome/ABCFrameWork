@@ -16,6 +16,7 @@
 		572929581C55C71C003BA9D1 /* YYFMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 572929511C55C71C003BA9D1 /* YYFMDatabaseQueue.m */; };
 		572929591C55C71C003BA9D1 /* YYFMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 572929541C55C71C003BA9D1 /* YYFMResultSet.m */; };
 		5729295C1C55F108003BA9D1 /* TestNetOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5729295B1C55F108003BA9D1 /* TestNetOperation.m */; };
+		5729295E1C561754003BA9D1 /* ABCDBModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5729295D1C561754003BA9D1 /* ABCDBModelSpec.m */; };
 		572F93EC1C3F9F3D004BB7D7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 572F93EB1C3F9F3D004BB7D7 /* QuartzCore.framework */; };
 		573C82491C3CFBF700509607 /* HSDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 573C82431C3CFBF700509607 /* HSDownloadManager.m */; };
 		573C824A1C3CFBF700509607 /* HSSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 573C82451C3CFBF700509607 /* HSSessionModel.m */; };
@@ -103,6 +104,7 @@
 		572929541C55C71C003BA9D1 /* YYFMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFMResultSet.m; sourceTree = "<group>"; };
 		5729295A1C55F108003BA9D1 /* TestNetOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestNetOperation.h; sourceTree = "<group>"; };
 		5729295B1C55F108003BA9D1 /* TestNetOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestNetOperation.m; sourceTree = "<group>"; };
+		5729295D1C561754003BA9D1 /* ABCDBModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCDBModelSpec.m; sourceTree = "<group>"; };
 		572F93EB1C3F9F3D004BB7D7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		573C82421C3CFBF700509607 /* HSDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDownloadManager.h; sourceTree = "<group>"; };
 		573C82431C3CFBF700509607 /* HSDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDownloadManager.m; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 		574E7BCC1AEF29B30042E538 /* ABCFrameWorkTests */ = {
 			isa = PBXGroup;
 			children = (
+				5729295D1C561754003BA9D1 /* ABCDBModelSpec.m */,
 				57F72CE11C17F89200C0F36E /* ABCRequestModelTest */,
 				574E7BCD1AEF29B30042E538 /* Supporting Files */,
 			);
@@ -947,6 +950,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5729295E1C561754003BA9D1 /* ABCDBModelSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
