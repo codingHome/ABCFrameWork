@@ -10,4 +10,4 @@ before_install:
 
 script: 
 - xctool -workspace ABCFrameWork/ABCFrameWork.xcworkspace -scheme ABCFrameWork -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-- xctool test -workspace ABCFrameWork/ABCFrameWork.xcworkspace -scheme ABCFrameWork -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xctool -workspace ABCFrameWork/ABCFrameWork.xcworkspace -scheme ABCFrameWork test
