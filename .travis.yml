@@ -1,5 +1,5 @@
 language: objective-c
 
 script: 
-- xctool -workspace ABCFrameWork.xcworkspace -scheme ABCFrameWork -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-- xctool test -workspace ABCFrameWork.xcworkspace -scheme ABCFrameWorkTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xctool -workspace ABCFrameWork/ABCFrameWork.xcworkspace -scheme ABCFrameWork -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xctool test -workspace ABCFrameWork/ABCFrameWork.xcworkspace -scheme ABCFrameWorkTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
