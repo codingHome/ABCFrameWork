@@ -21,6 +21,7 @@
 #import "UIView+Loading.h"
 #import "ABCRoundImageView.h"
 #import "TestNetOperation.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface TestViewController ()
 
@@ -44,8 +45,8 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self testRequest];
-//    [self testVidio];
+//    [self testRequest];
+    [self testVidio];
 //    [self testScaleImage];
 //    [self testTableView];
 //    [self testActionSheet];
@@ -73,8 +74,33 @@
 }
 
 - (void)testVidio {
-    NSURL *videoURL = [NSURL URLWithString:@"http://krtv.qiniudn.com/150522nextapp"];
+    NSURL *videoURL = [NSURL URLWithString:@"https://player.vimeo.com/video/143506410"];
     [self playVideoWithURL:videoURL];
+    
+//    NSDictionary *opts = @{AVURLAssetPreferPreciseDurationAndTimingKey: [NSNumber numberWithBool:NO]};
+//    
+//    AVURLAsset *urlAssert = [AVURLAsset URLAssetWithURL:videoURL options:opts];
+//    
+//    //视频长度
+//    float second = urlAssert.duration.value/urlAssert.duration.timescale;
+//    
+//    NSLog(@"%f",second);
+//    
+//    AVAssetImageGenerator *imageGenerator = [AVAssetImageGenerator assetImageGeneratorWithAsset:urlAssert];
+//    
+//    NSError *error = nil;
+//    CMTime time = CMTimeMake(10,10);//缩略图创建时间 CMTime是表示电影时间信息的结构体，第一个参数表示是视频第几秒，第二个参数表示每秒帧数.(如果要活的某一秒的第几帧可以使用CMTimeMake方法)
+//    CMTime actucalTime; //缩略图实际生成的时间
+//    CGImageRef cgImage = [imageGenerator copyCGImageAtTime:time actualTime:&actucalTime error:&error];
+//    if (error) {
+//        NSLog(@"截取视频图片失败:%@",error.localizedDescription);
+//    }
+//    CMTimeShow(actucalTime);
+//    UIImage *image = [UIImage imageWithCGImage:cgImage];
+//    UIImageWriteToSavedPhotosAlbum(image,nil, nil,nil);
+//    CGImageRelease(cgImage);
+    
+//    NSLog(@"视频截取成功");
 }
 
 - (void)playVideoWithURL:(NSURL *)url
