@@ -10,4 +10,4 @@ before_install:
 
 script: 
 - xctool -workspace ABCFrameWork/ABCFrameWork.xcworkspace -scheme ABCFrameWork -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-- xcodebuild -workspace ABCFrameWork/ABCFrameWork.xcworkspace -scheme ABCFrameWorkTests -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest' test
+- xcodebuild -workspace ABCFrameWork/ABCFrameWork.xcworkspace -scheme ABCFrameWorkTests -sdk iphonesimulator test
